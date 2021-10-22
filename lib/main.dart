@@ -1,10 +1,16 @@
+import 'dart:io';
+
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:nohfibu/settings.dart';
+import 'package:nohfibu/fibusettings.dart';
 import 'package:nohfibu/csv_handler.dart';
 import 'package:nohfibu/nohfibu.dart';
 import 'package:nohfibu/ops_handler.dart';
+import 'package:shared_preferences_settings/shared_preferences_settings.dart';
 
-void main() {
+import 'navdrawer.dart';
+
+Future<void> main() async {
   runApp(const MyApp());
 }
 
@@ -51,70 +57,102 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-  Book book = new Book();
+/*
 
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
+
+Saving a file
+
+final path = await getSavePath();
+final name = "hello_file_selector.txt";
+final data = Uint8List.fromList("Hello World!".codeUnits);
+final mimeType = "text/plain";
+final file = XFile.fromData(data, name: name, mimeType: mimeType);
+await file.saveTo(path);
+
+ */
+class _MyHomePageState extends State<MyHomePage> {
+
+  Book book = new Book();
+  FibuSettings settings = FibuSettings();
+  String fname = "argh";
+
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
+    ;
+    Settings().getString( 'key-filename', 'none' ).then((value) {
+        fname= value!;
+        return;
+    });
+    print("retrieved $fname");
     return Scaffold(
+      drawer: NavDrawer(),
       appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
+        title: Text('Side menu '),
       ),
       body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
-        ),
+        child:
+        Settings().onStringChanged(
+          settingKey: 'key-filename',
+          defaultValue: 'Empty',
+          childBuilder: (context, value){
+            fname= value!;
+            return Row(
+              children: [
+                Text('need to load $fname!'),
+               IconButton(onPressed: (){
+                //file_selector
+                // final typeGroup = XTypeGroup(label: 'data', extensions: ['csv']);
+                //openFile(acceptedTypeGroups: [typeGroup]).then((file){print("got back $file");});
+                FilePicker.platform.pickFiles( type: FileType.custom, allowedExtensions: ['csv'], ).then(
+                        (value) {
+                if (value != null) {
+                  //print("dialog retrieved : ${value.files.single.path} vs $fname");
+                  String result = "${value.files.single.path}";
+                  Settings().save("key-filename", "${value.files.single.path}");
+
+                  if(value.files.single.path != null)
+                    {
+                      int pos = result.lastIndexOf(".");
+                      if( pos>0)
+                        {
+                          settings["base"] = result.substring(0,pos);
+                          settings["type"] = result.substring(pos+1).trim();
+                        }
+                      else
+                        {
+                          settings["base"] = result;
+                          settings["type"] = "csv";
+                        }
+                  File file = File(settings["base"]+"."+ settings["type"]);
+                  print("changed $file and ${file.existsSync()}");
+                    }
+                  //setState(() {
+
+                 //});
+                }
+                else {
+                 // User canceled the picker
+                 }
+                });
+
+
+               }, icon: Icon(Icons.save)),
+                IconButton(onPressed: (){
+                  var handler = CsvHandler();
+                  File file = File(settings["base"]);
+                  print("asked to open $file and ${file.existsSync()}");
+                  handler.load(book: book, conf: settings);
+                  print("loaded $book");
+
+
+                }, icon: Icon(Icons.arrow_forward))
+
+            ],
+            );
+          },
+        )
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
