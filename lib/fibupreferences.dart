@@ -6,6 +6,8 @@ import 'navdrawer.dart';
 
 class FibuPreferences extends StatefulWidget
 {
+  static const String routeName = "/settings";
+
     @override
     _FibuPreferencesState createState() => _FibuPreferencesState();
 }
