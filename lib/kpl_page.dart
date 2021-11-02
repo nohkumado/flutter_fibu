@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_fibu/screen_arguments.dart';
 import 'package:nohfibu/fibusettings.dart';
 import 'package:nohfibu/nohfibu.dart';
-import 'package:shared_preferences_settings/shared_preferences_settings.dart';
 
 import 'generated/l10n.dart';
 import 'navdrawer.dart';
+import 'jrl_page.dart';
 
 class KplPage extends StatefulWidget {
   Book book = new Book();
@@ -62,11 +62,11 @@ class _KplPageState extends State<KplPage> {
                         {
                           return DataRow(
                               cells: [
-                                DataCell(Text(line[0])),
-                                DataCell(Text((line.length >1)?"${line[1]}":"no data")),
-                                DataCell(Text((line.length >2)?"${line[2]}":"no data")),
-                                DataCell(Text((line.length >3)?"${line[3]}":"no data")),
-                                DataCell(Text((line.length >4)?"${line[4]}":"no data")),
+                                DataCell(makeButton(line[0])), //acount nnumber
+                                DataCell(Text((line.length >1)?"${line[1]}":"no data")),//acc desc
+                                DataCell(Text((line.length >2)?"${line[2]}":"no data")),//acc cur
+                                DataCell(Text((line.length >3)?"${line[3]}":"no data")),//acc budget
+                                DataCell(Text((line.length >4)?"${line[4]}":"no data")),//acc valuta
                               ]);
                         }).toList()
 
@@ -90,5 +90,18 @@ class _KplPageState extends State<KplPage> {
           //),
         )
     );
+  }
+
+
+  Widget makeButton(String text)
+  {
+    return RaisedButton(child: Text(text), onPressed: ()
+	{
+		  Navigator.pushNamed(
+		      context,
+		      JrlPage.routeName,
+		      arguments: ScreenArguments(widget.book, widget.settings, extract:text)
+		  );
+	},); 
   }
 }
