@@ -40,15 +40,18 @@ class _JrlPageState extends State<JrlPage> {
 
   @override
   Widget build(BuildContext context) {
-    final args = ModalRoute.of(context)!.settings.arguments as ScreenArguments;
-    if(args != null)
+    if(ModalRoute.of(context)!.settings.arguments != null)
     {
-      widget.book = args.book;
-      widget.settings = args.settings;
+      final args = ModalRoute.of(context)!.settings.arguments as ScreenArguments;
+      if(args != null)
+      {
+	widget.book = args.book;
+	widget.settings = args.settings;
+      }
+      ;
     }
-    ;
     //print("in KPL book is : ${widget.book}");
-    List items = widget.book.jrl.asList([]);
+    List items = widget.book.jrl.asList([],silent: true);
     return Scaffold(
         drawer: NavDrawer(book: widget.book, settings: widget.settings),
         appBar: AppBar( title: Text(S.of(context).JrlTitle) ),

@@ -48,7 +48,7 @@ class _KplPageState extends State<KplPage> {
     }
     ;
     //print("in KPL book is : ${widget.book}");
-    List items = widget.book.kpl.asList();
+    List items = widget.book.kpl.asList(silent: true);
     return Scaffold(
         drawer: NavDrawer(book: widget.book, settings: widget.settings),
         appBar: AppBar( title: Text(S.of(context).KplTitle) ),
