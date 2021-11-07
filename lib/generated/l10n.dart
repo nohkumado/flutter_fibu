@@ -139,6 +139,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Extract for {konto}`
+  String extract(Object konto) {
+    return Intl.message(
+      'Extract for $konto',
+      name: 'extract',
+      desc: '',
+      args: [konto],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
