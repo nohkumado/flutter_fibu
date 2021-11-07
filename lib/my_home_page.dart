@@ -84,7 +84,7 @@ class _MyHomePageState extends State<MyHomePage> {
 			],
 		    ),
 		    ElevatedButton(
-			child:Text(S.of(context).NavTitle),
+			child:Text(S.of(context).save),
 			onPressed: (){
 			  var handler = CsvHandler();
 			  File file = File(settings["base"]);
@@ -111,58 +111,62 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void selectBase()
-  {
-    //file_selector
-    // final typeGroup = XTypeGroup(label: 'data', extensions: ['csv']);
-    //openFile(acceptedTypeGroups: [typeGroup]).then((file){print("got back $file");});
-    FilePicker.platform.pickFiles( type: FileType.custom, allowedExtensions: ['csv'], ).then(
-	(value) {
-	  if (value != null) {
-	    //print("dialog retrieved : ${value.files.single.path} vs $fname");
-	    
-	    String result = (value.files.first != null)? "${value.files.first.name}":"${value.files.single.path}";
-	    //var fileBytes = result.files.first.bytes;
-	        String  fileBytes = "";
-	    if (value.files.first != null) {
-	      fileBytes = utf8.decode(value.files.first.bytes!);
-	     //Uint8List asbyte = value.files.first.bytes;
-	     //fileBytes = String.fromCharCodes(asbyte);
-	    }
+	{
+		//file_selector
+		// final typeGroup = XTypeGroup(label: 'data', extensions: ['csv']);
+		//openFile(acceptedTypeGroups: [typeGroup]).then((file){print("got back $file");});
+		FilePicker.platform.pickFiles( type: FileType.custom, allowedExtensions: ['csv'], ).then(
+						(value) {
+					if (value != null) {
+						//print("dialog retrieved : ${value.files.single.path} vs stored $fname");
+						//as web app, there's no path, the data comes directly as bytestring, desktop, we get a path
+						String  fileBytes = "";
+						String result = "";
 
-		    
-	        
-	    Settings().save("key-filename", "${result}");
-	    print("dialog retrieved : raw: ${fileBytes}  n-- ${result} vs $fname");
+						if (value.files.first != null) {
+							if (value.files.first.bytes != null) {
+								result = "${value.files.first.name}";
+								fileBytes = utf8.decode(value.files.first.bytes!);
+							}
+							else {
+								result = "${value.files.single.path}";
+							}
+							//print("set result to  : ${result}, $fileBytes");
+						}
 
-	    if(result != null)
-	    {
-	      int pos = result.lastIndexOf(".");
-	      if( pos>0)
-	      {
-		settings["base"] = result.substring(0,pos);
-		settings["type"] = result.substring(pos+1).trim();
-	      }
-	      else
-	      {
-		settings["base"] = result;
-		settings["type"] = "csv";
-	      }
-	      //File file = File(settings["base"]+"."+ settings["type"]);
-	      //print("changed $file and ${file.existsSync()}");
-	    }
-	    
-	    if(fileBytes.isNotEmpty)
-	    {
-	      //web... sends the file together with the file selection
-	    CsvHandler().load(book: book, conf: settings, data: fileBytes);
-	    }
-	    //setState(() {
+						Settings().save("key-filename", "${result}");
+						//print("dialog retrieved : raw: ${fileBytes}  n-- ${result} vs $fname");
 
-	    //});
-	  }
-	  else {
-	    // User canceled the picker
-	  }
-	});
-  }
+						if(result != null)
+						{
+							int pos = result.lastIndexOf(".");
+							if( pos>0)
+							{
+								settings["base"] = result.substring(0,pos);
+								settings["type"] = result.substring(pos+1).trim();
+							}
+							else
+							{
+								settings["base"] = result;
+								settings["type"] = "csv";
+							}
+							//File file = File(settings["base"]+"."+ settings["type"]);
+							//print("changed $file and ${file.existsSync()}");
+						}
+
+						if(fileBytes.isNotEmpty)
+						{
+							//web... sends the file together with the file selection
+							CsvHandler().load(book: book, conf: settings, data: fileBytes);
+						}
+						else CsvHandler().load(book: book, conf: settings);
+						//setState(() {
+
+						//});
+					}
+					else {
+						// User canceled the picker
+					}
+				});
+	}
 }

@@ -29,6 +29,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Start": MessageLookupByLibrary.simpleMessage("Willkommen"),
         "bilanz": MessageLookupByLibrary.simpleMessage("Bilanz"),
         "jrl": MessageLookupByLibrary.simpleMessage("Journal"),
-        "kpl": MessageLookupByLibrary.simpleMessage("Kontoplan")
+        "kpl": MessageLookupByLibrary.simpleMessage("Kontoplan"),
+        "save": MessageLookupByLibrary.simpleMessage("Speichern")
       };
 }
