@@ -40,6 +40,7 @@ class _JrlPageState extends State<JrlPage> {
 
   @override
   Widget build(BuildContext context) {
+    String extract = "";
     if(ModalRoute.of(context)!.settings.arguments != null)
     {
       final args = ModalRoute.of(context)!.settings.arguments as ScreenArguments;
@@ -47,6 +48,7 @@ class _JrlPageState extends State<JrlPage> {
       {
 	widget.book = args.book;
 	widget.settings = args.settings;
+	if(args.extract != null && args.extract.isNotEmpty) extract = args.extract;
       }
       ;
     }
