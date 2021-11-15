@@ -48,7 +48,7 @@ class _KplPageState extends State<KplPage> {
     }
     ;
     //print("in KPL book is : ${widget.book}");
-    List items = widget.book.kpl.asList(silent: true);
+    List items = widget.book.kpl.asList(silent: true, formatted:true);
     return Scaffold(
         drawer: NavDrawer(book: widget.book, settings: widget.settings),
         appBar: AppBar( title: Text(S.of(context).KplTitle) ),
@@ -65,29 +65,12 @@ class _KplPageState extends State<KplPage> {
                                 DataCell(makeButton(line[0])), //acount nnumber
                                 DataCell(Text((line.length >1)?"${line[1]}":"no data")),//acc desc
                                 DataCell(Text((line.length >2)?"${line[2]}":"no data")),//acc cur
-                                DataCell(Text((line.length >3)?"${line[3]}":"no data")),//acc budget
-                                DataCell(Text((line.length >4)?"${line[4]}":"no data")),//acc valuta
+                                DataCell(Align(alignment: Alignment.centerRight, child:Text((line.length >3)?"${line[3]}":"no data"))), //acc budget
+                                DataCell(Align(alignment: Alignment.centerRight, child:Text((line.length >4)?"${line[4]}":"no data"))), //acc valuta
                               ]);
                         }).toList()
-
-
                     )
                 )
-
-          //ListView.builder(
-          //    itemCount: items.length,
-          //    itemBuilder: (BuildContext context, int index) {
-          //      List data = items[index];
-          //      return Container(
-          //        height: 50,
-          //        margin: EdgeInsets.all(2),
-          //        child: Row(
-          //          children: data.map((e) => Text("$e")).toList(),
-          //        ),
-          //      );
-
-          //    }
-          //),
         )
     );
   }
@@ -95,13 +78,25 @@ class _KplPageState extends State<KplPage> {
 
   Widget makeButton(String text)
   {
-    return RaisedButton(child: Text(text), onPressed: ()
-	{
-		  Navigator.pushNamed(
-		      context,
-		      JrlPage.routeName,
-		      arguments: ScreenArguments(widget.book, widget.settings, extract:text)
-		  );
-	},); 
+    final ButtonStyle raisedButtonStyle = ElevatedButton.styleFrom(
+      onPrimary: Colors.black87,
+      primary: Colors.grey[300],
+      minimumSize: Size(88, 36),
+      padding: EdgeInsets.symmetric(horizontal: 16),
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(Radius.circular(2)),
+      ),
+    );
+    return ElevatedButton(
+      style: raisedButtonStyle,
+      onPressed: () { Navigator.pushNamed(
+          context,
+          JrlPage.routeName,
+          arguments: ScreenArguments(widget.book, widget.settings, extract:text)
+      );},
+      //child: Text(text, textAlign: TextAlign.left,),
+      child:
+      Align(alignment: Alignment.centerLeft, child:Text(text, textAlign: TextAlign.left,)),
+    );
   }
 }

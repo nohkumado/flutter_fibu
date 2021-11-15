@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_fibu/fibupreferences.dart';
 
-import 'jrl_icon.dart';
 import 'jrl_page.dart';
 import 'kpl_page.dart';
 import 'my_home_page.dart';

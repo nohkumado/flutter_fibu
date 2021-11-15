@@ -7,5 +7,6 @@
   "bilanz": "Balance",
   "KplTitle": "Account Plan",
   "JrlTitle": "Journal",
-   "save": "save"
+   "save": "save",
+  "extract": "Extract for {konto}"
 }
