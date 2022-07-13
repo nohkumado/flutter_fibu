@@ -37,13 +37,14 @@ dependencies:
   shared_preferences_settings:
     git: git@github.com:BarthaBRW/shared_preferences_settings.git
   #  path: ../shared_preferences_settings
-  file_picker: ^4.1.6
-  flutter_svg: ^0.23.0+1
+  file_picker: ^4.6.1
+  flutter_svg: ^1.1.1+1
 
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.2
+  cupertino_icons: ^1.0.5
+  flutter_riverpod: ^1.0.4
 
 dev_dependencies:
   flutter_test:
@@ -54,7 +55,7 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^1.0.0
+  flutter_lints: ^2.0.1
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
