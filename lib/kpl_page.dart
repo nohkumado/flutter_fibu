@@ -16,31 +16,94 @@ class KplPage extends ConsumerWidget{
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    print("in KPL building view");
     Book book = ref.watch(bookProvider);
     FibuSettings settings =  ref.watch(settingsProvider);
 
-    //print("in KPL book is : ${widget.book}");
     List items = book.kpl.asList(silent: true, formatted:true);
+    Map<String,TextEditingController> editors = {};
+    List<String> labels = ["kto nr","desc","cur","budget","valuta"]; //TODO internationalization here
+    labels.forEach((key) { editors[key] = TextEditingController( ); });
+    List<DataRow> drows = items.map((line)
+    {
+      return DataRow(
+          cells: [
+            DataCell(makeButton(text: line[0], context: context, book: book, settings: settings)), //acount nnumber
+            DataCell(Text((line.length >1)?"${line[1]}":"no data")),//acc desc
+            DataCell(Text((line.length >2)?"${line[2]}":"no data")),//acc cur
+            DataCell(Align(alignment: Alignment.centerRight, child:Text((line.length >3)?"${line[3]}":"no data"))), //acc budget
+            DataCell(Align(alignment: Alignment.centerRight, child:Text((line.length >4)?"${line[4]}":"no data"))), //acc valuta
+          ]);
+    }).toList();
+     drows.add(
+         DataRow(
+             cells: [
+               DataCell(Text( labels[0], )), //acount nnumber
+               DataCell(Text( labels[1], )),//acc desc
+               DataCell(Text( labels[2], )),//acc cur
+               DataCell(Text( labels[3], )), //acc budget
+               DataCell(Text( labels[4], )), //acc valuta
+             ])
+     );
+   drows.add(
+       DataRow(
+           cells: [
+             DataCell(TextField( controller: editors[labels[0]], decoration: InputDecoration( border: OutlineInputBorder(), labelText: labels[0], ),)), //acount nnumber
+             DataCell(TextField( controller: editors[labels[1]], decoration: InputDecoration( border: OutlineInputBorder(), labelText: labels[1], ), )),//acc desc
+             DataCell(TextField( controller: editors[labels[2]], decoration: InputDecoration( border: OutlineInputBorder(), labelText: labels[2], ),)),//acc cur
+             DataCell(TextField( controller: editors[labels[3]], decoration: InputDecoration( border: OutlineInputBorder(), labelText: labels[3], ), )), //acc budget
+             DataCell(TextButton(
+               child: Text("add"),
+               onPressed: (()
+               {
+                 print("pressed add ....");
+                 //editors.forEach((key, value) { print("k: $key with ${value.text}");});
+                 ref.read(bookProvider.notifier).addAccount(name: editors["kto nr"]!.text, desc: editors["desc"]!.text, cur:editors["cur"]!.text, budget:editors["budget"]!.text,);
+               }),
+             )), //acc valuta
+           ])
+   );
+
     return Scaffold(
         drawer: NavDrawer(book: book, settings: settings),
         appBar: AppBar( title: Text(S.of(context).KplTitle) ),
-        body: Center(
+        body:
+        Center(
             child:
             SingleChildScrollView(
-                child:
-                DataTable(
-                    columns: [  DataColumn(label: Text("kto nr")),DataColumn(label: Text("desc ")),DataColumn(label: Text("cur")), DataColumn(label: Text("budget")), DataColumn(label: Text("valuta"))],
-                    rows: items.map((line)
-                    {
-                      return DataRow(
-                          cells: [
-                            DataCell(makeButton(text: line[0], context: context, book: book, settings: settings)), //acount nnumber
-                            DataCell(Text((line.length >1)?"${line[1]}":"no data")),//acc desc
-                            DataCell(Text((line.length >2)?"${line[2]}":"no data")),//acc cur
-                            DataCell(Align(alignment: Alignment.centerRight, child:Text((line.length >3)?"${line[3]}":"no data"))), //acc budget
-                            DataCell(Align(alignment: Alignment.centerRight, child:Text((line.length >4)?"${line[4]}":"no data"))), //acc valuta
-                          ]);
-                    }).toList()
+                child: Column(
+                  children: [
+                    DataTable(
+                        columns: [  DataColumn(label: Text(labels[0])),DataColumn(label: Text(labels[1])),DataColumn(label: Text(labels[2])), DataColumn(label: Text(labels[3])), DataColumn(label: Text(labels[4]))],
+                       rows: drows,
+                       //rows: items.map((line)
+                       //{
+                       //  return DataRow(
+                       //      cells: [
+                       //        DataCell(makeButton(text: line[0], context: context, book: book, settings: settings)), //acount nnumber
+                       //        DataCell(Text((line.length >1)?"${line[1]}":"no data")),//acc desc
+                       //        DataCell(Text((line.length >2)?"${line[2]}":"no data")),//acc cur
+                       //        DataCell(Align(alignment: Alignment.centerRight, child:Text((line.length >3)?"${line[3]}":"no data"))), //acc budget
+                       //        DataCell(Align(alignment: Alignment.centerRight, child:Text((line.length >4)?"${line[4]}":"no data"))), //acc valuta
+                       //      ]);
+                       //}).toList()
+                    ),
+                  // Row(
+                  //   children:
+                  //   [
+                  //     Expanded(child:
+                  //     TextField(
+                  //       controller: editors["kto nr"],
+                  //     )
+                  //     )
+
+                  //   ]
+                  //   //labels.map((label) => Expanded(child: TextField(
+                  //   //  controller: editors[label],
+                  //   //))).toList()
+                  //   ,
+                  // )
+                  ],
                 )
             )
         )

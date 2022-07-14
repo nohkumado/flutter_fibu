@@ -16,6 +16,7 @@ class JrlPage extends ConsumerWidget {
   static const String routeName = "/jrl";
   JrlPage({Key? key}) : super(key: key) ;
   Widget build(BuildContext context, WidgetRef ref) {
+    print("drawing jrl ");
     Book book = ref.watch(bookProvider);
     FibuSettings settings = ref.watch(settingsProvider);
 
@@ -45,11 +46,68 @@ class JrlPage extends ConsumerWidget {
       }
     }
     else {
-      print("${extract}i is empty we go with std journal!");
+      print("'${extract}' is empty we go with full journal!");
       items = book.jrl.asList([],silent: true, formatted: true);
     }
     String pageTitle = (extract.isEmpty)?S.of(context).JrlTitle: S.of(context).extract(extract);
     //TODO alternate cooring: https://api.flutter.dev/flutter/material/DataTable-class.html:w
+
+    Map<String,TextEditingController> editors = {};
+    List<String> labels = ["Datum","kto-","kto+","desc","cur","valuta","sum"]; //TODO internationalization here
+    labels.forEach((key) { editors[key] = TextEditingController( ); });
+    List<DataRow> rows = items.map((line)
+    {
+      return DataRow(
+          cells: [
+            DataCell(Text(line[0])), //date
+            DataCell(Text((line.length >1)?"${line[1]}":"no data"), ), //kpl-
+            DataCell(Text((line.length >2)?"${line[2]}":"no data")), //kpl+
+            DataCell(Text((line.length >3)?"${line[3]}":"no data")), // desc
+            DataCell(Text((line.length >4)?"${line[4]}":"no data")), //cur
+            DataCell(Align(alignment: Alignment.centerRight, child:Text((line.length >5)?"${line[5]}":"no data"))), // valuta
+            DataCell(Align(alignment: Alignment.centerRight, child:Text((line.length >6)?"${line[6]}":"no data"))), //sum
+          ]);
+    }).toList();
+    rows.add(
+        DataRow(
+            cells: [
+              for(int i =0; i< labels.length; i++) DataCell(Text( labels[i], )), //acount nnumber
+            ])
+    );
+    rows.add(
+        DataRow(
+            cells: [
+              for(int i =0; i< labels.length-1; i++)
+                        DataCell(TextField( controller: editors[labels[i]], decoration: InputDecoration( border: OutlineInputBorder(), labelText: labels[i], ),)), //acount nnumber
+                        DataCell(TextButton(
+                          child: Text("add"),
+                          onPressed: (()
+                          {
+                            print("pressed add ....");
+                            //editors.forEach((key, value) { print("k: $key with ${value.text}");});
+                            ref.read(bookProvider.notifier).addJrlLine(date: editors["Datum"]!.text,ktom: editors["kto-"]!.text,ktop: editors["kto+"]!.text, desc: editors["desc"]!.text, cur:editors["cur"]!.text, valuta:editors["valuta"]!.text,);
+                          }),
+                        )), //acc valuta
+            ])
+    );
+    //rows.add(
+    //    DataRow(
+    //        cells: [
+    //          DataCell(TextField( controller: editors[labels[0]], decoration: InputDecoration( border: OutlineInputBorder(), labelText: labels[0], ),)), //acount nnumber
+    //          DataCell(TextField( controller: editors[labels[1]], decoration: InputDecoration( border: OutlineInputBorder(), labelText: labels[1], ), )),//acc desc
+    //          DataCell(TextField( controller: editors[labels[2]], decoration: InputDecoration( border: OutlineInputBorder(), labelText: labels[2], ),)),//acc cur
+    //          DataCell(TextField( controller: editors[labels[3]], decoration: InputDecoration( border: OutlineInputBorder(), labelText: labels[3], ), )), //acc budget
+    //          DataCell(TextButton(
+    //            child: Text("add"),
+    //            onPressed: (()
+    //            {
+    //              print("pressed add ....");
+    //              //editors.forEach((key, value) { print("k: $key with ${value.text}");});
+    //              ref.read(bookProvider.notifier).addAccount(name: editors["kto nr"]!.text, desc: editors["desc"]!.text, cur:editors["cur"]!.text, budget:editors["budget"]!.text,);
+    //            }),
+    //          )), //acc valuta
+    //        ])
+    //);
 
     return Scaffold(
         drawer: NavDrawer(book: book, settings: settings),
@@ -61,21 +119,7 @@ class JrlPage extends ConsumerWidget {
                 //TODO think to switch to https://api.flutter.dev/flutter/material/PaginatedDataTable-class.html
                 DataTable(
                     columns: [  DataColumn(label: Text("Datum")),DataColumn(label: Text("kto- ")),DataColumn(label: Text("kto+")), DataColumn(label: Text("desc")), DataColumn(label: Text("cur")), DataColumn(label: Text("valuta")), DataColumn(label: Text("sum"))],
-                    rows: items.map((line)
-                    {
-                      return DataRow(
-                          cells: [
-                            DataCell(Text(line[0])), //date
-                            DataCell(Text((line.length >1)?"${line[1]}":"no data"), ), //kpl-
-                            DataCell(Text((line.length >2)?"${line[2]}":"no data")), //kpl+
-                            DataCell(Text((line.length >3)?"${line[3]}":"no data")), // desc
-                            DataCell(Text((line.length >4)?"${line[4]}":"no data")), //cur
-                            DataCell(Align(alignment: Alignment.centerRight, child:Text((line.length >5)?"${line[5]}":"no data"))), // valuta
-                            DataCell(Align(alignment: Alignment.centerRight, child:Text((line.length >6)?"${line[6]}":"no data"))), //sum
-                          ]);
-                    }).toList()
-
-
+                  rows: rows,
                 )
             )
 
