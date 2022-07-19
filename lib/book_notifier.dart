@@ -18,7 +18,9 @@ class BookNotifier extends StateNotifier<Book>
     }
     Konto newOne = Konto(name : name, desc:desc, plan: state.kpl,  cur: cur, budget: budgetAsInt );
     state = state..kpl.put(name,  newOne);
-    print("donw actacc");
+    Book bak = state;
+      state = Book();
+    state = bak;
   }
 
   void addJrlLine({required String date, required String ktom, required String ktop, required String desc, String? cur, required String valuta})
@@ -35,5 +37,8 @@ class BookNotifier extends StateNotifier<Book>
     }
     JrlLine jrlLine = JrlLine(datum: date,kmin: ktom,kplu: ktop,desc: desc,cur: cur,valuta: valutaAsInt);
     state = state..jrl.add(jrlLine);
+    Book bak = state; //TODO look out why....
+    state = Book();
+    state = bak;
   }
 }

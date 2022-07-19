@@ -11,6 +11,7 @@ import 'package:nohfibu/csv_handler.dart';
 import 'package:nohfibu/nohfibu.dart';
 import 'package:shared_preferences_settings/shared_preferences_settings.dart';
 
+import 'act_widget.dart';
 import 'nav_notifier.dart';
 import 'navdrawer.dart';
 import 'generated/l10n.dart';
@@ -47,13 +48,41 @@ class MyHomePage extends ConsumerWidget {
 			"helpview" : ActWidget(name:S.of(context).bilanz, icon:Icon(Icons.help_outline), body: ManualBrowser()),
 			"settingsview" : ActWidget(name:S.of(context).settings, icon: Icon(Icons.settings), body: FibuPreferences()),
 		};
+		if(ref.read(navProvider.notifier).pages.isEmpty) {
+		  ref.read(navProvider.notifier).pages.addAll(pages);
+		}
+		else
+			{
+
+			}
 
 		return
 			Scaffold(
 					drawer: NavDrawer(pages:pages),
 					appBar: AppBar(
-						title: Text(S.of(context).AppTitle),
-					),
+						title:
+						Row(
+							children:
+							[
+								Text(S.of(context).AppTitle),
+								if(ref.read(navProvider.notifier).history.isNotEmpty)
+								IconButton(
+									icon: Icon(Icons.arrow_back_ios_new),
+									onPressed: ()
+									{
+										ref.read(navProvider.notifier).popPage();
+									},
+								),
+							],
+						)
+						// automaticallyImplyLeading: true,
+						// leading: IconButton(
+						// 	icon: Icon(Icons.arrow_back),
+						// 	onPressed: ()
+						// 	{
+						// 	print("pressed back button");
+						),
+					//),
 					body:
 					(actPage.name == "none" && pages.containsKey("start"))? pages["start"]!.body: actPage.body
 

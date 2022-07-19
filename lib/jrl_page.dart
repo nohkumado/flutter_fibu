@@ -1,17 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_fibu/screen_arguments.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:nohfibu/fibusettings.dart';
 import 'package:nohfibu/nohfibu.dart';
-import 'package:shared_preferences_settings/shared_preferences_settings.dart';
 
+import 'act_widget.dart';
 import 'generated/l10n.dart';
-import 'navdrawer.dart';
 import 'rp_provider.dart';
 
 ///the page that displays the journal or extract for a certain account
 class JrlPage extends ConsumerWidget {
-  String extract = "";
 
   static const String routeName = "/jrl";
   JrlPage({Key? key}) : super(key: key) ;
@@ -19,6 +16,9 @@ class JrlPage extends ConsumerWidget {
     print("drawing jrl ");
     Book book = ref.watch(bookProvider);
     FibuSettings settings = ref.watch(settingsProvider);
+    ActWidget actPage = ref.watch(navProvider);
+    String extract = "";
+    if(actPage.args != null) extract = actPage.args!.extract;
 
     late List items;
 

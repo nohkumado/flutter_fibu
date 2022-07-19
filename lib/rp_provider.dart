@@ -2,6 +2,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:nohfibu/fibusettings.dart';
 import 'package:nohfibu/nohfibu.dart';
 
+import 'act_widget.dart';
 import 'book_notifier.dart';
 import 'manual_provider.dart';
 import 'nav_notifier.dart';

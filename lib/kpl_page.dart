@@ -4,7 +4,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:nohfibu/fibusettings.dart';
 import 'package:nohfibu/nohfibu.dart';
 
+import 'act_widget.dart';
 import 'generated/l10n.dart';
+import 'nav_notifier.dart';
 import 'navdrawer.dart';
 import 'jrl_page.dart';
 import 'rp_provider.dart';
@@ -18,6 +20,8 @@ class KplPage extends ConsumerWidget{
   Widget build(BuildContext context, WidgetRef ref) {
     print("in KPL building view");
     Book book = ref.watch(bookProvider);
+    ActWidget actPage = ref.watch(navProvider);
+    print("actPage is ${actPage.name}");
     FibuSettings settings =  ref.watch(settingsProvider);
 
     List items = book.kpl.asList(silent: true, formatted:true);
@@ -28,7 +32,7 @@ class KplPage extends ConsumerWidget{
     {
       return DataRow(
           cells: [
-            DataCell(makeButton(text: line[0], context: context, book: book, settings: settings)), //acount nnumber
+            DataCell(makeButton(text: line[0], context: context, book: book, settings: settings, ref: ref)), //acount nnumber
             DataCell(Text((line.length >1)?"${line[1]}":"no data")),//acc desc
             DataCell(Text((line.length >2)?"${line[2]}":"no data")),//acc cur
             DataCell(Align(alignment: Alignment.centerRight, child:Text((line.length >3)?"${line[3]}":"no data"))), //acc budget
@@ -105,7 +109,7 @@ class KplPage extends ConsumerWidget{
             )
     );
   }
-  Widget makeButton({required String text, required BuildContext context, required Book book, required FibuSettings settings})
+  Widget makeButton({required String text, required BuildContext context, required Book book, required FibuSettings settings, required WidgetRef ref})
   {
     final ButtonStyle raisedButtonStyle = ElevatedButton.styleFrom(
       onPrimary: Colors.black87,
@@ -118,11 +122,16 @@ class KplPage extends ConsumerWidget{
     );
     return ElevatedButton(
       style: raisedButtonStyle,
-      onPressed: () { Navigator.pushNamed(
-          context,
-          JrlPage.routeName,
-          arguments: ScreenArguments(book, settings, extract:text)
-      );},
+      onPressed: () {
+        print("pressed  $text");
+
+        ref.read(navProvider.notifier).chgPage("jrlview", args: ScreenArguments(extract:text));
+      //  Navigator.pushNamed(
+      //    context,
+      //    JrlPage.routeName,
+      //    arguments: ScreenArguments(book, settings, extract:text)
+      //);
+        },
       //child: Text(text, textAlign: TextAlign.left,),
       child:
       Align(alignment: Alignment.centerLeft, child:Text(text, textAlign: TextAlign.left,)),
