@@ -8,5 +8,9 @@
   "KplTitle": "Account Plan",
   "JrlTitle": "Journal",
    "save": "save",
-  "extract": "Extract for {konto}"
+  "extract": "Extract for {konto}",
+  "settings": "Settings",
+  "loadFile": "load",
+  "loadDefault": "load",
+  "manual" : "manual"
 }

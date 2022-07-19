@@ -1,0 +1,80 @@
+\chapter{Installation}
+
+\section{Caracteristics of bb-Fibu:}
+
+\begin{itemize}
+
+\item Programmed in standard PHP4/SQL, compatible with all operating systems where the apache and postgresSQL servers run, or more generally where GNU software runs, virtually any somehow recent operating system.
+
+\item selection of an operative language through a ressource file.
+
+\item free definable accounting plan
+
+\item foreign currency accounts possible, the automatic conversion parts are disabled though, since the handling of this is quite a tough thema.
+
+\item ease of acquisition of data through the proposal of prefilled template entries.
+
+\item maximum number of journal entries limited only by the capacities of the database.
+
+\item on screen consultation of all parts of the accounting, caching of
+previous result.
+
+\end{itemize}
+
+\subsection{ Prerequisites for this program:}
+
+To run this program several assertions have to be fulfilled:
+you need:
+
+\begin{itemize}
+
+
+\item a recent \htmladdnormallink{apache}{http://www.apache.org/} daemon
+\item a recent \htmladdnormallink{PHP4}{http://www.php.net/} module for the apache
+\item a \htmladdnormallink{PostgresSQL}{http://www.postgresql.org/} database
+\item the php2postgres module/library
+\item the perl procedural language for postgres
+\item the account where the fibu will be installed needs .htaccess control and at least the 'AllowOverride Options' right.
+
+
+\end{itemize}
+
+\subsection{Installation}
+
+After unpacking the fibu tarball: 
+
+\begin{itemize}
+
+\item  check if pgsql is installed fixed or as a loadable module on your apache
+install, eventually add/decomment a dl(pgsql.so); on top of the
+includes/global.php, after '\$globalloaded = ''true'';'
+
+\item  create a dabatase for the fibu system
+  e.g. <bold>createdb fibu</bold>, assert that plperl is loaded (eventually add it with createlang plperl)
+
+\item  cp htaccess-sample to .htaccess, adn the other includes/*-sample.php to includes/*.php, edit them and adjust them to your needs
+
+\item  edit includes/settings.php accordingly to your needs (especially the
+  defaultadmin line, that's the one that gives the user with that name the
+  admin rights to access the system.
+
+\item  check that in the .htaccess file the FilesMatch sections are all commented out
+
+\item  load the file admin/install.php through the server into a browser.
+  <bold>lynx http://localhost/<PATHTOFIBU>/admin/install.php</bold>
+  This will populate the DB with the necessary tables and fill the needed tables.
+
+\item  edit your .htaccess file and decomment the FilesMatch section to protect access to the only index.php file
+
+\item  log into your new fibu system with the first mentioned admin name and the
+  passwd 'tochange', first of all, change the admin passwd in the options
+  section. 
+
+\item  create a new book set and
+
+\item  set up your account-plan, set up some transaction templates, and you are off
+with your brand new book-keeping system. don't forget to make regular backups
+of your database, e.g. through a cron-script (<bold>crontab -e -> 0 0 * * * cd
+                /PATHTOFIBU/;cp DBBAK DBBAK.old;pg\_dump fibu >DBBAK</bold>)
+\end{itemize}
+

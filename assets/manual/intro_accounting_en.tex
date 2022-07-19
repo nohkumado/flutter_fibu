@@ -1,0 +1,79 @@
+\chapter{Accounting concepts}
+
+\section{ Initial values}
+
+ At the 01.01.9X initial values must be given to the active and passive
+accounts (so-called transfers).  This is achieved by inserting journal-lines where only one account is designated, either the positive account, or
+the negative passive account, while the second account is set exeptionally to 0.
+
+ Example:
+
+ {\tt  01,01,93 1101 0 transfer cash 100000 01,01,93 0 2100 transfer
+Patrimonio 100000 }
+
+
+
+\section{ References to record keeping}
+
+ For the demonstration purposes the following shortened account plan is used:
+
+{\tt  
+1001 cash 
+1010 current account account 
+1020 time deposits:  Credit at
+comrade x OFFERED 
+1100 
+1999 suspence account 
+0 end of Aktivas 
+2001
+abilityability abilities 
+2010 reserve rear 2100 debts at supplier 0 end of
+liabilities 3001 administratives expense 3010 energy costs 3020 service costs 0
+end of the costs 4100 incomes:  of members 4500 incomes:  Interest 4600
+incomes:  various 0 end of the incomes }
+
+ Many procedures consist in reality of several single steps, which must be
+registered separately in the journal:
+
+
+
+\begin{itemize}
+
+\item different incomes (cxxx = number file, file etc.)  {\tt  01,02,95 1001
+4100 of x, cxxx 100000 15,02,95 1001 4100 of y, cheque, cxxx 500000 01,03,95
+1010 1001 from cash to giro 600000 }
+
+
+
+\item detailed calculation, payment later (dxxx = number of the file, file etc.)
+{\tt  01,02,95 3010 2100 calculation ENEL 12-1,95, dxxx 300000 15,03,95 2100
+1010 at ENEL Ueb/Scheckxxx 300000 }
+
+
+
+\item detailed calculation, payment immediately, allocation of the costs  {\tt 
+01,02,95 1999 1010 Rech.Telecom 1bim95, dxxx 600000 01,02,95 3020 1999
+Rech.Telecom 1bim95 service 450000 01,02,95 1100 1999 Rech.Telecom 1bim95
+privately 150000 15,02,95 1001 1100 of x / priv.Telefon 150000 }
+
+
+
+\item Festgeldanlage abgezinst  {\tt  010595 1M 920000 OFFERED 01,02,95 1020 1010
+plant
+
+01,05,95 1010 1999 Rueckz.  010595 1M OFFERED 1000000 01,05,95 1999 1020
+Rueckz.  010595 1M OFFERED 920000 01,05,95 1999 4500 interest OFFERED 010595 1M
+80000 }
+
+
+
+\end{itemize}
+
+ Such allocations over a suspence account or the cash are necessary, in
+order in particular to prove on the bank accounts only the amounts, which will
+appear to the bank also in the account statement (= easier control).
+
+ Finally recommended to always use the same formulations as possible be as
+short should (e.g. / = for, etc.).  With recurring procedures one should check
+therefore always only in the journal further above.
+

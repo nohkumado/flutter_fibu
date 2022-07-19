@@ -149,6 +149,46 @@ class S {
       args: [konto],
     );
   }
+
+  /// `Settings`
+  String get settings {
+    return Intl.message(
+      'Settings',
+      name: 'settings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `load`
+  String get loadFile {
+    return Intl.message(
+      'load',
+      name: 'loadFile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `load`
+  String get loadDefault {
+    return Intl.message(
+      'load',
+      name: 'loadDefault',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `manual`
+  String get manual {
+    return Intl.message(
+      'manual',
+      name: 'manual',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

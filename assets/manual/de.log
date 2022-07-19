@@ -1,0 +1,176 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=latex 2022.6.16)  16 JUL 2022 15:17
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**de.tex
+(./de.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-01-21>
+(/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
+Document Class: report 2021/10/04 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count185
+\c@chapter=\count186
+\c@section=\count187
+\c@subsection=\count188
+\c@subsubsection=\count189
+\c@paragraph=\count190
+\c@subparagraph=\count191
+\c@figure=\count192
+\c@table=\count193
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen138
+)
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2022/01/26 3.70 The Babel package
+\babel@savecnt=\count194
+\U@D=\dimen139
+\l@unhyphenated=\language87
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
+\bbl@readstream=\read2
+\bbl@dirlevel=\count195
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel-german/german.ldf
+Language: german 2021/02/27 v2.13 German support for babel (pre-1996 orthograph
+y)
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel-german/germanb.ldf
+Language: germanb 2021/02/27 v2.13 German support for babel (pre-1996 orthograp
+hy)
+Package babel Info: Making " an active character on input line 139.
+)))
+(/usr/share/texlive/texmf-dist/tex/generic/epsf/epsf.sty
+This is `epsf.tex' v2.7.4 <14 February 2011>
+\epsffilein=\read3
+\epsfframemargin=\dimen140
+\epsfframethickness=\dimen141
+\epsfrsize=\dimen142
+\epsftmp=\dimen143
+\epsftsize=\dimen144
+\epsfxsize=\dimen145
+\epsfysize=\dimen146
+\pspoints=\dimen147
+) (/usr/share/texmf/tex/latex/html/html.sty
+Package: html 1999/07/19 v1.38 hypertext commands for latex2html (nd, hws, rrm)
+
+\c@lpart=\count196
+\c@lchapter=\count197
+\c@lsection=\count198
+\c@lsubsection=\count199
+\c@lsubsubsection=\count266
+\c@lparagraph=\count267
+\c@lsubparagraph=\count268
+\c@lsubsubparagraph=\count269
+\ptrfile=\write3
+) (./stdheader.tex (./myepsf.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-dvips.def
+File: l3backend-dvips.def 2022-01-12 L3 backend support: dvips
+\l__pdf_internal_box=\box50
+\g__pdf_backend_object_int=\count270
+\l__pdf_backend_content_box=\box51
+\l__pdf_backend_model_box=\box52
+\g__pdf_backend_annotation_int=\count271
+\g__pdf_backend_link_int=\count272
+\g__pdf_backend_link_sf_int=\count273
+)
+(./de.aux)
+\openout1 = `de.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+ (./de.toc
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 3.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 3.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 3.
+)
+\tf@toc=\write4
+\openout4 = `de.toc'.
+
+ [1
+
+
+]
+Kapitel 1.
+
+Overfull \hbox (3.27228pt too wide) in paragraph at lines 21--24
+\OT1/cmr/m/n/12 F[]ur die Ver-wal-tung wert-be-zo-ge-ner Vorg[]ange ist ei-ne F
+inanz-Buchhaltung un-erl[]a^^Ylich.
+ []
+
+
+Overfull \hbox (5.60016pt too wide) in paragraph at lines 21--24
+\OT1/cmr/m/n/12 WB-FIBU ist ein EDV-Programm, das nach dem Prin-zip der dop-pel
+-ten Kon-tof[]uhrung
+ []
+
+[2
+
+] [3] [4]
+Kapitel 2.
+[5
+
+] [6]
+Kapitel 3.
+
+Overfull \hbox (169.77829pt too wide) in paragraph at lines 241--243
+[]\OT1/cmr/m/n/12 Der Zu-gang zum Pro-gramm er-folgt []uber einen Web-cli-ent, 
+z.B. \OT1/cmr/m/it/12 lynx http://localhost/<PATHTOFIBU>/index.php\OT1/cmr/m/n/
+12 .
+ []
+
+[7
+
+]
+Anhang A.
+
+Overfull \hbox (36.3339pt too wide) in paragraph at lines 272--272
+[]    \OT1/cmtt/m/n/12 58 W^^?ahrung 2 Zeichen,        z.B. LI, DM, FS, etc (de
+rzeit nicht verw.)[] 
+ []
+
+
+Overfull \hbox (36.3339pt too wide) in paragraph at lines 288--288
+[]    \OT1/cmtt/m/n/12 79 frei; das Programm h^^?angt an diese Position den Sal
+do an = 12 Zeichen[] 
+ []
+
+[8
+
+]
+Anhang B.
+[9
+
+] [10]
+Anhang C.
+[11
+
+] (./de.aux) ) 
+Here is how much of TeX's memory you used:
+ 1883 strings out of 478288
+ 31272 string characters out of 5849315
+ 344366 words of memory out of 5000000
+ 20115 multiletter control sequences out of 15000+600000
+ 475324 words of font info for 48 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 42i,6n,52p,270b,266s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on de.dvi (11 pages, 22848 bytes).

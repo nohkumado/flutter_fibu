@@ -34,6 +34,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "extract": m0,
         "jrl": MessageLookupByLibrary.simpleMessage("Journal"),
         "kpl": MessageLookupByLibrary.simpleMessage("account plan"),
-        "save": MessageLookupByLibrary.simpleMessage("save")
+        "loadDefault": MessageLookupByLibrary.simpleMessage("load"),
+        "loadFile": MessageLookupByLibrary.simpleMessage("load"),
+        "manual": MessageLookupByLibrary.simpleMessage("manual"),
+        "save": MessageLookupByLibrary.simpleMessage("save"),
+        "settings": MessageLookupByLibrary.simpleMessage("Settings")
       };
 }

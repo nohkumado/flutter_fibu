@@ -64,10 +64,7 @@ class KplPage extends ConsumerWidget{
            ])
    );
 
-    return Scaffold(
-        drawer: NavDrawer(book: book, settings: settings),
-        appBar: AppBar( title: Text(S.of(context).KplTitle) ),
-        body:
+    return
         Center(
             child:
             SingleChildScrollView(
@@ -106,7 +103,6 @@ class KplPage extends ConsumerWidget{
                   ],
                 )
             )
-        )
     );
   }
   Widget makeButton({required String text, required BuildContext context, required Book book, required FibuSettings settings})

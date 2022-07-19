@@ -1,0 +1,75 @@
+%*****************************************************************************
+%\originalTeX
+%\input{psfig}                     %solange der postscript includer da ist
+%\germanTeX
+%%%%%%%%%%%%%%%%
+
+\def\figurepath{./}
+\def\psfigurepath#1{\edef\figurepath{#1}}
+%\def\docpath{scsi::4.$.word.texfiles.diplarbeit.bilder.}
+%\def\docpath{/home/bboett/tex/gb.dipl/bilder/}
+
+%%%%%% aus psfig
+
+%\psfigurepath{scsi::4.$.word.texfiles.diplarbeit.bilder.}
+%\psfigurepath{/home/bboett/tex/gb.dipl/bilder/}
+%*****************************************************************************
+% pageheight = 29.7cm (= DIN A4)
+
+\topmargin-0.7cm                    % oberer Rand=3.7 +tm=2cm
+\headheight1cm                     % Hoehe  der Kopfzeile 1cm
+\headsep0.3cm                       % Abstand zur Text/Kopfzeile
+\topskip1cm                         % Abstand Textanf/Text
+%\footheight0.5cm                    % Hoehe Fu"sleiste .5cm
+\textheight23cm                     % L"ange Seite
+\footskip2cm                        % Tiefe Fu"szeile
+% pagewidth =  21.0cm (= DIN A4)
+\evensidemargin1cm                  % linker Rand = 3 +1 =4cm
+\oddsidemargin1cm                   %    "                 "
+\textwidth15cm                      % Textbreite
+
+
+
+
+
+%*****************************************************************************
+% Centred scaled captioned labeled figure
+% example: \psfig{file.ps}{scale}{caption}{reference}
+% \def\psfig#1#2#3#4{
+%        \begin{figure}
+%                \def\epsfsize##1##2{#2##1}
+%                \centerline{\epsfbox{#1}}
+%                \caption{#3}
+%                \label{#4}
+%        \end{figure}
+% }
+
+\usepackage{myepsf}
+\def\psfig#1#2#3#4{
+       \begin{figure}
+               \setepsfsize{#2}\centerline{\epsfbox{#1}}
+               \caption{#3} \label{#4}
+       \end{figure}
+}
+
+%
+%\newcommand{\postfig}[4]{       %for use with psfig
+%   \begin{figure}[hbtp]
+%   \centerline{\hbox{\psfig{figure=#1, height=#2}}}
+%   \caption{#3}\label{#4}
+%   \end{figure}}
+
+
+
+%\input{\docpath hyph_ge}
+%selb-st"an-dig
+                                                                            
+%*****************************************************************************
+%\newtheorem{definition}{Definition}[chapter]
+%*************** Damit die Bilder da bleiben wo ich sie hingepackt habe ******
+\renewcommand{\topfraction}{0,9999}
+\renewcommand{\bottomfraction}{0,9999}
+\renewcommand{\textfraction}{0}
+
+%*****************************************************************************
+

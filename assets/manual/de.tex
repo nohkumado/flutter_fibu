@@ -1,0 +1,387 @@
+%*****************************************************************************
+% copyright Winfried and Bruno Böttcher
+\documentclass[12pt]{report}
+\usepackage[german]{babel}
+%\usepackage{isolatin1}
+\usepackage{epsf}
+\usepackage{html}
+
+\pagestyle{headings}
+%*****************************************************************************
+\input{stdheader}                                                                
+%*****************************************************************************
+\begin{document}
+
+\tableofcontents
+
+\chapter{Einführung}
+
+\section{Warum Finanzbuchhaltung ?}
+
+Für die Verwaltung wertbezogener Vorgänge ist eine Finanz-Buchhaltung
+unerläßlich. WB-FIBU ist ein EDV-Programm, das nach dem Prinzip der doppelten
+Kontoführung arbeitet.
+
+Die doppelte Kontoführung wurde erstmals 1445 von Luca Paciolo beschrieben und
+beruht auf einer denkbar einfachen Idee: ''Jeder Vorgang wird als eine
+Geldbewegung dargestellt, die von einer Quelle ausgeht und in einer Senke
+verschwindet.'' Quellen und Senken (Konten genannt) kann man sich auch als
+Töpfe vorstellen, die alle auf einem großen Tisch stehen, und aus denen Geld
+entnommen wird (Quellen), oder in die Geld hineingelegt wird (Senken).
+Arithmetisch gesehen bedeutet die Geldentnahme eine Subtraktion (-), und ein
+Hineinlegen eine Addition (+).  
+
+\begin{verbatim}
+      Senke                     Quelle
+      +      <--- Vorgang ---   -
+\end{verbatim}
+
+Da jeder Vorgang immer 2 Konten betrifft, heißt das Verfahren auch doppelte
+Kontoführung (partita doppia).
+
+Der Kontoplan (Konto-Rahmen) enthält eine frei wählbare Menge an Konten,wie
+sie zur Beschreibung des Geschehens benötigt werden. Der Kontoplan kann
+jederzeit nach Bedarf erweitert werden. Das Wegnehmen eines Kontos inmitten
+eines Geschäftsjahres ist nur dann statthaft, wenn es keine Bewegungen über
+dieses Konto gegeben hat.
+
+Die Konten sind übrigens in 4 Gruppen eingeteilt:
+
+\begin{itemize}
+
+\item Aktiv-Konten (Kasse, Bankkonten, Immobilien-Werte, Guthaben, etc)
+
+\item Passiv-Konten(effektives Vermögen, Patrimonio, Schulden, etc)
+
+\item Ausgaben
+
+\item Einnahmen
+
+\end{itemize}
+
+Es ist ein wenig abstraktes Denken nötig um zu verstehen oder zu glauben, daß
+die Salden dieser Gruppen im Rahmen der Buchhaltung wechselnde Vorzeichen
+haben:
+
+   
+\begin{itemize}
+
+\item Aktivkonten sind positiv, 
+
+\item Passivkonten sind negativ,
+
+\item Ausgaben sind positiv,
+
+\item Einnahmen sind negativ.
+
+\end{itemize}
+
+Dies ergibt eine globale Saldensumme von Null als Kontrolle.
+
+Das Journal ist eine sequentielle Aufzeichnung aller Vorgänge. Die wichtige
+Aufgabe des Buchhalters besteht darin, den Vorgang evt. in seine Einzelschritte
+zu zerlegen und die zugehörigen Konten zu bestimmen. Im Zweifelsfall kann
+jederzeit ein neues Konto eröffnet werden.
+
+\subsection{Der Kontoauszug:} 
+
+Alle im Journal eingetragenen Bewegungen, die ein bestimmtes Konto betreffen,
+lassen sich auf einer Kontokarte zusammenfassen, und aus dem Anfangsbetrag und
+den Bewegungen läßt sich der aktuelle Endbetrag des Kontos errechnen (Saldo).
+Die Aussagekraft dieser Zusammenstellung hängt einzig und allein davon ab, wie
+fein der Kontoplan Unterscheidungen zuläßt.
+
+\subsection{Bilanz / Wirtschaftsrechnung:} 
+
+Dürfen nicht verwechselt werden.  Die Bilanz ist der Vergleich der Salden von
+allen Aktiv- und Passiv-Konten an einem bestimmten Tag. Sie gibt Aufschluß
+über den derzeitigen Vermögensstand.
+
+Die Wirtschaftsrechnung ist der Vergleich der Salden von allen Ausgabekonten
+mit denen der Einnahmekonten, über einen bestimmten Zeitraum.  Die
+Wirtschaftrechnung gibt Aufschluß über das ökonomische Verhalten.
+
+\subsection{Anfangswerte:} 
+
+Zu Beginn der Abrechnungsperiode (neues Journal) bekommen nur die Aktiv- und
+Passivkonten Anfangswerte, und zwar so, daß die Summe der positiven
+Aktivkonten gleich der Summe der negativen Passivkonten ist.  
+
+Ein Beispiel kann im Kapitel \ref{Anfangswerte} eingesehen werden.
+
+\subsection{Kontrollmöglichkeit:} 
+
+Da die fortlaufend hinzukommenden Bewegungen immer 2 Konten betreffen, einmal +
+(Senke), einmal - (Quelle), bleibt in jedem Zeitpunkt des Jahres die
+Gesamtsumme aller Konten = Null.
+
+Der Unterschied zwischen Aktiv- und Passivkonten ist im Betrag gleich dem
+Unterschied zwischen Einnahmen und Ausgaben, jedoch mit entgegengesetztem
+Vorzeichen (damit die Gesamtsumme aller Konten gleich Null wird).
+
+\section{Warum WB-FIBU ?}
+
+Einschlägige Bücher über Buchhaltung hinterlassen den Eindruck, daß die
+begleitenden Buchhaltungsregeln, die z.T.  gesetzlich verankert sind,
+  komplizierter sind, als es die Materie erfordert.
+
+Die zahlreichen auf dem Markt befindlichen EDV-Programme tragen diesen Ballast
+mit sich herum, und sind deshalb entsprechend komplex. 
+
+Um ganz einfach die obigen Beziehungen in einem ebenso einfachen und
+anspruchslosen Programm zu realisieren, wurde diese Neuentwicklung nötig (es
+ist z.B. möglich, schon gemachte Journal-Einträge zu korrigieren, oder
+kommende Einträge im voraus zu tätigen - das Journal wird autom. nach Datum
+sortiert). Daraus resultiert eine stets bereinigte und damit klarere
+Buchhaltung.
+
+Es wurd Wert darauf gelegt, das Programm so zu schreiben, daß es leicht auf
+verschiedene EDV Plattformen portiert werden kann und daß es direkt unter dem
+Betriebssystem lauffähig ist.
+
+\subsection{Zielgruppe für WB-FIBU:} 
+
+Privatleute, Buchhalter von Vereinen oder kleinen Firmen ohne gesetzliche
+Auflagen.
+\chapter{Installation}
+\section{Arbeitsweise mit WB-FIBU:}
+
+\begin{itemize}
+
+\item man startet das Program von einer Kommandolinie;
+
+\item man gibt über die Tastatur die neuen Daten für das Journal oder den
+Kontoplan ein; dabei kann man gleichbleibende Daten von der vorhergehenden
+Linie kopieren (noch nicht implementiert).
+
+\item während in einer manuellen Buchhaltung der Journal-Eintrag auf den 2
+Kontokarten wiederholt werden muß (+Saldo Berechnung), wählt man einfach
+Menupunkt XEQ und erzeugt eine Resultat-Datei mit dem was man braucht:
+Kontoplan, Journal, alle Kontoauszüge, Bilanz und Wirtschaftsrechnung.
+
+\item die Ergebnisse werden am Bildschirm angezeigt werden (Tab-Panel
+Buchungen, Bilanz) von Zeit zu Zeit ist ein Ausdruck sinnvoll (Menupunkt PRINT,
+noch nicht implementiert).
+
+\item bei Beendigung des Programmes wird automatisch der aktuelle Stand
+abgespeichert, noch sollte per Hand eine Sicherung auf Diskette gemacht werden;
+man sollte 2 Disketten abwechselnd verwenden und verfügt dann immer über die
+letzte und die vorhergehende Situation.  Somit kann bei Ausfall der Festplatte
+oder des ganzen PC jederzeit auf einem anderen PC weitergemacht werden.
+
+\item Die Resultat-Datei bleibt solange erhalten, bis Punkt 3 erneut
+angesteuert wird. Man kann also nachträglich Kontostände abfragen, und somit
+den Papierausdruck auf ein Minimum beschränken. (noch nicht implementiert)
+
+\end{itemize}
+
+\section{Eigenschaften WB-FIBU:}
+
+\begin{itemize}
+
+\item  Quell Programm in JAVA für alle EDV Plattformen, die die Java Virtual
+Machine (SUN-JVM) unterstützen: PC-DOS, Archimedes, UNIX WS, ..;
+
+\item  Dialog-Sprache und Titel für Ausgaben frei wählbar (deutsch,
+ital.,franz,...) fibu*properties.
+
+\item  Kontoplan (rahmen) frei wählbar;
+
+\item  Fremdwährungskonten vorgesehen, Funktionen ausgeschaltet, da dieses Thema sehr komplex ist;
+
+\item  Formular zur Eingabe der Daten, standard Operationen möglich, mit denen die Formulare vorausgefüllt werden.
+
+\item  Abarbeitung aller Daten im Speicher;
+
+\item  maximale Zahl der Einträge nur von der Speichergröße abhängig;
+
+\item  Konsultation der Resultate am Bildschirm (zur Papierersparnis) - diese
+bleiben bis zur nächsten Abarbeitung erhalten und können beliebig oft
+angeschaut werden;
+
+
+\end{itemize}
+
+\subsection{Voraussetzungen für dieses Programm:}
+
+\begin{itemize}
+\item ein halbwegs aktueller \htmladdnormallink{apache}{http://www.apache.org/} webserver.
+\item  Beliebige java-fähige Plattform, da swing benutzt wurde wird ein Hauptspeicher von mindestens 32MB empfohlen.
+
+\item  Festplatte erwünscht - Bedarf circa 700 kbytes für das Programm;
+
+\item  Drucker nützlich (16cpi Einstellung oder 120 Kolonnen-Papier);
+
+\end{itemize}
+
+\subsection{WB-FIBU Dateien:}
+
+\begin{itemize}
+
+\item  xF     Starter Klasse für die graphische jFibu Version.
+
+\item  fibu\_de\_DE.properties    Meldungen und Ausgaben in deutsch
+
+\item  fibu\_it\_IT.properties    Meldungen und Ausgaben in italienisch
+
+\item  fibu.cfg   Editiertastenbelegungen
+
+\item  fibu.prn   Druckeranpassung - Escape Sequenzen in HP PCL Notation N.B.
+diese Dateien stehen alle im gleichen Verzeichnis
+
+\item  <Name>.kpl   Kontoplan für Buchhaltung <Name>, z.B. ELKI93.kpl
+\end{itemize}
+
+\chapter{Benutzungshandbuch}
+
+\section{Arbeitsweise mit bb-Fibu:}
+
+\begin{itemize}
+
+\item Der Zugang zum Programm erfolgt über einen Webclient, z.B. {\em lynx
+    http://localhost/<PATHTOFIBU>/index.php}. Es wird ein gültiges Login verlangt, welches vom jeweiligen Buchadministrator oder vom Erstadministrator vergeben werden kann. Vom Optionsbildschirm selektiert man das Buchset von dem man arbeiten möchte.
+
+\item Die Journaleinträge werden über das Standardoperationsformular gemacht, die vorinstallierten Standardoperationen könne einfach erweitert werden und sind an Benutzer und Buchset gebunden.
+
+\item während in einer manuellen Buchhaltung der Journal-Eintrag auf den 2
+Kontokarten wiederholt werden muß (+Saldo Berechnung), wählt man einfach
+Menupunkt XEQ und erzeugt eine Resultat-Datei mit dem was man braucht:
+Kontoplan, Journal, alle Kontoauszüge, Bilanz und Wirtschaftsrechnung.
+
+\item Die Resultat-Datei bleibt solange erhalten, bis die Bilanz erneut
+angesteuert wird. Man kann also nachträglich Kontostände abfragen, und somit
+den Papierausdruck auf ein Minimum beschränken.
+
+\end{itemize}
+
+\begin{appendix}
+
+\chapter{bb-Fibu Datei-Formate}
+
+\subsection{Datei-Format .kpl}
+
+\begin{verbatim}
+Pos 01 Seitenkontrolle (P neue Seite, leer fortlaufend)
+    02 leer
+    03 Konto-Nummer 1-4 stellig, z.B. 1101 
+    07 leer
+    08 Konto-Titel  50 Zeichen,  z.B. Kasse
+    58 Währung 2 Zeichen,        z.B. LI, DM, FS, etc (derzeit nicht verw.)
+    60 Betrag für Voranschlag (0 bei Aktiv/Passivkonten), 12 Zeichen
+    72 frei
+\end{verbatim}
+
+\subsubsection{Datei-Format .jrl}
+
+\begin{verbatim}
+Pos 01 Datum 8 Zeichen, z.B. 01.01.1993
+    09 leer 
+    10 Konto-Nummer +, (Senke),  1-4 Zeichen
+    14 leer
+    15 Konto-Nummer -, (Quelle), 1-4 Zeichen
+    19 leer
+    20 Vorgang max 45 Zeichen
+    65 Währung 2 Zeichen (wie bei KPL)
+    67 Betrag bis zu 12 Zeichen 
+    79 frei; das Programm hängt an diese Position den Saldo an = 12 Zeichen
+    90 letzte Position im Ausgabe-Format
+\end{verbatim}
+
+In fibu-Kompatibilität wird /*EOF ignoriert. 
+
+			      \chapter{Buchhaltungskonzepte}
+
+\subsubsection{Anfangswerte}
+
+\label{Anfangswerte}
+
+Am 01.01.9X müssen den Aktiv- und Passivkonten Anfangswerte gegeben werden
+(sogenannte Ueberträge).  Dies geschieht dadurch, daß in diesen Linien nur
+ein Konto benannt wird, entweder das positive Aktivkonto, oder das negative
+Passivkonto, während das zweite Konto ausnahmsweise =0 gesetzt wird.
+
+Beispiel:
+
+\begin{verbatim}
+01.01.93 1101    0 Uebertrag Kasse          100000
+01.01.93    0 2100 Uebertrag Patrimonio     100000
+\end{verbatim}
+
+\subsubsection{Hinweise zur Buchführung}
+
+Für die Darstellung wird folgender gekürzter Kontoplan angenommen:
+\begin{verbatim}
+  1001 Kasse
+  1010 Kontokorrent Konto
+  1020 Festgeld: BOT
+  1100 Kredit an Genosse x
+  1999 Zwischenkonto
+     0 Ende Aktivas
+  2001 Betriebsvermögen
+  2010 Reservefond
+  2100 Schulden an Zulieferer
+     0 Ende Passiva
+  3001 Verwaltungskosten
+  3010 Energiekosten
+  3020 Dienstleistungskosten
+     0 Ende der Kosten
+  4100 Einnahmen: von Mitgliedern
+  4500 Einnahmen: Zinsen
+  4600 Einnahmen: diverse
+     0 Ende der Einnahmen
+\end{verbatim}
+
+Viele Vorgänge setzen sich in Wirklichkeit aus mehreren Einzelschritten
+zusammen, die separat ins Journal eingetragen werden müssen:
+
+\begin{itemize}
+
+\item verschiedenen Einnahmen (cxxx = Nummer Ablage,Ordner etc)
+  \begin{verbatim}
+  01.02.95 1001 4100 von x,cxxx                    100000
+  15.02.95 1001 4100 von y, Scheck, cxxx           500000
+  01.03.95 1010 1001 von Kasse nach giro           600000
+  \end{verbatim}
+
+\item eingehende Rechnung, Zahlung später (dxxx = Nummer der Ablage,Ordner etc)
+  \begin{verbatim}
+  01.02.95 3010 2100 Rechnung ENEL 12-1.95,dxxx    300000
+  15.03.95 2100 1010 an ENEL Ueb/Scheckxxx         300000
+  \end{verbatim}
+
+\item eingehende Rechnung, Zahlung sofort, Aufteilung der Kosten
+  \begin{verbatim}
+  01.02.95 1999 1010 Rech.Telecom 1bim95, dxxx     600000
+  01.02.95 3020 1999 Rech.Telecom 1bim95 Dienst    450000
+  01.02.95 1100 1999 Rech.Telecom 1bim95 privat    150000
+  15.02.95 1001 1100 von x / priv.Telefon          150000
+  \end{verbatim}
+
+\item Festgeldanlage abgezinst
+  \begin{verbatim}
+  01.02.95 1020 1010 Anlage   BOT 010595 1M  920000
+
+  01.05.95 1010 1999 Rückz.  BOT 010595 1M 1000000
+  01.05.95 1999 1020 Rückz.  BOT 010595 1M  920000
+  01.05.95 1999 4500 Zinsen   BOT 010595 1M   80000
+  \end{verbatim}
+
+\end{itemize}
+
+Solche Aufteilungen über ein Zwischenkonto oder die Kasse sind nötig, um
+insbesondere auf den Bankkonten nur die Beträge auszuweisen, die auch im
+Kontoauszug der Bank erscheinen werden ( = leichtere Kontrolle).
+
+Schließlich wird empfohlen, immer die gleichen Formulierungen zu gebrauchen,
+die so kurz wie möglich sein sollten (z.B. / = für, usw.). Bei wiederkehren-
+den Vorgängen sollte man deshalb immer erst im Journal weiter oben nach-
+schauen.
+
+\chapter{Referenzen}
+
+Eine Testplattform is auf 
+\htmladdnormallink{http://fibu.adlp.org}{http://fibu.adlp.org} aufgebaut.
+
+\end{appendix}
+
+\end{document}

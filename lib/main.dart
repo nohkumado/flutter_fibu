@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_fibu/nav_notifier.dart';
 import 'package:flutter_fibu/rp_provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:nohfibu/fibusettings.dart';
+import 'package:nohfibu/nohfibu.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:flutter_fibu/fibupreferences.dart';
-
-import 'jrl_page.dart';
-import 'kpl_page.dart';
 import 'my_home_page.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'generated/l10n.dart';
@@ -31,6 +29,8 @@ class MyApp extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     FibuSettings settings = ref.watch(settingsProvider);
+    Book book = ref.watch(bookProvider);
+
     if(settings.empty())
     {
       for(String key in prefs.getKeys())
@@ -50,16 +50,16 @@ class MyApp extends ConsumerWidget {
       ],
       supportedLocales: S.delegate.supportedLocales,
       // static routes to allow the drawer to run around
-      routes: <String, WidgetBuilder> {
-        MyHomePage.routeName: (BuildContext context) => MyHomePage(title: "NohFibu"),
-        KplPage.routeName: (BuildContext context) => KplPage(),
-        JrlPage.routeName: (BuildContext context) => JrlPage(),
-        FibuPreferences.routeName: (BuildContext context) => FibuPreferences(),
-      },
+      //routes: <String, WidgetBuilder> {
+      //  MyHomePage.routeName: (BuildContext context) => MyHomePage(title: "NohFibu"),
+      //  KplPage.routeName: (BuildContext context) => KplPage(),
+      //  JrlPage.routeName: (BuildContext context) => JrlPage(),
+      //  FibuPreferences.routeName: (BuildContext context) => FibuPreferences(),
+      //},
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: "NohFibu", ),
+      home: MyHomePage() ,
     );
   }
   void analyseFname(FibuSettings settings) {

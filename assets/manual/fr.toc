@@ -1,0 +1,20 @@
+\babel@toc {french}{}\relax 
+\contentsline {chapter}{\numberline {1}Introduction}{2}{}%
+\contentsline {section}{\numberline {1.1}Pourquoi une comptabilité financière ?}{2}{}%
+\contentsline {subsection}{\numberline {1.1.1}L'extrait de compte:}{3}{}%
+\contentsline {subsection}{\numberline {1.1.2}Bilan / compte de résultat:}{3}{}%
+\contentsline {subsection}{\numberline {1.1.3}Valeurs initiales:}{3}{}%
+\contentsline {subsection}{\numberline {1.1.4}Contrôlabilité:}{3}{}%
+\contentsline {section}{\numberline {1.2}Pourquoi jFibu?}{4}{}%
+\contentsline {subsection}{\numberline {1.2.1}Utilisateurs potentiels de jFibu:}{4}{}%
+\contentsline {chapter}{\numberline {2}Mise en place}{5}{}%
+\contentsline {section}{\numberline {2.1}utilisation de jFibu: }{5}{}%
+\contentsline {subsection}{\numberline {2.1.1} Préalables à ce programme: }{6}{}%
+\contentsline {chapter}{\numberline {3}Manuel d'utilisation}{7}{}%
+\contentsline {subsection}{\numberline {3.0.1} dossiers de jFibu:}{7}{}%
+\contentsline {chapter}{\numberline {A}Formats de fichiers}{8}{}%
+\contentsline {subsection}{\numberline {A.0.1} Kpl de format de dossier}{8}{}%
+\contentsline {subsection}{\numberline {A.0.2} Jrl de format de dossier}{8}{}%
+\contentsline {chapter}{\numberline {B}Concepts de comptabilité}{9}{}%
+\contentsline {subsection}{\numberline {B.0.1} Valeurs initiales}{9}{}%
+\contentsline {subsection}{\numberline {B.0.2} Références pour enregistrer conserver }{9}{}%

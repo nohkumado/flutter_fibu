@@ -1,0 +1,331 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=latex 2022.6.16)  16 JUL 2022 15:43
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**fr.tex
+(./fr.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-01-21>
+(/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
+Document Class: report 2021/10/04 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count185
+\c@chapter=\count186
+\c@section=\count187
+\c@subsection=\count188
+\c@subsubsection=\count189
+\c@paragraph=\count190
+\c@subparagraph=\count191
+\c@figure=\count192
+\c@table=\count193
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen138
+)
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2022/01/26 3.70 The Babel package
+\babel@savecnt=\count194
+\U@D=\dimen139
+\l@unhyphenated=\language87
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
+\bbl@readstream=\read2
+\bbl@dirlevel=\count195
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel-french/french.ldf
+Language: french 2021/07/20 v3.5m French support from the babel system
+Package babel Info: Hyphen rules for 'acadian' set to \l@french
+(babel)             (\language16). Reported on input line 91.
+Package babel Info: Hyphen rules for 'canadien' set to \l@french
+(babel)             (\language16). Reported on input line 92.
+\FB@nonchar=\count196
+Package babel Info: Making : an active character on input line 430.
+Package babel Info: Making ; an active character on input line 431.
+Package babel Info: Making ! an active character on input line 432.
+Package babel Info: Making ? an active character on input line 433.
+\FBguill@level=\count197
+\FBold@everypar=\toks16
+\FB@Mht=\dimen140
+\mc@charclass=\count198
+\mc@charfam=\count199
+\mc@charslot=\count266
+\std@mcc=\count267
+\dec@mcc=\count268
+\listindentFB=\dimen141
+\descindentFB=\dimen142
+\labelindentFB=\dimen143
+\labelwidthFB=\dimen144
+\leftmarginFB=\dimen145
+\parindentFFN=\dimen146
+\FBfnindent=\dimen147
+))
+(/usr/share/texlive/texmf-dist/tex/latex/carlisle/scalefnt.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2021/02/14 v1.3d Input encoding file
+\inpenc@prehook=\toks18
+\inpenc@posthook=\toks19
+)
+(/usr/share/texlive/texmf-dist/tex/generic/epsf/epsf.sty
+This is `epsf.tex' v2.7.4 <14 February 2011>
+\epsffilein=\read3
+\epsfframemargin=\dimen148
+\epsfframethickness=\dimen149
+\epsfrsize=\dimen150
+\epsftmp=\dimen151
+\epsftsize=\dimen152
+\epsfxsize=\dimen153
+\epsfysize=\dimen154
+\pspoints=\dimen155
+) (/usr/share/texmf/tex/latex/html/html.sty
+Package: html 1999/07/19 v1.38 hypertext commands for latex2html (nd, hws, rrm)
+
+\c@lpart=\count269
+\c@lchapter=\count270
+\c@lsection=\count271
+\c@lsubsection=\count272
+\c@lsubsubsection=\count273
+\c@lparagraph=\count274
+\c@lsubparagraph=\count275
+\c@lsubsubparagraph=\count276
+\ptrfile=\write3
+) (./stdheader.tex (./myepsf.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-dvips.def
+File: l3backend-dvips.def 2022-01-12 L3 backend support: dvips
+\l__pdf_internal_box=\box50
+\g__pdf_backend_object_int=\count277
+\l__pdf_backend_content_box=\box51
+\l__pdf_backend_model_box=\box52
+\g__pdf_backend_annotation_int=\count278
+\g__pdf_backend_link_int=\count279
+\g__pdf_backend_link_sf_int=\count280
+)
+(./fr.aux)
+\openout1 = `fr.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Info: Redefining \degres on input line 13.
+LaTeX Info: Redefining \up on input line 13.
+
+
+Package french.ldf Warning: OT1 encoding should not be used for French.
+(french.ldf)                Add \usepackage[T1]{fontenc} to the preamble
+(french.ldf)                of your document; reported on input line 13.
+
+(./fr.toc
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 3.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 3.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 3.
+)
+\tf@toc=\write4
+\openout4 = `fr.toc'.
+
+ [1
+
+
+]
+Chapitre 1.
+
+Overfull \hbox (4.29863pt too wide) in paragraph at lines 42--44
+[]\OT1/cmr/m/n/12 Chaque tran-sac-tion concerne tou-jours deux comptes, c'est p
+our cela que le proc^^Sed^^Se
+ []
+
+[2
+
+] [3] [4]
+Chapitre 2.
+
+Overfull \hbox (11.41383pt too wide) in paragraph at lines 171--175
+[]\OT1/cmr/m/n/12 tandis qu'en comp-ta-bi-lit^^Se ma-nuelle les entr^^See du jo
+ur-nal doivent ^^Retre r^^Sepercut^^Sees
+ []
+
+
+Overfull \hbox (7.2361pt too wide) in paragraph at lines 171--175
+\OT1/cmr/m/n/12 sur les deux fiches de compte (cal-cul de +Saldo), ici il suf-f
+it de lan-cer l'ex^^Secution
+ []
+
+
+Overfull \hbox (16.07907pt too wide) in paragraph at lines 194--196
+[]\OT1/cmr/m/n/12 Facilit^^Se d'entr^^See de donn^^Sees, en pro-po-sant des tra
+n-sac-tions stan-dard pr^^Seremplies ; 
+ []
+
+[5
+
+]
+Overfull \hbox (17.64156pt too wide) in paragraph at lines 252--253
+[]\OT1/cmr/m/n/12 N'importe quelle pla-te-forme Java-avertie peut ^etre em-ploy
+^^See, puisque la balancer-
+ []
+
+[6]
+Chapitre 3.
+
+Overfull \hbox (0.10425pt too wide) in paragraph at lines 303--304
+[]\OT1/cmr/m/n/12 < Name>.lst des r^^Sesultats pour la comp-ta-bi-lit^^Se < nom
+ >, par exemple ELKI93.lst 
+ []
+
+[7
+
+]
+Annexe A.
+
+Overfull \hbox (23.74706pt too wide) in paragraph at lines 317--323
+[]\OT1/cmr/m/n/12 La com-mande lat^^Serale de la po-si-tion 01 (le nou-veau c^o
+t^^Se de P, vident s^^Sequentiellement)
+ []
+
+[8
+
+]
+Annexe B.
+
+Overfull \hbox (16.90869pt too wide) in paragraph at lines 348--349
+[]\OT1/cmtt/m/n/12 01.01.93 1101 0 argents comptants de transfert 100000 01.01.
+93 0 2100
+ []
+
+
+Overfull \hbox (4.55869pt too wide) in paragraph at lines 358--359
+[]\OT1/cmtt/m/n/12 1001 compte de compte courant de l'argent comptant 1010 1020
+ d^^Sep^ots
+ []
+
+
+Overfull \hbox (23.98389pt too wide) in paragraph at lines 358--359
+\OT1/cmtt/m/n/12 ^^Ra terme: Le cr^^Sedit au camarade X A OFFERT ^^Ra 1100 1999
+ comptes de suspence
+ []
+
+
+Overfull \hbox (23.98389pt too wide) in paragraph at lines 358--359
+\OT1/cmtt/m/n/12 0 fins d'Aktivas 2001 capacit^^Ses d'abilityability 2010 dette
+s de l'arri^^Rere
+ []
+
+
+Overfull \hbox (5.45888pt too wide) in paragraph at lines 358--359
+\OT1/cmtt/m/n/12 2100 de r^^Seservation ^^Ra la fin du fournisseur 0 des respon
+sabilit^^Ses 3001
+ []
+
+
+Overfull \hbox (5.45888pt too wide) in paragraph at lines 358--359
+\OT1/cmtt/m/n/12 administratives que les d^^Sepenses 3010 co^ut ^^Senergetique 
+3020 le service
+ []
+
+
+Overfull \hbox (17.80888pt too wide) in paragraph at lines 358--359
+\OT1/cmtt/m/n/12 co^ute 0 fins de co^ute 4100 revenus: des membres 4500 revenus
+: Revenus de
+ []
+
+
+Overfull \hbox (22.1835pt too wide) in paragraph at lines 365--366
+\OT1/cmtt/m/n/12 4100 de x, cxxx 100000 15.02.95 1001 4100 de y, ch^^Reque, cxx
+x 500000
+ []
+
+
+Overfull \hbox (16.0085pt too wide) in paragraph at lines 365--366
+\OT1/cmtt/m/n/12 01.03.95 1010 1001 de l'argent comptant aux ch^^Reques postaux
+ 600000
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 365--366
+
+ []
+
+
+Overfull \hbox (10.94426pt too wide) in paragraph at lines 369--371
+\OT1/cmr/m/n/12 etc...) \OT1/cmtt/m/n/12 01.02.95 3010 2100 calcul ENEL 12-1.95
+, dxxx 300000 15.03.95
+ []
+
+
+Overfull \hbox (3.17313pt too wide) in paragraph at lines 374--376
+[]\OT1/cmr/m/n/12 calcul d^^Setaill^^Se, paie-ment imm^^Sediatement, af-fec-ta-
+tion des co^uts \OT1/cmtt/m/n/12 01.02.95 1999
+ []
+
+
+Overfull \hbox (9.8335pt too wide) in paragraph at lines 374--376
+\OT1/cmtt/m/n/12 1010 Rech.Telecom 1bim95, dxxx 600000 01.02.95 3020 1999 servi
+ces
+ []
+
+
+Overfull \hbox (28.3585pt too wide) in paragraph at lines 374--376
+\OT1/cmtt/m/n/12 450000 de Rech.Telecom 1bim95 01.02.95 1100 1999 Rech.Telecom 
+1bim95
+ []
+
+
+Overfull \hbox (3.6585pt too wide) in paragraph at lines 374--376
+\OT1/cmtt/m/n/12 en priv^^Se 150000 15.02.95 1001 1100 de x / de priv.Telefon 1
+50000
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 374--376
+
+ []
+
+[9
+
+]
+Overfull \hbox (25.03471pt too wide) in paragraph at lines 379--380
+[]\OT1/cmr/m/n/12 Abgezinst de Fest-gel-dan-lage \OT1/cmtt/m/n/12 010595 1M 920
+000 ONT OFFERT l'usine 01.02.95
+ []
+
+
+Overfull \hbox (3.6585pt too wide) in paragraph at lines 381--382
+[]\OT1/cmtt/m/n/12 01.05.95 1010 1999 Rueckz. 010595 1m Ont offert 1000000 01.0
+5.95
+ []
+
+
+Overfull \hbox (3.6585pt too wide) in paragraph at lines 381--382
+\OT1/cmtt/m/n/12 1999 1020 Rueckz. 010595 1M ONT OFFERT 920000 01.05.95 1999 45
+00
+ []
+
+[10] (./fr.aux) ) 
+Here is how much of TeX's memory you used:
+ 2650 strings out of 478288
+ 43867 string characters out of 5849315
+ 357993 words of memory out of 5000000
+ 20876 multiletter control sequences out of 15000+600000
+ 474640 words of font info for 46 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 39i,6n,46p,524b,426s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on fr.dvi (10 pages, 25244 bytes).

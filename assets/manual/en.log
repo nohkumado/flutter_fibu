@@ -1,0 +1,307 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=latex 2022.6.16)  16 JUL 2022 15:21
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**en.tex
+(./en.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-01-21>
+(/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
+Document Class: report 2021/10/04 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count185
+\c@chapter=\count186
+\c@section=\count187
+\c@subsection=\count188
+\c@subsubsection=\count189
+\c@paragraph=\count190
+\c@subparagraph=\count191
+\c@figure=\count192
+\c@table=\count193
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen138
+)
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2022/01/26 3.70 The Babel package
+\babel@savecnt=\count194
+\U@D=\dimen139
+\l@unhyphenated=\language87
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
+\bbl@readstream=\read2
+\bbl@dirlevel=\count195
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel-english/english.ldf
+Language: english 2017/06/06 v3.3r English support from the babel system
+Package babel Info: Hyphen rules for 'canadian' set to \l@english
+(babel)             (\language0). Reported on input line 102.
+Package babel Info: Hyphen rules for 'australian' set to \l@ukenglish
+(babel)             (\language53). Reported on input line 105.
+Package babel Info: Hyphen rules for 'newzealand' set to \l@ukenglish
+(babel)             (\language53). Reported on input line 108.
+))
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2021/02/14 v1.3d Input encoding file
+\inpenc@prehook=\toks16
+\inpenc@posthook=\toks17
+)
+(/usr/share/texlive/texmf-dist/tex/generic/epsf/epsf.sty
+This is `epsf.tex' v2.7.4 <14 February 2011>
+\epsffilein=\read3
+\epsfframemargin=\dimen140
+\epsfframethickness=\dimen141
+\epsfrsize=\dimen142
+\epsftmp=\dimen143
+\epsftsize=\dimen144
+\epsfxsize=\dimen145
+\epsfysize=\dimen146
+\pspoints=\dimen147
+) (/usr/share/texmf/tex/latex/html/html.sty
+Package: html 1999/07/19 v1.38 hypertext commands for latex2html (nd, hws, rrm)
+
+\c@lpart=\count196
+\c@lchapter=\count197
+\c@lsection=\count198
+\c@lsubsection=\count199
+\c@lsubsubsection=\count266
+\c@lparagraph=\count267
+\c@lsubparagraph=\count268
+\c@lsubsubparagraph=\count269
+\ptrfile=\write3
+) (./stdheader.tex (./myepsf.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-dvips.def
+File: l3backend-dvips.def 2022-01-12 L3 backend support: dvips
+\l__pdf_internal_box=\box50
+\g__pdf_backend_object_int=\count270
+\l__pdf_backend_content_box=\box51
+\l__pdf_backend_model_box=\box52
+\g__pdf_backend_annotation_int=\count271
+\g__pdf_backend_link_int=\count272
+\g__pdf_backend_link_sf_int=\count273
+)
+No file en.aux.
+\openout1 = `en.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+No file en.toc.
+\tf@toc=\write4
+\openout4 = `en.toc'.
+
+[1
+
+
+]
+\openout2 = `intro_en.aux'.
+
+ (./intro_en.tex
+Chapter 1.
+[2
+
+
+]) [3]
+\openout2 = `target_en.aux'.
+
+ (./target_en.tex) [4
+
+
+
+]
+\openout2 = `install_en.aux'.
+
+ (./install_en.tex
+Chapter 2.
+[5
+
+
+
+
+]) [6]
+\openout2 = `manual_en.aux'.
+
+ (./manual_en.tex
+Chapter 3.
+
+Overfull \hbox (143.99335pt too wide) in paragraph at lines 7--9
+[]\OT1/cmr/m/n/12 The ac-cess to the pro-gram is done through a browser e.g. \O
+T1/cmr/m/it/12 lynx http://localhost/<PATHTOFIBU>/index.php\OT1/cmr/m/n/12 ,
+ []
+
+) [7
+
+
+
+
+]
+\openout2 = `fileformats_en.aux'.
+
+ (./fileformats_en.tex
+Appendix A.
+
+Overfull \hbox (36.3339pt too wide) in paragraph at lines 5--10
+\OT1/cmtt/m/n/12 Pos 01 side control (P new side, empty sequentially) of 02 emp
+ty 03 account
+ []
+
+
+Overfull \hbox (11.63388pt too wide) in paragraph at lines 5--10
+\OT1/cmtt/m/n/12 number 1-4 digit, e.g. 1101 07 empty 08 account titles 50 indi
+cations,
+ []
+
+
+Overfull \hbox (5.45888pt too wide) in paragraph at lines 5--10
+\OT1/cmtt/m/n/12 e.g. cash 58 currency 2 indications, e.g. left, DM, telex, etc
+. (at
+ []
+
+
+Overfull \hbox (42.5089pt too wide) in paragraph at lines 5--10
+\OT1/cmtt/m/n/12 present not verw.) 60 amount for estimate (0 with active/passi
+ve accounts),
+ []
+
+
+Overfull \hbox (5.45888pt too wide) in paragraph at lines 15--21
+\OT1/cmtt/m/n/12 Pos 01 date 8 indications, e.g. 01,01,1993 09 empty 10 account
+ number
+ []
+
+
+Overfull \hbox (5.45888pt too wide) in paragraph at lines 15--21
+\OT1/cmtt/m/n/12 +, (lower), 1-4 characters 14 empty 15 account number -, (sour
+ce), 1-4
+ []
+
+
+Overfull \hbox (61.0339pt too wide) in paragraph at lines 15--21
+\OT1/cmtt/m/n/12 characters 19 empty 20 procedure of max 45 characters 65 curre
+ncy 2 indications
+ []
+
+
+Overfull \hbox (17.80888pt too wide) in paragraph at lines 15--21
+\OT1/cmtt/m/n/12 (as with KPL) 67 amount up to 12 characters 79 freely; the pro
+gram hangs
+ []
+
+
+Overfull \hbox (11.63388pt too wide) in paragraph at lines 15--21
+\OT1/cmtt/m/n/12 last position in the output format on to this position the bal
+ance = 12
+ []
+
+) [8
+
+
+
+
+]
+\openout2 = `intro_accounting_en.aux'.
+
+ (./intro_accounting_en.tex
+Appendix B.
+
+Overfull \hbox (35.4337pt too wide) in paragraph at lines 11--13
+[]\OT1/cmtt/m/n/12 01,01,93 1101 0 transfer cash 100000 01,01,93 0 2100 transfe
+r Patrimonio
+ []
+
+
+Overfull \hbox (16.90869pt too wide) in paragraph at lines 21--34
+[]\OT1/cmtt/m/n/12 1001 cash 1010 current account account 1020 time deposits: C
+redit at
+ []
+
+
+Overfull \hbox (73.38391pt too wide) in paragraph at lines 21--34
+\OT1/cmtt/m/n/12 comrade x OFFERED 1100 1999 suspence account 0 end of Aktivas 
+2001 abilityability
+ []
+
+
+Overfull \hbox (11.63388pt too wide) in paragraph at lines 21--34
+\OT1/cmtt/m/n/12 abilities 2010 reserve rear 2100 debts at supplier 0 end of li
+abilities
+ []
+
+
+Overfull \hbox (11.63388pt too wide) in paragraph at lines 21--34
+\OT1/cmtt/m/n/12 3001 administratives expense 3010 energy costs 3020 service co
+sts 0 end
+ []
+
+
+Overfull \hbox (42.5089pt too wide) in paragraph at lines 21--34
+\OT1/cmtt/m/n/12 of the costs 4100 incomes: of members 4500 incomes: Interest 4
+600 incomes:
+ []
+
+
+Overfull \hbox (3.95856pt too wide) in paragraph at lines 42--45
+\OT1/cmtt/m/n/12 cxxx 100000 15,02,95 1001 4100 of y, cheque, cxxx 500000 01,03
+,95
+ []
+
+
+Overfull \hbox (3.95856pt too wide) in paragraph at lines 48--51
+\OT1/cmtt/m/n/12 01,02,95 3010 2100 calculation ENEL 12-1,95, dxxx 300000 15,03
+,95
+ []
+
+
+Overfull \hbox (59.53358pt too wide) in paragraph at lines 54--58
+\OT1/cmtt/m/n/12 1999 1010 Rech.Telecom 1bim95, dxxx 600000 01,02,95 3020 1999 
+Rech.Telecom
+ []
+
+
+Overfull \hbox (34.83357pt too wide) in paragraph at lines 54--58
+\OT1/cmtt/m/n/12 1bim95 service 450000 01,02,95 1100 1999 Rech.Telecom 1bim95 p
+rivately
+ []
+
+[9
+
+
+
+
+]
+Overfull \hbox (16.30856pt too wide) in paragraph at lines 64--67
+[]\OT1/cmtt/m/n/12 01,05,95 1010 1999 Rueckz. 010595 1M OFFERED 1000000 01,05,9
+5 1999
+ []
+
+
+Overfull \hbox (10.13356pt too wide) in paragraph at lines 64--67
+\OT1/cmtt/m/n/12 1020 Rueckz. 010595 1M OFFERED 920000 01,05,95 1999 4500 inter
+est
+ []
+
+) [10] (./en.aux (./intro_en.aux) (./target_en.aux) (./install_en.aux)
+(./manual_en.aux) (./fileformats_en.aux) (./intro_accounting_en.aux)) ) 
+Here is how much of TeX's memory you used:
+ 1961 strings out of 478288
+ 35485 string characters out of 5849315
+ 340595 words of memory out of 5000000
+ 20174 multiletter control sequences out of 15000+600000
+ 472579 words of font info for 39 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 40i,5n,52p,334b,277s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on en.dvi (10 pages, 16896 bytes).

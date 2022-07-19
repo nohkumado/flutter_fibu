@@ -1,0 +1,24 @@
+\chapter{File - Formats}
+
+\section{ File format kpl}
+
+ {\tt  Pos 01 side control (P new side, empty sequentially) of 02 empty 03
+account number 1-4 digit, e.g. 1101 07 empty 08 account titles 50 indications,
+e.g. cash 58 currency 2 indications, e.g. left, DM, telex, etc. (at present not
+verw.)  60 amount for estimate (0 with active/passive accounts), 12 characters
+72 freely }
+
+
+
+\section{ File format jrl}
+
+ {\tt  Pos 01 date 8 indications, e.g. 01,01,1993 09 empty 10 account number
++, (lower), 1-4 characters 14 empty 15 account number -, (source), 1-4
+characters 19 empty 20 procedure of max 45 characters 65 currency 2 indications
+(as with KPL) 67 amount up to 12 characters 79 freely;  the program hangs last
+position in the output format on to this position the balance = 12 characters
+90 }
+
+ In bb-Fibu compatibility / * eof is ignored.
+
+ 

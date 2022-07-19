@@ -1,0 +1,339 @@
+%*****************************************************************************
+% copyright Winfried and Bruno Böttcher
+\documentclass[12pt]{report}
+\usepackage[italian]{babel}
+\usepackage{isolatin1}
+\usepackage{epsf}
+\usepackage{html}
+
+\pagestyle{headings}
+%*****************************************************************************
+\input{stdheader}
+%*****************************************************************************
+\begin{document}
+
+\tableofcontents
+
+\chapter{Introduzzione}
+
+\section{Perche fare una contabilita' ?}
+La gestione  di trasazioni legati a movimenti di valori rende  necessaria una
+contabilita' scritta. WB-FIBU e' un programma per ordinatore elettronico, che
+applica il cosidetto sistema della partita doppia.  
+
+Questo sistema fu' descritto  per la  prima volta nel 1445 da Luca Paciolo e 
+si basa su una idea molto semplice:
+"Ogni movimento o trasazione viene considerato come un movimento finanziario,
+che nasce in una sorgente, e che sparisce in un pozzo."
+Le sorgenti e i pozzi (chiamati conti) possono essere immaginati come 
+recipienti disposti su un grande tavolo, dai  quali si prende un importo qua 
+(sorgente), per  metterlo altrove (pozzo) -  ma sempre  rimanendo sul grande 
+tavolo.
+Da un punto di visto aritmetico, l'estrazione di soldi da una sorgente e' una
+sostrazione (-), mentre la deposizione in un pozzo e' una addizione (+).
+
+\begin{verbatim}
+      Pozzo                     Sorgente
+      +      <--- Causale ---   -
+\end{verbatim}
+
+Siccome ogni operazione concerne sempre 2 conti, questo sistema si chiama
+partita doppia.
+
+Il Piano dei Conti e' l'insieme dei conti liberamente scelti per descrivere i
+sotto-insiemi da distinguere. Questo Piano puo' essere ampliato in ogni mo- 
+mento dell'esercizio. La cancellazione di un conto invece e' solamente pos- 
+sibile, se non esiste alcun movimento su questo conto.
+
+L'insieme dei conti e' suddiviso in 4 gruppi:
+
+\begin{itemize}
+   \item Conti Attivita' (Cassa, conti correnti, Immobili, Crediti a terzi, etc)
+\item Conti Passivita'(patrimonio,riserve, debiti verso terzi, etc)
+\item Conti Spese   (diversificazione a gusto personale) 
+\item Conti Entrate (diversificazione a gusto personale) 
+\end{itemize}
+
+E' necessario un po di raggionamento astatto per capire o per accettare che
+i saldi di questi conti hanno segno aritmetico alternato:
+
+\begin{itemize}
+   \item i conti Attivita'  hanno segno positivo
+\item i conti Passivita' hanno segno negativo
+\item i conti Spese      hanno segno positivo
+\item i conti Entrate    hanno segno negativo
+\end{itemize}
+
+Cosi la somma globale di tutti i conti e' sempre uguale a zero.
+
+Il Giornale e' la registrazione sequenziale di tutti i movimenti. Il compito
+importante e principale del contabile e' di interpretare la transazione e di
+assegnare i 2 conti interessati. In caso di dubbio, si puo' anche creare un
+conto ex nuovo per trovare una sistemazione adeguata per il movimento.
+ 
+\subsubsection{L'estratto conto:} per tutti i movimenti dell'esercizio
+corrente, che si trovano nel Giornale, si puo' fare un ragruppamento dei soli
+movimenti che interessano un determinato conto, sia in positivo, che in
+negativo. Questo sotto-insieme del Giornale si chiama estratto conto. La somma
+aritmetica del saldo iniziale, e di tutti gli importi in piu' o in meno,
+produce un saldo finale. Il significato di un estratto particolare dipende
+della diversifica- zione del titolo di conto. Un conto spese nel quale
+finiscono spese di energia elettrica e di gas, ha meno significato che un conto
+che evidenzia solo energia elettrica, p.e. 
+
+\subsubsection{Bilancio / Conto Economico:} sono due cose completamente
+diversi.  Il Bilancio e' la comparazione fra conti Attivita' e conti Passivita'
+in un determinato giorno dell'esercizio. Esso da un idea sulla situzione
+patrimoniale.
+
+Il conto economico invece e' la comparazione fra conti Spese e conti Entrate,
+per un periodo determinato, normalmente dall'inizio esercizio fino al giorno 
+di oggi. Esso da un idea sulla situazione economica dell'esercizio in corso.
+
+\subsubsection{Valori iniziali:} all'inizio dell'esercizio bisogna dare valori
+iniziali ai soli conti Attivita' e Passivita'in modo tale, che la somma dei
+conti positivi attivi e' uguale alla somma negativa dei conti passivi.  (+x -x
+= 0 complessivamente).
+
+Siccome i movimenti che si aggiungono durante l'esercizio interessano sempre
+due conti, una volta in +, una volta in -, l'equilibrio iniziale si mantiene,
+e la somma di tutti i conti rimane sempre uguale a zero, se tutto e' stato 
+registrato correttamente.
+
+\section{Perche' WB-FIBU ?}
+
+Leggendo i tanti libri in materia, si scopre ben presto, che le regole di 
+contabilita', parzialmente anche sotto forma di disposizioni di legge, sono
+piu' complicati del necessario. E questo si ripercuote nei tanti programmi
+per PC o altre piattaforme ottenibile anche a basso prezzo.
+
+Il WB-FIBU invece cerca di realizzare semplicemente la partita doppia, senza 
+restrizioni qualsiase p.e. permette di togliere o rettificare linee giornale, 
+che non sono corretti, oppure accetta registrazioni con data anteriore per
+fatti annunciati p.e. dalla banca - il giornale viene sorteggiato autom. in 
+ordine di data crescente. Cosi si ottiene un giornale sempre pulito e' cor- 
+retto e di conseguenza piu' chiaro.
+
+Il programma doveva essere concepito in modo da eseguirsi su ogni PC 
+standard, in modo portabile su altre piattaforme, e senza requisiti onerosi 
+in termini di programmi aggiuntivi oltre al sistema operativo della machina.
+
+Il gruppo di utenza visata: privati, contabili di club o associazioni piccoli 
+senza obblighi di legge.
+
+Il modo di lavorare con WB-FIBU:
+\begin{itemize}
+\item si fa partire il programma sotto DOS, oppure sotto Windows;
+
+\item si entrano i dati nuovi del giornale a partire  della tastiera,
+usando  l'editore incorporato, che permette di copiare  campi  invariati  dalla
+linea precedente, e che produce il formato giusto dei dati;  
+
+\item Mentre  in  una  contabilita'  manuale,  questa scrittura  deve
+essere ripetuto due volte su ogni scheda conto, con i calcoli dei saldi, qui si
+sceglie l'opzione XEQ,  e in pochi secondi il  programma  produce quello che e'
+richiesto: stampa Piano dei Conti,  stampa Giornale,  tutti  gli estratti,
+Bilancio e Conto Economico.
+
+\item I risultati possono essere visualizzati allo schermo con VIEW - le
+linee degli estratti sono allora ridotti per stare in una linea video. Ogni
+tanto e' utile di fare una stampa scegliendo PRINT. 
+
+\item In chiusura il programma richiede un dischetto per fare una copia di
+backup per sicurezza, solo se i dati furono cambiati. Si consiglia di usare
+almeno 2 dischetti in alternanza, per ridurre il rischio del dischetto
+rovinato, e per disporre sempre delle due ultime situazioni.  Cosi in caso di
+rottura del discho rigido della machina, si puo' conti- nuare subito su ogni
+altra machina a disposizione.
+
+\item L'insieme dati con i risultati rimane sempre valido fino ad una nuova
+esecuzione secondo il punto 3 di sopra. E' allora possibile, di interro- gare
+la contabilita' esattamente come fogliare uno stampato.  Questo dovrebbe
+permettere di ridurre l'uso della carta ad un minimo.
+
+\end{itemize}
+
+\subsection{Utilizzatori potentiali di bb-Fibu:}
+Proprieta' WB-FIBU:
+\begin{itemize}
+
+\item Particolari, contabili di piccole associazioni o piccole imprese senza costrette legali.
+
+\item Programma scritto in C (Turbo C/PC) portabile su diverse piattaforme:
+PC-DOS, Archimedes, UNIX WS, ..;
+
+\item Il linguaggio di dialogo nonche' quello usato per la rappresentazione
+dei risultati e' definito in un insieme esterno al programma, e
+conseguentemente a scelta, se esiste la traduzione. Attualmente esistono:
+fibu.de, fibu.it, ...
+
+\item Il Piano dei Conti e' liberamente definibile;
+
+\item La tabella dei cambi di valuta e' prevista (non ancora implementato);
+
+\item L'entrata dei dati sotto controllo di un editore linea adattato;
+
+\item I tasti di funzione del editore sono definiti in un file esterno
+(fibu.cfg);
+
+\item Tutti i dati sono elaborati in memoria viva;
+
+\item Il numero massimo di registrazioni dipende solamente dalla memoria a
+disponibile.
+
+\item Consulatazione dei risultati allo schermo - rimangono validi fino alla
+prossima esecuzione e possono essere visualizzati a domanda;
+
+\item Stampa su commando su LPT1, sia in locale che in rete, con adattamento
+della stampante a traverso commani ESC in HP PCL contenuti in fibu.prn.  E
+necessario il supporto di scrittura normale in ISO A4 landscape, oppure 16 cpi
+per la stampa in ISO A4 portrait.
+
+\end{itemize}
+     
+Pre-requisiti per questo programma:
+\begin{itemize}
+\item PC con MS-DOS, 640 Kbytes a 8bit/byte
+\item a secondo della configurazione del PC sono possibile ca. 8000 righe;
+\item stampante non indispensabile ma utile (16cpi,o carta a 120 colonne);
+\end{itemize}
+
+WB-FIBU insiemi dati (files):
+\begin{itemize}
+\item FIBU.EXE   programma per DOS
+\item FIBU.DE    tutti i messaggi in tedesco
+\item FIBU.IT    tutti i messaggi in italiano
+\item FIBU.CFG   definizione dei tasti per l'editore
+\item FIBU.PRN   addattamento stampante in HP PCL notazione
+     N.B. questi insiemi devono trovarsi nella stessa directory
+
+\item <Name>.KPL  Piano dei conti <Name>, p.e. ELKI93.KPL
+\item <Name>.JRL  Giornale        <Name>, p.e. ELKI93.JRL
+\item <Name>.LST  Risultati        <Name>,p.e. ELKI93.LST
+     N.B. questi insiemi devono trovarsi nella stessa directory
+\end{itemize}
+\begin{appendix}
+\chapter{Informazzioni techniche}
+
+\section{ Formato dei dati nella X.KPL}
+
+
+\begin{verbatim}
+Pos 01 controllo pagina per l'estratto (P nuova pagina, spazio= stampa cont.)
+    02 spazio
+    03 numero conto, 1-4 posizioni, p.e. 1101 
+    07 spazio
+    08 Titolo del conto,           50 caratteri,  p.e. Cassa
+    58 Valuta, 2 caratteri,        p.e. LI, DM, FS, etc (derzeit nicht verw.)
+    60 importo preventivo  (solo per conti spesa,entrata), 12 posizioni
+    72 spazio, fine linea
+\end{verbatim}
+
+\section{ Formato dei dati nella X.JRL}
+
+\begin{verbatim}
+Pos 01 Data 8 caratteri, p.e. 01.01.1993
+    09 spazio 
+    10 Numero conto +, (pozzo),    1-4 posizioni alineati a destra
+    14 spazio
+    15 Numero conto -, (sorgente), 1-4 posizioni alineati a destra
+    19 spazio
+    20 descrizione causale, 45 caratteri al massimo
+    65 valuta 2 posizioni come da x.kpl
+    67 importo 12 posizioni alineati a destra 
+    79 spazio e fine linea; durante l'esecuzione, si aggianca qui il saldo
+    90 l'ultima posizione del saldo (solo in memoria)
+\end{verbatim}
+
+Nei due insiemi la fine logica dei dati e' indicati con un /*EOF 
+
+\chapter{Concetti contabili}
+
+Si copia il contenuto del dischetto base in una directroy del disco rigido:
+
+\section{Valori iniziali}
+All'inizio dell'esercizio e' necessario dare valori iniziali ai conti 
+Attivita' e Passivita', i cosidetti Riporti.
+Per questi riporti e' consentito in modo eccezzionale di avere registrazioni
+con un solo numero conto valido, mentre l'altro conto e' messo a zero.
+Si usa il numero conto + per riportare un saldo positivo, e il numero conto -
+per riportare un saldo negativo.
+
+\paragraph{Esempio:}
+
+\begin{verbatim}
+01.01.93 1101    0 Riporto cassa            100000
+01.01.93    0 2100 Riporto patrimonio       100000
+\end{verbatim}
+
+\subsection{Esempi pratici di contabilita'}
+
+Per gli esempi serve questo piano dei conti :
+
+\begin{verbatim}
+  1001 Cassa
+  1010 Conto Corrente
+  1020 Conto a termine: BOT
+  1100 Credito a socio x
+  1999 Giroconto
+     0 fine attivita'
+  2001 Patrimonio
+  2010 Fondo di riserva
+  2100 Debito verso fornitore
+     0 fine passivita'
+  3001 Spese di amministrazione
+  3010 Spese per l'energia
+  3020 Spese per servizi
+     0 fine costi
+  4100 Entrata: da soci
+  4500 Entrata: interessi
+  4600 Entrata: diversi
+     0 fine entrate
+\end{verbatim}
+
+E frequente di dover trattare dei movimenti, che in realta si compongono di
+diversi movimenti parziali, che vanno essere registrati in modo detagliato.
+1. incassi vari (cxxx = numero consecutivo del giustificativo, classificatore)
+\begin{verbatim}
+  01.02.95 1001 4100 ricevo soldi,cxxx             100000
+  15.02.95 1001 4100 ricevo assegno, cxxx          500000
+  01.03.95 1010 1001 versamento da cassa           600000
+\end{verbatim}
+
+2. fattura entrante, pagamento dilazionato (dxxx = numero pezzo giustificativo)
+\begin{verbatim}
+  01.02.95 3010 2100 fatt ENEL 12-1.95,dxxx        300000
+  15.03.95 2100 1010 pagamento bolletta ENEL       300000
+\end{verbatim}
+
+3. fattura entrante, pagamento immediato, ripartizione spesa
+\begin{verbatim}
+  01.02.95 1999 1010 fatt Telecom 1bim95, dxxx     600000
+  01.02.95 3020 1999 fatt Telecom 1bim95 parte uff 450000
+  01.02.95 1100 1999 fatt Telecom 1bim95 parte pri 150000
+  15.02.95 1001 1100 da x / telefono               150000
+\end{verbatim}
+
+4. acquisto BOT con interessi scontati
+\begin{verbatim}
+  01.02.95 1020 1010 acquisto BOT 010595 1M  920000
+
+  01.05.95 1010 1999 rimborso BOT 010595 1M 1000000
+  01.05.95 1999 1020 rimborso BOT 010595 1M  920000
+  01.05.95 1999 4500 interess BOT 010595 1M   80000
+\end{verbatim}
+
+Questa tecnica permette di dettagliare come si vuole, e di nascondere questo
+su quei estratti conti, dove c'e bisogno di mantenere esattamente i stessi
+movimenti cha fara la banca e come appaiano nel estratto conto della banca.
+
+Finalmente si racommanda di usare sempre le stesse espressioni, corti, 
+significativi, per le stesse cose. Sempre guardare nel giornale piu' in alto
+per descrivere lo stesso fatto in modo uguale.
+
+
+Winfried, Bruno Böttcher
+November 1995
+\end{appendix}
+\end{document}
+

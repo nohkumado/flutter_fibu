@@ -109,10 +109,7 @@ class JrlPage extends ConsumerWidget {
     //        ])
     //);
 
-    return Scaffold(
-        drawer: NavDrawer(book: book, settings: settings),
-        appBar: AppBar( title: Text(pageTitle) ),
-        body: Center(
+    return  Center(
             child:
             SingleChildScrollView(
                 child:
@@ -137,7 +134,6 @@ class JrlPage extends ConsumerWidget {
 
           //    }
           //),
-        )
     );
   }
 

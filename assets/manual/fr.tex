@@ -1,0 +1,399 @@
+%*****************************************************************************
+% copyright Winfried and Bruno Böttcher
+\documentclass[12pt]{report}
+\usepackage[french]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{epsf}
+\usepackage{html}
+
+\pagestyle{headings}
+%*****************************************************************************
+\input{stdheader}                                                                
+%*****************************************************************************
+\begin{document}
+
+\tableofcontents
+
+\chapter{Introduction}
+
+\section{Pourquoi une comptabilité financière ?}
+
+
+Pour l'administration des procédures financières une méthode de comptabilité
+financière est essentielle. jFibu est un
+logiciel qui fonctionne selon le principe de la double comptabilité.
+
+
+La double comptabilité a été décrit pour la première fois en 1445 par Luca
+Paciolo et est basée sur une idée très simple: ''Chaque operation est
+représentée par un versement ou mouvement d'argent, qui procède à partir d'une
+source vers une cible.'' Les sources et les cibles (appelés les comptes)
+peuvent être considérés aussi comme des pots arrangés sur une grande table,
+d'ou l'on retire de l'argent (des sources), ou bien dans lesquels de  l'argent
+est déposé.  Arithmétiquement le retrait d'argent signifie une soustraction
+(-), et le dépot une addition (+).  
+
+\begin{verbatim}
+      Cible                     Source
+      +      <--- Transaction ---   -
+\end{verbatim}
+
+
+Chaque transaction concerne toujours deux comptes, c'est pour cela que le
+procédé s'appelle également double comptabilité (partita doppia).
+
+
+Le plan des comptes contient un ensemble de comptes librement choisis, ils sont
+nécessaires pour la description des différentes transactions.  Le plan des
+comptes peut être élargi à tout moment selon les exigences.  La destruction d'un
+compte pendant une periode d'exercice est autorisée seulement si aucun mouvement
+n'a été fait en utilisant ce compte.
+
+
+Les comptes sont divisés en 4 groupes:
+
+
+
+\begin{itemize}
+\item Comptes actifs (argent comptant, comptes bancaires, valeurs immobilières,
+capitaux, etc...)
+
+\item Comptes passifs (fortune, posessions, dettes, etc.)
+
+\item Dépenses
+
+\item Revenus
+
+\end{itemize}
+
+
+
+Un certain sens de l'abstraction est nécessaire pour comprendre ou croire que
+les sommes de ces groupes ont des signes changeants dans le contexte de la
+comptabilité:
+
+\begin{itemize}
+\item Les comptes actifs sont positifs, 
+
+\item Les comptes passifs sont négatifs,
+
+\item Les dépenses sont positives,
+
+\item Les revenus sont négatifs.
+
+\end{itemize}
+
+Ceci a comme conséquence que la somme globale de tous les comptes est zéro.
+
+Le journal est un enregistrement séquentiel de toutes les transactions.  La
+tâche importante du comptable consiste à découper la transaction en
+sous-mouvements appropriés et à déterminer les comptes impliqués. En cas de
+doute un nouveau compte peut être ouvert à tout moment.
+
+
+
+\subsection{L'extrait de compte:} 
+
+Tous les mouvements enregistrés dans le journal, concernant un certain compte,
+peuvent être récapitulés sur une fiche de compte, et à partir du montant
+initial et des mouvements effectués le montant total actuel du compte peut être
+calculé.  Le degré d'expression de cette compilation dépend de la granularité
+du plan des comptes (plus la granularité est fine, plus sélectives sont les
+distinctions permises par le plan ).
+
+\subsection{Bilan / compte de résultat:} 
+
+A ne pas confondre.  Le bilan est la comparaison des soldes de tous les
+ comptes actifs et de passif en un certain jour.  Il informe au sujet de la
+ situation financière actuelle.
+
+Le compte de résultat est la comparaison des soldes de tous les comptes de
+dépense avec ceux des comptes de revenus, sur une certaine période.  Le calcul
+du tableau informe au sujet de l'évolution économique.
+
+\subsection{Valeurs initiales:} 
+
+Au début d'un exercice comptable (nouveau journal) seulement les comptes
+actifs et passifs obtiennent des valeurs initiales, de telle manière que la
+somme des comptes actifs positifs soit égale à la somme des comptes passifs
+négatifs.  
+
+
+
+\subsection{Contrôlabilité:} 
+
+Puisque chaque transaction concerne toujours deux
+comptes, une fois + (cible), une fois - (source), la somme de tous les comptes
+doit ètre zéro à tout moment.
+
+La différence entre les comptes actifs et passifs est égale à la différence
+entre les revenus et des dépenses, toutefois avec le signe opposé (c'est
+nécessaire si la somme de tous les comptes doit ètre zéro).
+
+
+
+\section{Pourquoi jFibu?}
+
+En lisant des livres sur la comptabilité, on peut avoir l'impression que les
+règles accompagnant la comptabilité, qui sont partiellement exigées par la loi,
+rendent les choses plus compliqués, que le sujet l'exige.
+
+Les nombreux logiciels de comptabilité actuellement sur le marché portent ce ballast avec eux, et sont donc en conséquence assez complexes. 
+
+Afin d'implémenter facilement les relations enoncées ci-dessus dans un logiciel
+simple, le développement d'un nouveau logiciel est devenu nécessaire (par
+exemple il est possible de corriger les entrées dans le journal, les entrées
+sont automatiquement triées selon la date).  Ceci assure une  comptabilité plus
+claire, au détriment de certaines impositions par la loi concernant les grandes entreprises.
+
+Des efforts ont été faits d'écrire le programme de telle manière qu'il puisse
+être facilement porté sur différentes plateformes informatiques.
+
+
+
+\subsection{Utilisateurs potentiels de  jFibu:} 
+
+ Particuliers, comptables d'associations ou petites compagnies sans contraintes légales.
+
+
+\chapter{Mise en place}
+
+\section{utilisation de jFibu: }
+
+\begin{itemize}
+
+\item le programme  est lancé à partir d'une ligne de commande;
+
+\item les nouvelles données pour le journal ou le plan des comptes sont saisies
+par le clavier;  possibilité pour copier des données de la ligne précédente
+(pas encore mise en application).
+
+\item tandis qu'en comptabilité manuelle les  entrée du journal doivent ètre
+répercutées sur les deux fiches de compte (calcul de +Saldo), ici
+il suffit de lancer l'exécution (point de menu: exécution). L'on obtent ainsi un fichier avec toutes les informations nécessaires (plan des comptes,
+journal, table des devises, bilan et  compte de résultat).
+
+\item les résultats pourront ètre consultes à l'écran (Tabpanel pour les
+composants, l'équilibre différents) de temps en temps ou une copie
+imprimée de bookkepping est nécessaire et peut être fait (COPIE, pas encore
+instrument de menupoint).
+
+\item sur la sortie du programme l'état actuel est stocké automatiquement, mais
+pour la sûreté une copie sur à disque souple devrait être tirée à la main;  on
+devrait utiliser 2 disques souples alternatingly et toujours permuter le
+dernier avec précéder pour garder les deux dernières situations.  Ainsi en cas
+d'échec du principal-disque ou du travail entier de PC peut être continué à
+tout moment sur un autre PC.
+
+\item Les comptes en devises étrangères sont possibles, par contre les méthodes
+de conversion automatiques ont été abandonnées, le problème étant un peu trop
+complexe pour le moment, et nécessiterait de la part de l'utilisateur un suivi
+continu;
+
+
+\item Facilité d'entrée de données, en proposant des transactions standard
+préremplies;
+\end{itemize}
+
+\begin{itemize}
+\item Programmé dans JAVA pour toutes les plateformes d'informatique, qui soutiennent la machine virtuelle de Java (SUN-JVM):  Pc-dos, Archimedes, W D'Unix..;
+
+\item nombre maximum des entrées seulement dépendantes de la capacité de la
+base de données;
+
+
+\item La langue et les menu-titres d'interaction sont librement (allemand, italien, Français...) des fibu*properties sélectionnables.
+
+
+
+\item Rendre compte-plan librement sélectionnable;
+
+
+
+\item Comptes de devise étrangère soutenus;
+
+
+
+\item Rédacteur de ligne pour l'entrée de données contexte-référée;
+
+
+
+\item Configuration des clefs d'édition au-dessus du dossier externe (fibu.cfg);  (pas encore mis en application)
+
+
+
+\item Traitement de toutes les données dans la mémoire;
+
+
+
+\item nombre maximum des entrées seulement dépendantes de la capacité de la mémoire;
+
+
+
+\item Consultation des résultats sur l'écran (économie de papier!)  - ceux-ci restent et peuvent être employés encore au prochain traitement;
+
+
+
+\item Imprimant sur LPT1 possible sur des imprimeurs avec 90 caractères par la ligne maximum (paysage normal de manuscrit DIN A4, ou portrait de 16cpi DIN A4);  Ajustement d'imprimeur au-dessus du dossier externe (fibu.prn);  (pas encore instrument)
+
+
+
+\end{itemize}
+
+
+
+
+\subsection{ Préalables à ce programme:
+}
+
+
+
+\begin{itemize}
+\item N'importe quelle plateforme Java-avertie peut être employée, puisque la balancer-bibliothèque était au moins 32MB utilisé sont recommandées.
+
+
+
+\item Disque non démontable suggéré - environ 700 K bytes sont nécessaires pour le programme;
+
+
+
+\item Imprimeur utile (paysage 16cpi ou colonne 120 de papier);
+
+
+
+\end{itemize}
+
+\chapter{Manuel d'utilisation}
+
+
+
+\subsection{ dossiers de jFibu:}
+
+
+
+\begin{itemize}
+\item classe de démarreur de xF pour la version du graphique jFibu.
+
+
+
+\item messages et menus de fibu\_de\_DE.properties en allemand
+
+
+
+\item messages et menus de fibu\_it\_IT.properties en italien
+
+
+
+\item fibu.cfg éditant la table de devise
+
+
+
+\item ajustements d'imprimeur de fibu.prn - les ordres d'évasion dans dossiers de la notation NOTA: de la HP PCL ces sont dans le même annuaire
+
+
+
+\item  <plan des comptes de Name>.kpl pour la comptabilité < nom >, par exemple ELKI93.kpl
+
+
+
+\item < journal de Name>.jrl pour la comptabilité < nom >, par exemple ELKI93.jrl
+
+
+
+\item < Name>.lst des résultats pour la comptabilité < nom >, par exemple ELKI93.lst 
+
+
+
+\end{itemize}
+
+\begin{appendix}
+
+ N.B.  ces dossiers tous sont localisés dans le même annuaire.
+
+\chapter{Formats de fichiers}
+
+\subsection{ Kpl de format de dossier}
+
+La commande latérale de la position 01 (le nouveau côté de P, vident
+séquentiellement) du chiffre vide du numéro du compte 02 03 1-4, par exemple
+1101 07 08 titres de compte vides 50 indications, par exemple encaissent 58
+indications de la devise 2, par exemple à gauche, DM, télex, etc.
+(actuellement pas le verw.)  60 quantités pour l'évaluation (0 avec des comptes
+d'active/passive), 12 caractères 72 librement 
+
+ <PRE> La commande latérale de la position 01 (le nouveau côté de P, vident séquentiellement) du chiffre vide du numéro du compte 02 03 1-4, par exemple 1101 07 08 titres de compte vides 50 indications, par exemple encaissent 58 indications de la devise 2, par exemple à gauche, DM, télex, etc. (actuellement pas le verw.)  60 quantités pour l'évaluation (0 avec des comptes d'active/passive), 12 caractères 72 librement </PRE>
+
+
+\subsection{ Jrl de format de dossier}
+
+Position 01 indications de la date 8, par exemple numéro du compte 01.01.1993
+09 10 vide +, (inférieur), 1-4 numéro du compte 15 vide des caractères 14 -,
+(source), 1-4 le procédé 20 vide des caractères 19 des caractères de maximum 45
+65 indications de la devise 2 (comme avec KPL) 67 s'élèvent jusqu'à 12
+caractères 79 librement;  le programme accroche la dernière position dans le
+format de rendement dessus dans cette position l'équilibre = 12 caractères 90
+
+ <PRE> Position 01 indications de la date 8, par exemple numéro du compte 01.01.1993 09 10 vide +, (inférieur), 1-4 numéro du compte 15 vide des caractères 14 -, (source), 1-4 le procédé 20 vide des caractères 19 des caractères de maximum 45 65 indications de la devise 2 (comme avec KPL) 67 s'élèvent jusqu'à 12 caractères 79 librement;  le programme accroche la dernière position dans le format de rendement dessus dans cette position l'équilibre = 12 caractères 90 </PRE>
+
+ Dans la compatibilité de jFibu / * le EOF est ignoré. 
+
+
+\chapter{Concepts de comptabilité}
+\subsection{ Valeurs initiales}
+
+ À 01.01.9X les valeurs initiales doivent être indiquées aux comptes actifs et de passif (prétendus transferts).  Ceci est réalisé en insérant des journal-lignes où seulement un compte est indiqué, le compte positif, ou le compte passif négatif, alors que le deuxième compte est établi exeptionally à 0.
+
+ Exemple:
+
+ {\tt  01.01.93 1101 0 argents comptants de transfert 100000 01.01.93 0 2100 transfèrent Patrimonio 100000 }
+
+
+
+\subsection{ Références pour enregistrer conserver
+}
+
+ Pour la démonstration le plan raccourci suivant de compte est employé:
+
+{\tt  
+1001 compte de compte courant de l'argent comptant 1010 1020 dépôts à terme:  Le crédit au camarade X A OFFERT à 1100 1999 comptes de suspence 0 fins d'Aktivas 2001 capacités d'abilityability 2010 dettes de l'arrière 2100 de réservation à la fin du fournisseur 0 des responsabilités 3001 administratives que les dépenses 3010 coût énergetique 3020 le service coûte 0 fins de coûte 4100 revenus:  des membres 4500 revenus:  Revenus de l'intérêt 4600:  diverse 0 fins des revenus }
+
+ Beaucoup de procédures consistent en réalité de plusieurs pas à pas, qui doivent être enregistrés séparément dans le journal:
+
+
+
+\begin{itemize}
+\item différents revenus (cxxx = dossier de nombre, dossier etc...)  {\tt  01.02.95 1001 4100 de x, cxxx 100000 15.02.95 1001 4100 de y, chèque, cxxx 500000 01.03.95 1010 1001 de l'argent comptant aux chèques postaux 600000 }
+
+
+
+\item calcul détaillé, paiement plus tard (dxxx = nombre du dossier, de dossier etc...)
+{\tt  01.02.95 3010 2100 calcul ENEL 12-1.95, dxxx 300000 15.03.95 2100 1010 à ENEL Ueb/Scheckxxx 300000 }
+
+
+
+\item calcul détaillé, paiement immédiatement, affectation des coûts  {\tt 
+01.02.95 1999 1010 Rech.Telecom 1bim95, dxxx 600000 01.02.95 3020 1999 services 450000 de Rech.Telecom 1bim95 01.02.95 1100 1999 Rech.Telecom 1bim95 en privé 150000 15.02.95 1001 1100 de x / de priv.Telefon 150000 }
+
+
+
+\item Abgezinst de Festgeldanlage  {\tt  010595 1M 920000 ONT OFFERT l'usine 01.02.95 1020 1010
+
+01.05.95 1010 1999 Rueckz.  010595 1m Ont offert 1000000 01.05.95 1999 1020 Rueckz.  010595 1M ONT OFFERT 920000 01.05.95 1999 4500 que l'intérêt A OFFERT 010595 1M 80000 }
+
+
+
+\end{itemize}
+
+
+ De telles attributions au-dessus d'un suspence rendent compte ou l'argent
+ comptant sont nécessaire, dans l'ordre en particulier pour prouver sur les
+ comptes bancaires seulement les montants, qui apparaîtront à la banque
+ également dans le rapport de compte (= une commande plus facile).
+
+ Enfin recommandé d'employer toujours les mêmes formulations soyez que possible
+ pendant que sous peu si (par exemple / = pour, etc.).  Avec des procédures se
+ reproduisantes on devrait vérifier donc toujours seulement dans le journal
+ plus loin en haut.
+
+\end{appendix}
+\end{document}

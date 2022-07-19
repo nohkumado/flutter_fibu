@@ -21,9 +21,19 @@ class BookNotifier extends StateNotifier<Book>
     print("donw actacc");
   }
 
-  void addJrlLine({required String date, required String ktom, required String ktop, required String desc, required String cur, required String valuta})
+  void addJrlLine({required String date, required String ktom, required String ktop, required String desc, String? cur, required String valuta})
   {
     print("adding jrl line");
-   state = state;
-}
+    if(cur == null || cur.isEmpty) cur = "EUR";
+    if(valuta == null || valuta.isEmpty) valuta = "0";
+    int valutaAsInt = 0;
+    try {
+      valutaAsInt = int.parse(valuta);
+    }
+    catch(e){
+      //print("failed to convert $valuta to int");
+    }
+    JrlLine jrlLine = JrlLine(datum: date,kmin: ktom,kplu: ktop,desc: desc,cur: cur,valuta: valutaAsInt);
+    state = state..jrl.add(jrlLine);
+  }
 }

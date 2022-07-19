@@ -1,0 +1,697 @@
+<!DOCTYPE HTML>
+
+<!--Converted with LaTeX2HTML 2021.2 (Released July 1, 2021) -->
+<HTML lang="en">
+<HEAD>
+<TITLE>de</TITLE>
+<META NAME="description" CONTENT="de">
+<META NAME="keywords" CONTENT="de">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="viewport" CONTENT="width=device-width, initial-scale=1.0">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2021.2">
+
+<LINK REL="STYLESHEET" HREF="de.css">
+
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<IMG WIDTH="81" HEIGHT="24" ALT="next_inactive" SRC="nx_grp_g.png"> 
+<IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up_g.png"> 
+<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev_g.png">   
+<BR>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<P>
+<BR>
+
+<H2><A ID="SECTION00100000000000000000">
+Inhalt</A>
+</H2>
+<!--Table of Contents-->
+
+<UL CLASS="TofC">
+<LI><A ID="tex2html27"
+  HREF="de.html#SECTION00200000000000000000">Einführung</A>
+<UL>
+<LI><A ID="tex2html28"
+  HREF="de.html#SECTION00210000000000000000">Warum Finanzbuchhaltung ?</A>
+<UL>
+<LI><A ID="tex2html29"
+  HREF="de.html#SECTION00211000000000000000">Der Kontoauszug:</A>
+<LI><A ID="tex2html30"
+  HREF="de.html#SECTION00212000000000000000">Bilanz / Wirtschaftsrechnung:</A>
+<LI><A ID="tex2html31"
+  HREF="de.html#SECTION00213000000000000000">Anfangswerte:</A>
+<LI><A ID="tex2html32"
+  HREF="de.html#SECTION00214000000000000000">Kontrollmöglichkeit:</A>
+</UL>
+<LI><A ID="tex2html33"
+  HREF="de.html#SECTION00220000000000000000">Warum WB-FIBU ?</A>
+<UL>
+<LI><A ID="tex2html34"
+  HREF="de.html#SECTION00221000000000000000">Zielgruppe für WB-FIBU:</A>
+</UL>
+</UL>
+<BR>
+<LI><A ID="tex2html35"
+  HREF="de.html#SECTION00300000000000000000">Installation</A>
+<UL>
+<LI><A ID="tex2html36"
+  HREF="de.html#SECTION00310000000000000000">Arbeitsweise mit WB-FIBU:</A>
+<LI><A ID="tex2html37"
+  HREF="de.html#SECTION00320000000000000000">Eigenschaften WB-FIBU:</A>
+<UL>
+<LI><A ID="tex2html38"
+  HREF="de.html#SECTION00321000000000000000">Voraussetzungen für dieses Programm:</A>
+<LI><A ID="tex2html39"
+  HREF="de.html#SECTION00322000000000000000">WB-FIBU Dateien:</A>
+</UL>
+</UL>
+<BR>
+<LI><A ID="tex2html40"
+  HREF="de.html#SECTION00400000000000000000">Benutzungshandbuch</A>
+<UL>
+<LI><A ID="tex2html41"
+  HREF="de.html#SECTION00410000000000000000">Arbeitsweise mit bb-Fibu:</A>
+</UL>
+<BR>
+<LI><A ID="tex2html42"
+  HREF="de.html#SECTION00500000000000000000">bb-Fibu Datei-Formate</A>
+<UL>
+<LI><A ID="tex2html43"
+  HREF="de.html#SECTION00501000000000000000">Datei-Format .kpl</A>
+</UL>
+<BR>
+<LI><A ID="tex2html44"
+  HREF="de.html#SECTION00600000000000000000">Buchhaltungskonzepte</A>
+<LI><A ID="tex2html45"
+  HREF="de.html#SECTION00700000000000000000">Referenzen</A>
+</UL>
+<!--End of Table of Contents-->
+<P>
+
+<H1><A ID="SECTION00200000000000000000">
+Einführung</A>
+</H1>
+
+<P>
+
+<H1><A ID="SECTION00210000000000000000">
+Warum Finanzbuchhaltung ?</A>
+</H1>
+
+<P>
+Für die Verwaltung wertbezogener Vorgänge ist eine Finanz-Buchhaltung
+unerläßlich. WB-FIBU ist ein EDV-Programm, das nach dem Prinzip der doppelten
+Kontoführung arbeitet.
+
+<P>
+Die doppelte Kontoführung wurde erstmals 1445 von Luca Paciolo beschrieben und
+beruht auf einer denkbar einfachen Idee: &rdquo;Jeder Vorgang wird als eine
+Geldbewegung dargestellt, die von einer Quelle ausgeht und in einer Senke
+verschwindet.&rdquo; Quellen und Senken (Konten genannt) kann man sich auch als
+Töpfe vorstellen, die alle auf einem großen Tisch stehen, und aus denen Geld
+entnommen wird (Quellen), oder in die Geld hineingelegt wird (Senken).
+Arithmetisch gesehen bedeutet die Geldentnahme eine Subtraktion (-), und ein
+Hineinlegen eine Addition (+).  
+
+<P>
+<PRE>
+      Senke                     Quelle
+      +      &lt;--- Vorgang ---   -
+</PRE>
+
+<P>
+Da jeder Vorgang immer 2 Konten betrifft, heißt das Verfahren auch doppelte
+Kontoführung (partita doppia).
+
+<P>
+Der Kontoplan (Konto-Rahmen) enthält eine frei wählbare Menge an Konten,wie
+sie zur Beschreibung des Geschehens benötigt werden. Der Kontoplan kann
+jederzeit nach Bedarf erweitert werden. Das Wegnehmen eines Kontos inmitten
+eines Geschäftsjahres ist nur dann statthaft, wenn es keine Bewegungen über
+dieses Konto gegeben hat.
+
+<P>
+Die Konten sind übrigens in 4 Gruppen eingeteilt:
+
+<P>
+
+<UL>
+<LI>Aktiv-Konten (Kasse, Bankkonten, Immobilien-Werte, Guthaben, etc)
+
+<P>
+</LI>
+<LI>Passiv-Konten(effektives Vermögen, Patrimonio, Schulden, etc)
+
+<P>
+</LI>
+<LI>Ausgaben
+
+<P>
+</LI>
+<LI>Einnahmen
+
+<P>
+</LI>
+</UL>
+
+<P>
+Es ist ein wenig abstraktes Denken nötig um zu verstehen oder zu glauben, daß
+die Salden dieser Gruppen im Rahmen der Buchhaltung wechselnde Vorzeichen
+haben:
+
+<P>
+
+<UL>
+<LI>Aktivkonten sind positiv, 
+
+<P>
+</LI>
+<LI>Passivkonten sind negativ,
+
+<P>
+</LI>
+<LI>Ausgaben sind positiv,
+
+<P>
+</LI>
+<LI>Einnahmen sind negativ.
+
+<P>
+</LI>
+</UL>
+
+<P>
+Dies ergibt eine globale Saldensumme von Null als Kontrolle.
+
+<P>
+Das Journal ist eine sequentielle Aufzeichnung aller Vorgänge. Die wichtige
+Aufgabe des Buchhalters besteht darin, den Vorgang evt. in seine Einzelschritte
+zu zerlegen und die zugehörigen Konten zu bestimmen. Im Zweifelsfall kann
+jederzeit ein neues Konto eröffnet werden.
+
+<P>
+
+<H2><A ID="SECTION00211000000000000000">
+Der Kontoauszug:</A>
+</H2> 
+
+<P>
+Alle im Journal eingetragenen Bewegungen, die ein bestimmtes Konto betreffen,
+lassen sich auf einer Kontokarte zusammenfassen, und aus dem Anfangsbetrag und
+den Bewegungen läßt sich der aktuelle Endbetrag des Kontos errechnen (Saldo).
+Die Aussagekraft dieser Zusammenstellung hängt einzig und allein davon ab, wie
+fein der Kontoplan Unterscheidungen zuläßt.
+
+<P>
+
+<H2><A ID="SECTION00212000000000000000">
+Bilanz / Wirtschaftsrechnung:</A>
+</H2> 
+
+<P>
+Dürfen nicht verwechselt werden.  Die Bilanz ist der Vergleich der Salden von
+allen Aktiv- und Passiv-Konten an einem bestimmten Tag. Sie gibt Aufschluß
+über den derzeitigen Vermögensstand.
+
+<P>
+Die Wirtschaftsrechnung ist der Vergleich der Salden von allen Ausgabekonten
+mit denen der Einnahmekonten, über einen bestimmten Zeitraum.  Die
+Wirtschaftrechnung gibt Aufschluß über das ökonomische Verhalten.
+
+<P>
+
+<H2><A ID="SECTION00213000000000000000">
+Anfangswerte:</A>
+</H2> 
+
+<P>
+Zu Beginn der Abrechnungsperiode (neues Journal) bekommen nur die Aktiv- und
+Passivkonten Anfangswerte, und zwar so, daß die Summe der positiven
+Aktivkonten gleich der Summe der negativen Passivkonten ist.  
+
+<P>
+Ein Beispiel kann im Kapitel <A HREF="#Anfangswerte">B</A> eingesehen werden.
+
+<P>
+
+<H2><A ID="SECTION00214000000000000000">
+Kontrollmöglichkeit:</A>
+</H2> 
+
+<P>
+Da die fortlaufend hinzukommenden Bewegungen immer 2 Konten betreffen, einmal +
+(Senke), einmal - (Quelle), bleibt in jedem Zeitpunkt des Jahres die
+Gesamtsumme aller Konten = Null.
+
+<P>
+Der Unterschied zwischen Aktiv- und Passivkonten ist im Betrag gleich dem
+Unterschied zwischen Einnahmen und Ausgaben, jedoch mit entgegengesetztem
+Vorzeichen (damit die Gesamtsumme aller Konten gleich Null wird).
+
+<P>
+
+<H1><A ID="SECTION00220000000000000000">
+Warum WB-FIBU ?</A>
+</H1>
+
+<P>
+Einschlägige Bücher über Buchhaltung hinterlassen den Eindruck, daß die
+begleitenden Buchhaltungsregeln, die z.T.  gesetzlich verankert sind,
+  komplizierter sind, als es die Materie erfordert.
+
+<P>
+Die zahlreichen auf dem Markt befindlichen EDV-Programme tragen diesen Ballast
+mit sich herum, und sind deshalb entsprechend komplex. 
+
+<P>
+Um ganz einfach die obigen Beziehungen in einem ebenso einfachen und
+anspruchslosen Programm zu realisieren, wurde diese Neuentwicklung nötig (es
+ist z.B. möglich, schon gemachte Journal-Einträge zu korrigieren, oder
+kommende Einträge im voraus zu tätigen - das Journal wird autom. nach Datum
+sortiert). Daraus resultiert eine stets bereinigte und damit klarere
+Buchhaltung.
+
+<P>
+Es wurd Wert darauf gelegt, das Programm so zu schreiben, daß es leicht auf
+verschiedene EDV Plattformen portiert werden kann und daß es direkt unter dem
+Betriebssystem lauffähig ist.
+
+<P>
+
+<H2><A ID="SECTION00221000000000000000">
+Zielgruppe für WB-FIBU:</A>
+</H2> 
+
+<P>
+Privatleute, Buchhalter von Vereinen oder kleinen Firmen ohne gesetzliche
+Auflagen.
+
+<H1><A ID="SECTION00300000000000000000">
+Installation</A>
+</H1>
+
+<H1><A ID="SECTION00310000000000000000">
+Arbeitsweise mit WB-FIBU:</A>
+</H1>
+
+<P>
+
+<UL>
+<LI>man startet das Program von einer Kommandolinie;
+
+<P>
+</LI>
+<LI>man gibt über die Tastatur die neuen Daten für das Journal oder den
+Kontoplan ein; dabei kann man gleichbleibende Daten von der vorhergehenden
+Linie kopieren (noch nicht implementiert).
+
+<P>
+</LI>
+<LI>während in einer manuellen Buchhaltung der Journal-Eintrag auf den 2
+Kontokarten wiederholt werden muß (+Saldo Berechnung), wählt man einfach
+Menupunkt XEQ und erzeugt eine Resultat-Datei mit dem was man braucht:
+Kontoplan, Journal, alle Kontoauszüge, Bilanz und Wirtschaftsrechnung.
+
+<P>
+</LI>
+<LI>die Ergebnisse werden am Bildschirm angezeigt werden (Tab-Panel
+Buchungen, Bilanz) von Zeit zu Zeit ist ein Ausdruck sinnvoll (Menupunkt PRINT,
+noch nicht implementiert).
+
+<P>
+</LI>
+<LI>bei Beendigung des Programmes wird automatisch der aktuelle Stand
+abgespeichert, noch sollte per Hand eine Sicherung auf Diskette gemacht werden;
+man sollte 2 Disketten abwechselnd verwenden und verfügt dann immer über die
+letzte und die vorhergehende Situation.  Somit kann bei Ausfall der Festplatte
+oder des ganzen PC jederzeit auf einem anderen PC weitergemacht werden.
+
+<P>
+</LI>
+<LI>Die Resultat-Datei bleibt solange erhalten, bis Punkt 3 erneut
+angesteuert wird. Man kann also nachträglich Kontostände abfragen, und somit
+den Papierausdruck auf ein Minimum beschränken. (noch nicht implementiert)
+
+<P>
+</LI>
+</UL>
+
+<P>
+
+<H1><A ID="SECTION00320000000000000000">
+Eigenschaften WB-FIBU:</A>
+</H1>
+
+<P>
+
+<UL>
+<LI>Quell Programm in JAVA für alle EDV Plattformen, die die Java Virtual
+Machine (SUN-JVM) unterstützen: PC-DOS, Archimedes, UNIX WS, ..;
+
+<P>
+</LI>
+<LI>Dialog-Sprache und Titel für Ausgaben frei wählbar (deutsch,
+ital.,franz,...) fibu*properties.
+
+<P>
+</LI>
+<LI>Kontoplan (rahmen) frei wählbar;
+
+<P>
+</LI>
+<LI>Fremdwährungskonten vorgesehen, Funktionen ausgeschaltet, da dieses Thema sehr komplex ist;
+
+<P>
+</LI>
+<LI>Formular zur Eingabe der Daten, standard Operationen möglich, mit denen die Formulare vorausgefüllt werden.
+
+<P>
+</LI>
+<LI>Abarbeitung aller Daten im Speicher;
+
+<P>
+</LI>
+<LI>maximale Zahl der Einträge nur von der Speichergröße abhängig;
+
+<P>
+</LI>
+<LI>Konsultation der Resultate am Bildschirm (zur Papierersparnis) - diese
+bleiben bis zur nächsten Abarbeitung erhalten und können beliebig oft
+angeschaut werden;
+
+<P>
+</LI>
+</UL>
+
+<P>
+
+<H2><A ID="SECTION00321000000000000000">
+Voraussetzungen für dieses Programm:</A>
+</H2>
+
+<P>
+
+<UL>
+<LI>ein halbwegs aktueller <A ID="tex2html1"
+  HREF="http://www.apache.org/">apache</A>
+webserver.
+</LI>
+<LI>Beliebige java-fähige Plattform, da swing benutzt wurde wird ein Hauptspeicher von mindestens 32MB empfohlen.
+
+<P>
+</LI>
+<LI>Festplatte erwünscht - Bedarf circa 700 kbytes für das Programm;
+
+<P>
+</LI>
+<LI>Drucker nützlich (16cpi Einstellung oder 120 Kolonnen-Papier);
+
+<P>
+</LI>
+</UL>
+
+<P>
+
+<H2><A ID="SECTION00322000000000000000">
+WB-FIBU Dateien:</A>
+</H2>
+
+<P>
+
+<UL>
+<LI>xF     Starter Klasse für die graphische jFibu Version.
+
+<P>
+</LI>
+<LI>fibu_de_DE.properties    Meldungen und Ausgaben in deutsch
+
+<P>
+</LI>
+<LI>fibu_it_IT.properties    Meldungen und Ausgaben in italienisch
+
+<P>
+</LI>
+<LI>fibu.cfg   Editiertastenbelegungen
+
+<P>
+</LI>
+<LI>fibu.prn   Druckeranpassung - Escape Sequenzen in HP PCL Notation N.B.
+diese Dateien stehen alle im gleichen Verzeichnis
+
+<P>
+</LI>
+<LI>&lt;Name&gt;.kpl   Kontoplan für Buchhaltung &lt;Name&gt;, z.B. ELKI93.kpl
+</LI>
+</UL>
+
+<P>
+
+<H1><A ID="SECTION00400000000000000000">
+Benutzungshandbuch</A>
+</H1>
+
+<P>
+
+<H1><A ID="SECTION00410000000000000000">
+Arbeitsweise mit bb-Fibu:</A>
+</H1>
+
+<P>
+
+<UL>
+<LI>Der Zugang zum Programm erfolgt über einen Webclient, z.B. <EM>lynx
+    http://localhost/&lt;PATHTOFIBU&gt;/index.php</EM>. Es wird ein gültiges Login verlangt, welches vom jeweiligen Buchadministrator oder vom Erstadministrator vergeben werden kann. Vom Optionsbildschirm selektiert man das Buchset von dem man arbeiten möchte.
+
+<P>
+</LI>
+<LI>Die Journaleinträge werden über das Standardoperationsformular gemacht, die vorinstallierten Standardoperationen könne einfach erweitert werden und sind an Benutzer und Buchset gebunden.
+
+<P>
+</LI>
+<LI>während in einer manuellen Buchhaltung der Journal-Eintrag auf den 2
+Kontokarten wiederholt werden muß (+Saldo Berechnung), wählt man einfach
+Menupunkt XEQ und erzeugt eine Resultat-Datei mit dem was man braucht:
+Kontoplan, Journal, alle Kontoauszüge, Bilanz und Wirtschaftsrechnung.
+
+<P>
+</LI>
+<LI>Die Resultat-Datei bleibt solange erhalten, bis die Bilanz erneut
+angesteuert wird. Man kann also nachträglich Kontostände abfragen, und somit
+den Papierausdruck auf ein Minimum beschränken.
+
+<P>
+</LI>
+</UL>
+
+<P>
+
+<P>
+
+<H1><A ID="SECTION00500000000000000000">
+bb-Fibu Datei-Formate</A>
+</H1>
+
+<P>
+
+<H2><A ID="SECTION00501000000000000000">
+Datei-Format .kpl</A>
+</H2>
+
+<P>
+<PRE>
+Pos 01 Seitenkontrolle (P neue Seite, leer fortlaufend)
+    02 leer
+    03 Konto-Nummer 1-4 stellig, z.B. 1101 
+    07 leer
+    08 Konto-Titel  50 Zeichen,  z.B. Kasse
+    58 Währung 2 Zeichen,        z.B. LI, DM, FS, etc (derzeit nicht verw.)
+    60 Betrag für Voranschlag (0 bei Aktiv/Passivkonten), 12 Zeichen
+    72 frei
+</PRE>
+
+<P>
+
+<H3><A ID="SECTION00501100000000000000">
+Datei-Format .jrl</A>
+</H3>
+
+<P>
+<PRE>
+Pos 01 Datum 8 Zeichen, z.B. 01.01.1993
+    09 leer 
+    10 Konto-Nummer +, (Senke),  1-4 Zeichen
+    14 leer
+    15 Konto-Nummer -, (Quelle), 1-4 Zeichen
+    19 leer
+    20 Vorgang max 45 Zeichen
+    65 Währung 2 Zeichen (wie bei KPL)
+    67 Betrag bis zu 12 Zeichen 
+    79 frei; das Programm hängt an diese Position den Saldo an = 12 Zeichen
+    90 letzte Position im Ausgabe-Format
+</PRE>
+
+<P>
+In fibu-Kompatibilität wird /*EOF ignoriert. 
+
+<P>
+
+<H1><A ID="SECTION00600000000000000000">
+Buchhaltungskonzepte</A>
+</H1>
+
+<P>
+
+<H3><A ID="SECTION00600100000000000000">
+Anfangswerte</A>
+</H3>
+
+<P>
+<A ID="Anfangswerte"></A>
+<P>
+Am 01.01.9X müssen den Aktiv- und Passivkonten Anfangswerte gegeben werden
+(sogenannte Ueberträge).  Dies geschieht dadurch, daß in diesen Linien nur
+ein Konto benannt wird, entweder das positive Aktivkonto, oder das negative
+Passivkonto, während das zweite Konto ausnahmsweise =0 gesetzt wird.
+
+<P>
+Beispiel:
+
+<P>
+<PRE>
+01.01.93 1101    0 Uebertrag Kasse          100000
+01.01.93    0 2100 Uebertrag Patrimonio     100000
+</PRE>
+
+<P>
+
+<H3><A ID="SECTION00600200000000000000">
+Hinweise zur Buchführung</A>
+</H3>
+
+<P>
+Für die Darstellung wird folgender gekürzter Kontoplan angenommen:
+<PRE>
+  1001 Kasse
+  1010 Kontokorrent Konto
+  1020 Festgeld: BOT
+  1100 Kredit an Genosse x
+  1999 Zwischenkonto
+     0 Ende Aktivas
+  2001 Betriebsvermögen
+  2010 Reservefond
+  2100 Schulden an Zulieferer
+     0 Ende Passiva
+  3001 Verwaltungskosten
+  3010 Energiekosten
+  3020 Dienstleistungskosten
+     0 Ende der Kosten
+  4100 Einnahmen: von Mitgliedern
+  4500 Einnahmen: Zinsen
+  4600 Einnahmen: diverse
+     0 Ende der Einnahmen
+</PRE>
+
+<P>
+Viele Vorgänge setzen sich in Wirklichkeit aus mehreren Einzelschritten
+zusammen, die separat ins Journal eingetragen werden müssen:
+
+<P>
+
+<UL>
+<LI>verschiedenen Einnahmen (cxxx = Nummer Ablage,Ordner etc)
+  <PRE>
+  01.02.95 1001 4100 von x,cxxx                    100000
+  15.02.95 1001 4100 von y, Scheck, cxxx           500000
+  01.03.95 1010 1001 von Kasse nach giro           600000
+</PRE>
+
+<P>
+</LI>
+<LI>eingehende Rechnung, Zahlung später (dxxx = Nummer der Ablage,Ordner etc)
+  <PRE>
+  01.02.95 3010 2100 Rechnung ENEL 12-1.95,dxxx    300000
+  15.03.95 2100 1010 an ENEL Ueb/Scheckxxx         300000
+</PRE>
+
+<P>
+</LI>
+<LI>eingehende Rechnung, Zahlung sofort, Aufteilung der Kosten
+  <PRE>
+  01.02.95 1999 1010 Rech.Telecom 1bim95, dxxx     600000
+  01.02.95 3020 1999 Rech.Telecom 1bim95 Dienst    450000
+  01.02.95 1100 1999 Rech.Telecom 1bim95 privat    150000
+  15.02.95 1001 1100 von x / priv.Telefon          150000
+</PRE>
+
+<P>
+</LI>
+<LI>Festgeldanlage abgezinst
+  <PRE>
+  01.02.95 1020 1010 Anlage   BOT 010595 1M  920000
+
+  01.05.95 1010 1999 Rückz.  BOT 010595 1M 1000000
+  01.05.95 1999 1020 Rückz.  BOT 010595 1M  920000
+  01.05.95 1999 4500 Zinsen   BOT 010595 1M   80000
+</PRE>
+
+<P>
+</LI>
+</UL>
+
+<P>
+Solche Aufteilungen über ein Zwischenkonto oder die Kasse sind nötig, um
+insbesondere auf den Bankkonten nur die Beträge auszuweisen, die auch im
+Kontoauszug der Bank erscheinen werden ( = leichtere Kontrolle).
+
+<P>
+Schließlich wird empfohlen, immer die gleichen Formulierungen zu gebrauchen,
+die so kurz wie möglich sein sollten (z.B. / = für, usw.). Bei wiederkehren-
+den Vorgängen sollte man deshalb immer erst im Journal weiter oben nach-
+schauen.
+
+<P>
+
+<H1><A ID="SECTION00700000000000000000">
+Referenzen</A>
+</H1>
+
+<P>
+Eine Testplattform is auf 
+<A ID="tex2html2"
+  HREF="http://fibu.adlp.org">http://fibu.adlp.org</A>
+aufgebaut.
+
+<P>
+
+<P>
+
+<H1><A ID="SECTION00800000000000000000">
+&Uuml;ber dieses Dokument ...</A>
+</H1>
+ <P>
+This document was generated using the
+<A HREF="http://www.latex2html.org/">LaTeX2HTML</A> translator Version 2021.2 (Released July 1, 2021)
+<P>
+The command line arguments were: <BR>
+ <kbd>latex2html -split 0 de.tex</kbd>
+<P>
+The translation was initiated on 2022-07-16
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<IMG WIDTH="81" HEIGHT="24" ALT="next_inactive" SRC="nx_grp_g.png"> 
+<IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up_g.png"> 
+<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev_g.png">   
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+</BODY>
+</HTML>
