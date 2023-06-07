@@ -6,7 +6,6 @@ import 'package:nohfibu/nohfibu.dart';
 import 'act_widget.dart';
 import 'jrl_icon.dart';
 import 'generated/l10n.dart';
-import 'nav_notifier.dart';
 import 'rp_provider.dart';
 
 class NavDrawer extends ConsumerWidget {
@@ -19,7 +18,7 @@ class NavDrawer extends ConsumerWidget {
 
 	@override
 	Widget build(BuildContext context,WidgetRef ref) {
-		FibuSettings settings = ref.watch(settingsProvider);
+		//FibuSettings settings = ref.watch(settingsProvider);
 		ActWidget actPage = ref.watch(navProvider);
 		Book book = ref.watch(bookProvider);
 		return Drawer(

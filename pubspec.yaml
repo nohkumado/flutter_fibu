@@ -37,14 +37,14 @@ dependencies:
   shared_preferences_settings:
     git: git@github.com:BarthaBRW/shared_preferences_settings.git
   #  path: ../shared_preferences_settings
-  file_picker: ^4.6.1
-  flutter_svg: ^1.1.1+1
-  flutter_riverpod: ^1.0.4
-  flutter_html: ^3.0.0-alpha.5
+  file_picker: ^5.3.2
+  flutter_svg: ^2.0.6
+  flutter_riverpod: ^2.3.6
+  flutter_html: ^3.0.0-beta.2
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.5
-  flutter_launcher_icons: ^0.9.3
+  flutter_launcher_icons: ^0.13.1
 
 dev_dependencies:
   flutter_test:

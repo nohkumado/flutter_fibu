@@ -1,10 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:nohfibu/fibusettings.dart';
 import 'package:shared_preferences_settings/shared_preferences_settings.dart';
 
-import 'rp_provider.dart';
 
 class FibuPreferences extends ConsumerWidget
 {
@@ -12,7 +10,7 @@ class FibuPreferences extends ConsumerWidget
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    FibuSettings settings = ref.watch(settingsProvider);
+    //FibuSettings settings = ref.watch(settingsProvider);
     return SettingsScreen(
       title: "Application Settings",
       children: [

@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_fibu/nav_notifier.dart';
 import 'package:flutter_fibu/rp_provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:nohfibu/fibusettings.dart';
-import 'package:nohfibu/nohfibu.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'my_home_page.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -29,7 +27,7 @@ class MyApp extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     FibuSettings settings = ref.watch(settingsProvider);
-    Book book = ref.watch(bookProvider);
+    //Book book = ref.watch(bookProvider);
 
     if(settings.empty())
     {

@@ -7,17 +7,17 @@ class ManualNotifier extends StateNotifier<String>
 
   ManualNotifier() : super("<h1>No data!</h1>");
 
-  void load({required String lang})
+  void load({required String lang, String uri="", debug=true})
   {
     if(lang != lastLang) {
       lastLang  = lang;
-      String path = "assets/manual/$lang/index.html";
-      print("about to load asset $path");
+      String path = (uri.isNotEmpty)? "assets/manual/$lang/$uri" : "assets/manual/$lang/index.html";
+      if(debug)print("about to load asset $path");
       rootBundle.loadString(path).then((value) {
         state = value;
-        print("found and changed manual page");
+        if(debug)print("found and changed manual page");
       }).catchError((e) {
-        print("Asseet error for manual: $e");
+        if(debug)print("Asseet error for manual: $e");
         state = "<h1>$path not found!!</h1>";
         lastLang = "";
       });

@@ -1,18 +1,10 @@
 import 'package:flutter/material.dart';
-import 'dart:io';
-import 'dart:convert';
 
-import 'package:file_picker/file_picker.dart';
 import 'package:flutter_fibu/manual_browser.dart';
 import 'package:flutter_fibu/rp_provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:nohfibu/fibusettings.dart';
-import 'package:nohfibu/csv_handler.dart';
-import 'package:nohfibu/nohfibu.dart';
-import 'package:shared_preferences_settings/shared_preferences_settings.dart';
 
 import 'act_widget.dart';
-import 'nav_notifier.dart';
 import 'navdrawer.dart';
 import 'generated/l10n.dart';
 import 'package:flutter_fibu/fibupreferences.dart';
@@ -31,11 +23,11 @@ class MyHomePage extends ConsumerWidget {
 
 	@override
 	Widget build(BuildContext context, WidgetRef ref) {
-		String fname = "argh";
-		Book book = ref.watch(bookProvider);
-		FibuSettings settings =  ref.watch(settingsProvider);
+		//String fname = "argh";
+		//Book book = ref.watch(bookProvider);
+		//FibuSettings settings =  ref.watch(settingsProvider);
 
-		fname= settings["key-filename"];
+		//String fname= settings["key-filename"];
 
 		ActWidget actPage = ref.watch(navProvider);
 

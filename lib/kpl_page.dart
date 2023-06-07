@@ -5,10 +5,6 @@ import 'package:nohfibu/fibusettings.dart';
 import 'package:nohfibu/nohfibu.dart';
 
 import 'act_widget.dart';
-import 'generated/l10n.dart';
-import 'nav_notifier.dart';
-import 'navdrawer.dart';
-import 'jrl_page.dart';
 import 'rp_provider.dart';
 
 class KplPage extends ConsumerWidget{
@@ -112,8 +108,8 @@ class KplPage extends ConsumerWidget{
   Widget makeButton({required String text, required BuildContext context, required Book book, required FibuSettings settings, required WidgetRef ref})
   {
     final ButtonStyle raisedButtonStyle = ElevatedButton.styleFrom(
-      onPrimary: Colors.black87,
-      primary: Colors.grey[300],
+      foregroundColor: Colors.black87,
+      backgroundColor: Colors.grey[300],
       minimumSize: Size(88, 36),
       padding: EdgeInsets.symmetric(horizontal: 16),
       shape: const RoundedRectangleBorder(

@@ -89,7 +89,6 @@ class SetupPage extends ConsumerWidget {
             String  fileBytes = "";
             String result = "";
 
-            if (value.files.first != null) {
               if (value.files.first.bytes != null) {
                 result = "${value.files.first.name}";
                 fileBytes = utf8.decode(value.files.first.bytes!);
@@ -98,17 +97,13 @@ class SetupPage extends ConsumerWidget {
                 result = "${value.files.single.path}";
               }
               //print("set result to  : ${result}, $fileBytes");
-            }
 
             Settings().save("key-filename", "${result}");
             //print("dialog retrieved : raw: ${fileBytes}  n-- ${result} vs $fname");
 
-            if(result != null)
-            {
               analyseFname(settings);
               //File file = File(settings["base"]+"."+ settings["type"]);
               //print("changed $file and ${file.existsSync()}");
-            }
 
             if(fileBytes.isNotEmpty)
             {

@@ -27,7 +27,7 @@ class BookNotifier extends StateNotifier<Book>
   {
     print("adding jrl line");
     if(cur == null || cur.isEmpty) cur = "EUR";
-    if(valuta == null || valuta.isEmpty) valuta = "0";
+    if(valuta.isEmpty) valuta = "0";
     int valutaAsInt = 0;
     try {
       valutaAsInt = int.parse(valuta);

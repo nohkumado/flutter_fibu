@@ -18,11 +18,14 @@ class ManualBrowser extends ConsumerWidget
           child:
             SingleChildScrollView(
               child: Html(data: data,
-                onLinkTap:(url, context, attributes,  element) {
+
+        //onLinkTap:(url, context, attributes,  element) {
+      onLinkTap:(url,attributes, element) {
                   //url, RenderContext context, Map<String, String> attributes,  Element? element) {
                   //open URL in webview, or launch URL in browser, or anddy other logic here
                   print("got a tap on $element with  $url and att: $attributes");
-                } ,),
+                  ref.read(manualProvider.notifier).load(lang: Localizations.localeOf(context).languageCode,uri: url.toString());
+      } ,),
             )
 
       );

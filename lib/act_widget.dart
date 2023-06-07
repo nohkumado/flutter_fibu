@@ -11,7 +11,7 @@ class ActWidget
 
   final ScreenArguments? args;
 
-  const ActWidget({this.name="none", this.icon = const Icon(Icons.error), required this.body, this.args = null});
+  const ActWidget({this.name="none", this.icon = const Icon(Icons.error), required this.body, this.args});
 
   ActWidget copyWith({ScreenArguments? args})
   {

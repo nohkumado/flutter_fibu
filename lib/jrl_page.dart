@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:nohfibu/fibusettings.dart';
@@ -15,7 +17,7 @@ class JrlPage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     print("drawing jrl ");
     Book book = ref.watch(bookProvider);
-    FibuSettings settings = ref.watch(settingsProvider);
+    //FibuSettings settings = ref.watch(settingsProvider);
     ActWidget actPage = ref.watch(navProvider);
     String extract = "";
     if(actPage.args != null) extract = actPage.args!.extract;
@@ -27,16 +29,11 @@ class JrlPage extends ConsumerWidget {
       Konto? extK = book.kpl.get(extract);
       if(extK !=null)
       {
-        if(extK.extract == null ) {
-          book.jrl.execute();
-        } else
-        {
           if(extK.extract.count() <= 0)
           {
             book.jrl.execute();
             //TODO check if this node is empty but has chikldren in that case we should aggreagte all sub nodes
           }
-        }
         items = extK.extract.asList([],silent: true, formatted: true);
 
       }
@@ -49,7 +46,7 @@ class JrlPage extends ConsumerWidget {
       print("'${extract}' is empty we go with full journal!");
       items = book.jrl.asList([],silent: true, formatted: true);
     }
-    String pageTitle = (extract.isEmpty)?S.of(context).JrlTitle: S.of(context).extract(extract);
+    //String pageTitle = (extract.isEmpty)?S.of(context).JrlTitle: S.of(context).extract(extract);
     //TODO alternate cooring: https://api.flutter.dev/flutter/material/DataTable-class.html:w
 
     Map<String,TextEditingController> editors = {};
