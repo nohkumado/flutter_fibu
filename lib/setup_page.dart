@@ -8,7 +8,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:nohfibu/fibusettings.dart';
 import 'package:nohfibu/csv_handler.dart';
 import 'package:nohfibu/nohfibu.dart';
-import 'package:shared_preferences_settings/shared_preferences_settings.dart';
 
 import 'generated/l10n.dart';
 
@@ -98,7 +97,7 @@ class SetupPage extends ConsumerWidget {
               }
               //print("set result to  : ${result}, $fileBytes");
 
-            Settings().save("key-filename", "${result}");
+            //Settings().save("key-filename", "${result}"); //TODO ensure that the preferences a stored!!!
             //print("dialog retrieved : raw: ${fileBytes}  n-- ${result} vs $fname");
 
               analyseFname(settings);

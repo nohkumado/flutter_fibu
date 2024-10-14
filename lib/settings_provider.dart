@@ -9,4 +9,6 @@ class SettingsNotifier extends StateNotifier<FibuSettings>
     state[key] = val;
     state = state;
   }
+
+
 }

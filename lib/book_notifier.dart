@@ -35,7 +35,19 @@ class BookNotifier extends StateNotifier<Book>
     catch(e){
       //print("failed to convert $valuta to int");
     }
-    JrlLine jrlLine = JrlLine(datum: date,kmin: ktom,kplu: ktop,desc: desc,cur: cur,valuta: valutaAsInt);
+    DateTime dateO = DateTime.now();
+    try {
+      dateO = DateTime.parse(date);
+    }
+    catch(e){
+      print("failed to parse Date $date");
+    }
+    Konto minus = state.kpl.get(ktom)??Konto();
+    Konto plus = state.kpl.get(ktop)??Konto();
+    if(minus.isNotValid()) print("Konto $ktom minus not found....");
+    if(plus.isNotValid()) print("Konto $ktom plus not found....");
+
+    JrlLine jrlLine = JrlLine(datum: dateO ,kmin: minus,kplu: plus,desc: desc,cur: cur,valuta: valutaAsInt);
     state = state..jrl.add(jrlLine);
     Book bak = state; //TODO look out why....
     state = Book();
