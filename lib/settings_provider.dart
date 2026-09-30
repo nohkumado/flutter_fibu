@@ -6,8 +6,9 @@ class SettingsNotifier extends StateNotifier<FibuSettings>
   SettingsNotifier({FibuSettings? settings}) : super(settings ?? FibuSettings());
   /// the setter to set the data if needed
   void operator []=(String key, dynamic val) {
-    state[key] = val;
-    state = state;
+    final updatedSettings = state.copyWith(key: key, value: val);
+    //state[key] = val;
+    state = updatedSettings;
   }
 
 
