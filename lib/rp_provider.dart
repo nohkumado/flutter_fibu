@@ -8,8 +8,10 @@ import 'manual_provider.dart';
 import 'nav_notifier.dart';
 import 'settings_provider.dart';
 
-final settingsProvider = StateNotifierProvider<SettingsNotifier,FibuSettings>((ref) => SettingsNotifier());
-final bookProvider = StateNotifierProvider<BookNotifier,Book>((ref) => BookNotifier());
-final navProvider = StateNotifierProvider<NavNotifier,ActWidget>((ref) => NavNotifier());
-final manualProvider = StateNotifierProvider<ManualNotifier,String>((ref) => ManualNotifier());
+final settingsProvider =
+    NotifierProvider<SettingsNotifier, FibuSettings>(SettingsNotifier.new);
+final bookProvider = NotifierProvider<BookNotifier, Book>(BookNotifier.new);
+final navProvider = NotifierProvider<NavNotifier, ActWidget>(NavNotifier.new);
+final manualProvider =
+    NotifierProvider<ManualNotifier, String>(ManualNotifier.new);
 

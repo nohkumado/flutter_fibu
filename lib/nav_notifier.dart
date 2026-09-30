@@ -6,12 +6,14 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'act_widget.dart';
 
 
-class NavNotifier extends StateNotifier<ActWidget>
+/// The page shown, the known pages and the way back.
+class NavNotifier extends Notifier<ActWidget>
 {
   Map<String, ActWidget> pages = {};
   List<ActWidget> history = [];
 
-  NavNotifier({ActWidget? active}) : super(active ?? ActWidget(name:"none",body: Text("empty")));
+  @override
+  ActWidget build() => ActWidget(name: "none", body: Text("empty"));
 
   void chgPage(String name, {ScreenArguments? args}) {
     if(pages.containsKey(name)) {

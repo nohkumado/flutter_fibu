@@ -1,9 +1,17 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:nohfibu/nohfibu.dart';
 
-class BookNotifier extends StateNotifier<Book>
+/// The open book. Accounts and journal lines change the book in place, then
+/// tell the listeners ([Ref.notifyListeners]).
+class BookNotifier extends Notifier<Book>
 {
-  BookNotifier({Book? book}) : super(book ?? Book());
+  BookNotifier({this.initial});
+
+  /// A book to start with (tests), else an empty one.
+  final Book? initial;
+
+  @override
+  Book build() => initial ?? Book();
 
   void addAccount({required String name, required String desc, String? cur, String? budget})
   {
@@ -17,10 +25,8 @@ class BookNotifier extends StateNotifier<Book>
       //print("failed to convert $budget to int");
     }
     Konto newOne = Konto(name : name, desc:desc, plan: state.kpl,  cur: cur, budget: budgetAsInt );
-    state = state..kpl.put(name,  newOne);
-    Book bak = state;
-      state = Book();
-    state = bak;
+    state.kpl.put(name, newOne);
+    ref.notifyListeners();
   }
 
   void addJrlLine({required String date, required String ktom, required String ktop, required String desc, String? cur, required String valuta})
@@ -48,9 +54,7 @@ class BookNotifier extends StateNotifier<Book>
     if(plus.isNotValid()) print("Konto $ktom plus not found....");
 
     JrlLine jrlLine = JrlLine(datum: dateO ,kmin: minus,kplu: plus,desc: desc,cur: cur,valuta: valutaAsInt);
-    state = state..jrl.add(jrlLine);
-    Book bak = state; //TODO look out why....
-    state = Book();
-    state = bak;
+    state.jrl.add(jrlLine);
+    ref.notifyListeners();
   }
 }

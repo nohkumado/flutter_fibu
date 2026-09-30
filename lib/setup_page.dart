@@ -9,6 +9,7 @@ import 'package:nohfibu/fibusettings.dart';
 import 'package:nohfibu/csv_handler.dart';
 import 'package:nohfibu/nohfibu.dart';
 
+import 'book_file_name.dart';
 import 'generated/l10n.dart';
 
 ///displays choice of file to save/load
@@ -18,11 +19,11 @@ class SetupPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    String fname = "argh";
     Book book = ref.watch(bookProvider);
     FibuSettings settings =  ref.watch(settingsProvider);
-
-    fname= settings["key-filename"];
+    // empty on the first start: no book chosen yet
+    final String fname = settings["key-filename"] ?? "";
+    final bool hasBook = settings["base"] != null;
 
     return
           Center(
@@ -30,15 +31,15 @@ class SetupPage extends ConsumerWidget {
               Column(children: [
                 Row(
                   children: [
-                    Text('need to load $fname!'),
+                    Text(fname.isEmpty ? 'no book chosen yet' : 'need to load $fname!'),
                     IconButton(onPressed: (){ selectBase(ref: ref); }, icon: const Icon(Icons.save),tooltip: S.of(context).loadFile,),
-                    IconButton(onPressed: (){ CsvHandler().load(book: book, conf: settings); }, icon: const Icon(Icons.arrow_forward),tooltip: S.of(context).loadDefault)
+                    IconButton(onPressed: !hasBook ? null : (){ CsvHandler().load(book: book, conf: settings); }, icon: const Icon(Icons.arrow_forward),tooltip: S.of(context).loadDefault)
 
                   ],
                 ),
                 ElevatedButton(
                     child:Text(S.of(context).save),
-                    onPressed: (){
+                    onPressed: !hasBook ? null : (){
                       var handler = CsvHandler();
                       File file = File(settings["base"]);
                       print("asked to save $file and ${file.existsSync()}");
@@ -59,20 +60,6 @@ class SetupPage extends ConsumerWidget {
               ],)
       );
   }
-  void analyseFname(FibuSettings settings) {
-    String result = settings["key-filename"];
-    int pos = result.lastIndexOf(".");
-    if( pos>0)
-    {
-      settings["base"] = result.substring(0,pos);
-      settings["type"] = result.substring(pos+1).trim();
-    }
-    else
-    {
-      settings["base"] = result;
-      settings["type"] = "csv";
-    }
-  }
   void selectBase({required WidgetRef ref})
   {
     Book book = ref.watch(bookProvider);
@@ -80,21 +67,24 @@ class SetupPage extends ConsumerWidget {
     //file_selector
     // final typeGroup = XTypeGroup(label: 'data', extensions: ['csv']);
     //openFile(acceptedTypeGroups: [typeGroup]).then((file){print("got back $file");});
-    FilePicker.platform.pickFiles( type: FileType.custom, allowedExtensions: ['csv'], ).then(
-            (value) {
-          if (value != null) {
-            //print("dialog retrieved : ${value.files.single.path} vs stored $fname");
-            //as web app, there's no path, the data comes directly as bytestring, desktop, we get a path
+    FilePicker.pickFile(type: FileType.custom, allowedExtensions: ['csv']).then(
+            (file) async {
+          if (file != null) {
+            //as web app, there's no path, the data comes with the selection;
+            //desktop and mobile give a path
             String  fileBytes = "";
             String result = "";
 
-              if (value.files.first.bytes != null) {
-                result = "${value.files.first.name}";
-                fileBytes = utf8.decode(value.files.first.bytes!);
+              if (file.path == null) {
+                result = file.name;
+                fileBytes = utf8.decode(await file.readAsBytes());
               }
               else {
-                result = "${value.files.single.path}";
+                result = file.path!;
               }
+              // the chosen book, remembered in the settings
+              ref.read(settingsProvider.notifier)["key-filename"] = result;
+              settings = ref.read(settingsProvider);
               //print("set result to  : ${result}, $fileBytes");
 
             //Settings().save("key-filename", "${result}"); //TODO ensure that the preferences a stored!!!

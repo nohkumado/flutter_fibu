@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_fibu/bilanz_icon.dart';
-import 'package:flutter_riverpod/src/consumer.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:nohfibu/fibusettings.dart';
 import 'package:nohfibu/nohfibu.dart';
 import 'act_widget.dart';

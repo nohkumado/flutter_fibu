@@ -5,6 +5,7 @@ import 'package:nohfibu/fibusettings.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'my_home_page.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'book_file_name.dart';
 import 'generated/l10n.dart';
 /// main starter, entrypoint
 Future<void> main() async {
@@ -59,19 +60,5 @@ class MyApp extends ConsumerWidget {
       ),
       home: MyHomePage() ,
     );
-  }
-  void analyseFname(FibuSettings settings) {
-    String result = settings["key-filename"];
-    int pos = result.lastIndexOf(".");
-    if( pos>0)
-    {
-      settings["base"] = result.substring(0,pos);
-      settings["type"] = result.substring(pos+1).trim();
-    }
-    else
-    {
-      settings["base"] = result;
-      settings["type"] = "csv";
-    }
   }
 }
