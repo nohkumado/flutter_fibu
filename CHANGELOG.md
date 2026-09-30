@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+- Stored operations ("Schnellbuchungen" in the drawer): choose an op of the
+  open book, answer its questions as a form (date, account dropdowns for
+  ranges, amounts, texts), the journal lines previewed live (or what is
+  still wrong), "Book" adds them — nohfibu's `Operation.questions()` /
+  `fill()`. The unused dialog scaffold (fastoperation.dart) is gone.
+- intl_utils as dev dependency: `dart run intl_utils:generate` rebuilds
+  lib/generated from the .arb files.
 - Builds again: Linux, web and Android regenerated from the current Flutter
   template (android/ had been deleted, linux/ held only generated files, web/
   was missing) and versioned; app id `eu.nohkumado.flutter_fibu` (was

@@ -20,24 +20,33 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'de';
 
-  static String m0(konto) => "Konto-Auszug von ${konto}";
+  static String m0(count) => "${count} Zeilen gebucht";
+
+  static String m1(konto) => "Konto-Auszug von ${konto}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "AppTitle":
-            MessageLookupByLibrary.simpleMessage("Noh Finanz Buchhaltung"),
-        "JrlTitle": MessageLookupByLibrary.simpleMessage("Journal"),
-        "KplTitle": MessageLookupByLibrary.simpleMessage("Kontoplan"),
-        "NavTitle": MessageLookupByLibrary.simpleMessage("Navigation"),
-        "Start": MessageLookupByLibrary.simpleMessage("Willkommen"),
-        "bilanz": MessageLookupByLibrary.simpleMessage("Bilanz"),
-        "extract": m0,
-        "jrl": MessageLookupByLibrary.simpleMessage("Journal"),
-        "kpl": MessageLookupByLibrary.simpleMessage("Kontoplan"),
-        "loadDefault": MessageLookupByLibrary.simpleMessage("laden"),
-        "loadFile": MessageLookupByLibrary.simpleMessage("laden"),
-        "manual": MessageLookupByLibrary.simpleMessage("Handbuch"),
-        "save": MessageLookupByLibrary.simpleMessage("Speichern"),
-        "settings": MessageLookupByLibrary.simpleMessage("Einstellungen")
-      };
+    "AppTitle": MessageLookupByLibrary.simpleMessage("Noh Finanz Buchhaltung"),
+    "JrlTitle": MessageLookupByLibrary.simpleMessage("Journal"),
+    "KplTitle": MessageLookupByLibrary.simpleMessage("Kontoplan"),
+    "NavTitle": MessageLookupByLibrary.simpleMessage("Navigation"),
+    "Start": MessageLookupByLibrary.simpleMessage("Willkommen"),
+    "bilanz": MessageLookupByLibrary.simpleMessage("Bilanz"),
+    "bookIt": MessageLookupByLibrary.simpleMessage("Buchen"),
+    "booked": m0,
+    "chooseOp": MessageLookupByLibrary.simpleMessage("Operation wählen"),
+    "extract": m1,
+    "fastops": MessageLookupByLibrary.simpleMessage("Schnellbuchungen"),
+    "jrl": MessageLookupByLibrary.simpleMessage("Journal"),
+    "kpl": MessageLookupByLibrary.simpleMessage("Kontoplan"),
+    "loadDefault": MessageLookupByLibrary.simpleMessage("laden"),
+    "loadFile": MessageLookupByLibrary.simpleMessage("laden"),
+    "manual": MessageLookupByLibrary.simpleMessage("Handbuch"),
+    "noOps": MessageLookupByLibrary.simpleMessage(
+      "Dieses Buch hat keine gespeicherten Operationen.",
+    ),
+    "preview": MessageLookupByLibrary.simpleMessage("Vorschau"),
+    "save": MessageLookupByLibrary.simpleMessage("Speichern"),
+    "settings": MessageLookupByLibrary.simpleMessage("Einstellungen"),
+  };
 }

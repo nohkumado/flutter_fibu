@@ -46,6 +46,14 @@ class NavDrawer extends ConsumerWidget {
 							}
 					),
 					ListTile(
+						leading: const Icon(Icons.flash_on),
+						title: Text(S.of(context).fastops),
+						onTap: () {
+							ref.read(navProvider.notifier).chgPage("fastops");
+							Navigator.pop(context);
+						},
+					),
+					ListTile(
 						leading: Icon(Icons.account_balance),
 						title: Text(S.of(context).kpl),
 						onTap: () {

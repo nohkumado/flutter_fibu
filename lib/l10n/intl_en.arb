@@ -7,10 +7,16 @@
   "bilanz": "Balance",
   "KplTitle": "Account Plan",
   "JrlTitle": "Journal",
-   "save": "save",
+  "save": "save",
   "extract": "Extract for {konto}",
   "settings": "Settings",
   "loadFile": "load",
   "loadDefault": "load",
-  "manual" : "manual"
+  "manual": "manual",
+  "fastops": "Stored operations",
+  "bookIt": "Book",
+  "noOps": "This book has no stored operations.",
+  "chooseOp": "Choose an operation",
+  "booked": "{count} lines booked",
+  "preview": "Preview"
 }

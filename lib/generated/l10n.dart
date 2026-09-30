@@ -1,6 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+
 import 'intl/messages_all.dart';
 
 // **************************************************************************
@@ -18,8 +19,10 @@ class S {
   static S? _current;
 
   static S get current {
-    assert(_current != null,
-        'No instance of S was loaded. Try to initialize the S delegate before accessing S.current.');
+    assert(
+      _current != null,
+      'No instance of S was loaded. Try to initialize the S delegate before accessing S.current.',
+    );
     return _current!;
   }
 
@@ -41,8 +44,10 @@ class S {
 
   static S of(BuildContext context) {
     final instance = S.maybeOf(context);
-    assert(instance != null,
-        'No instance of S present in the widget tree. Did you add S.delegate in localizationsDelegates?');
+    assert(
+      instance != null,
+      'No instance of S present in the widget tree. Did you add S.delegate in localizationsDelegates?',
+    );
     return instance!;
   }
 
@@ -62,82 +67,42 @@ class S {
 
   /// `Side Menu`
   String get NavTitle {
-    return Intl.message(
-      'Side Menu',
-      name: 'NavTitle',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Side Menu', name: 'NavTitle', desc: '', args: []);
   }
 
   /// `Welcome`
   String get Start {
-    return Intl.message(
-      'Welcome',
-      name: 'Start',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Welcome', name: 'Start', desc: '', args: []);
   }
 
   /// `account plan`
   String get kpl {
-    return Intl.message(
-      'account plan',
-      name: 'kpl',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('account plan', name: 'kpl', desc: '', args: []);
   }
 
   /// `Journal`
   String get jrl {
-    return Intl.message(
-      'Journal',
-      name: 'jrl',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Journal', name: 'jrl', desc: '', args: []);
   }
 
   /// `Balance`
   String get bilanz {
-    return Intl.message(
-      'Balance',
-      name: 'bilanz',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Balance', name: 'bilanz', desc: '', args: []);
   }
 
   /// `Account Plan`
   String get KplTitle {
-    return Intl.message(
-      'Account Plan',
-      name: 'KplTitle',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Account Plan', name: 'KplTitle', desc: '', args: []);
   }
 
   /// `Journal`
   String get JrlTitle {
-    return Intl.message(
-      'Journal',
-      name: 'JrlTitle',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Journal', name: 'JrlTitle', desc: '', args: []);
   }
 
   /// `save`
   String get save {
-    return Intl.message(
-      'save',
-      name: 'save',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('save', name: 'save', desc: '', args: []);
   }
 
   /// `Extract for {konto}`
@@ -152,42 +117,72 @@ class S {
 
   /// `Settings`
   String get settings {
-    return Intl.message(
-      'Settings',
-      name: 'settings',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Settings', name: 'settings', desc: '', args: []);
   }
 
   /// `load`
   String get loadFile {
-    return Intl.message(
-      'load',
-      name: 'loadFile',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('load', name: 'loadFile', desc: '', args: []);
   }
 
   /// `load`
   String get loadDefault {
+    return Intl.message('load', name: 'loadDefault', desc: '', args: []);
+  }
+
+  /// `manual`
+  String get manual {
+    return Intl.message('manual', name: 'manual', desc: '', args: []);
+  }
+
+  /// `Stored operations`
+  String get fastops {
     return Intl.message(
-      'load',
-      name: 'loadDefault',
+      'Stored operations',
+      name: 'fastops',
       desc: '',
       args: [],
     );
   }
 
-  /// `manual`
-  String get manual {
+  /// `Book`
+  String get bookIt {
+    return Intl.message('Book', name: 'bookIt', desc: '', args: []);
+  }
+
+  /// `This book has no stored operations.`
+  String get noOps {
     return Intl.message(
-      'manual',
-      name: 'manual',
+      'This book has no stored operations.',
+      name: 'noOps',
       desc: '',
       args: [],
     );
+  }
+
+  /// `Choose an operation`
+  String get chooseOp {
+    return Intl.message(
+      'Choose an operation',
+      name: 'chooseOp',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{count} lines booked`
+  String booked(Object count) {
+    return Intl.message(
+      '$count lines booked',
+      name: 'booked',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `Preview`
+  String get preview {
+    return Intl.message('Preview', name: 'preview', desc: '', args: []);
   }
 }
 

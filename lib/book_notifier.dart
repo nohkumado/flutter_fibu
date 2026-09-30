@@ -57,4 +57,12 @@ class BookNotifier extends Notifier<Book>
     state.jrl.add(jrlLine);
     ref.notifyListeners();
   }
+
+  /// Adds journal lines made elsewhere (a stored operation) to the journal.
+  void addLines(List<JrlLine> lines) {
+    for (final line in lines) {
+      state.jrl.add(line);
+    }
+    ref.notifyListeners();
+  }
 }

@@ -7,10 +7,16 @@
   "bilanz": "Bilanz",
   "KplTitle": "Kontoplan",
   "JrlTitle": "Journal",
-   "save": "Speichern",
+  "save": "Speichern",
   "extract": "Konto-Auszug von {konto}",
   "settings": "Einstellungen",
   "loadFile": "laden",
   "loadDefault": "laden",
-  "manual" : "Handbuch"
+  "manual": "Handbuch",
+  "fastops": "Schnellbuchungen",
+  "bookIt": "Buchen",
+  "noOps": "Dieses Buch hat keine gespeicherten Operationen.",
+  "chooseOp": "Operation wählen",
+  "booked": "{count} Zeilen gebucht",
+  "preview": "Vorschau"
 }
