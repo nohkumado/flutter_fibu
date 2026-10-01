@@ -5,6 +5,10 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:nohfibu/fibusettings.dart';
 import 'package:settings_ui/settings_ui.dart';
 
+import 'generated/l10n.dart';
+import 'invoicing/customers_page.dart';
+import 'invoicing/letterheads_page.dart';
+
      // SettingsList(
      //   sections: [
      //     SettingsSection(
@@ -85,6 +89,22 @@ class FibuPreferences extends ConsumerWidget
               title: const Text('Version'),
               leading: Icon(Icons.info),
               value: Text('Version: ${settings["version"]?? 'Unknown'}'),
+            ),
+          ],
+        ),
+        // offers and invoices: what Android cannot edit as files
+        SettingsSection(
+          title: Text(S.of(context).invoicing),
+          tiles: [
+            SettingsTile.navigation(
+              leading: const Icon(Icons.badge_outlined),
+              title: Text(S.of(context).letterheads),
+              onPressed: (c) => Navigator.of(c).push(MaterialPageRoute<void>(builder: (_) => const LetterheadsPage())),
+            ),
+            SettingsTile.navigation(
+              leading: const Icon(Icons.people_outline),
+              title: Text(S.of(context).customers),
+              onPressed: (c) => Navigator.of(c).push(MaterialPageRoute<void>(builder: (_) => const CustomersPage())),
             ),
           ],
         ),

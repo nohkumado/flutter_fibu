@@ -2,6 +2,20 @@
 
 ## Unreleased
 
+- Offers & invoices ("Angebote & Rechnungen" in the drawer), on nohfibu's
+  workflow — the same archive and letterheads as the facture command line
+  (~/.config/nohfibu on Linux, the app's directory on Android): the list
+  with status and the reminders due; new offer or invoice (letterhead,
+  customer, category, subject, service date, items; tax and totals live);
+  a document's page with what its status allows — issue, delete a draft,
+  accepted / declined, make the invoice, payment received, write the
+  reminder due — its history and its PDF (preview, share, print).
+  Invoices and payments are booked into the open book when the letterhead
+  books and the book has its accounts (else a note says why not).
+- Settings: editors for the letterheads (issuer, legal ids, tax regime,
+  rates and reverse charge by category, bank, logo, reminders, booking
+  accounts — written as the YAML the command line reads) and the customers.
+- French as third language of the app.
 - nohfibu 0.2.0: book format 2 (version row, account roles), balances shown
   in their normal direction on the account plan (no minus on liabilities
   and income).

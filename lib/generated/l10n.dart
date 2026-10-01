@@ -184,6 +184,576 @@ class S {
   String get preview {
     return Intl.message('Preview', name: 'preview', desc: '', args: []);
   }
+
+  /// `Offers & invoices`
+  String get invoicing {
+    return Intl.message(
+      'Offers & invoices',
+      name: 'invoicing',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Offers`
+  String get offers {
+    return Intl.message('Offers', name: 'offers', desc: '', args: []);
+  }
+
+  /// `Invoices`
+  String get invoices {
+    return Intl.message('Invoices', name: 'invoices', desc: '', args: []);
+  }
+
+  /// `New offer`
+  String get newOffer {
+    return Intl.message('New offer', name: 'newOffer', desc: '', args: []);
+  }
+
+  /// `New invoice`
+  String get newInvoice {
+    return Intl.message('New invoice', name: 'newInvoice', desc: '', args: []);
+  }
+
+  /// `Letterheads`
+  String get letterheads {
+    return Intl.message('Letterheads', name: 'letterheads', desc: '', args: []);
+  }
+
+  /// `Customers`
+  String get customers {
+    return Intl.message('Customers', name: 'customers', desc: '', args: []);
+  }
+
+  /// `Letterhead`
+  String get letterhead {
+    return Intl.message('Letterhead', name: 'letterhead', desc: '', args: []);
+  }
+
+  /// `Customer`
+  String get customer {
+    return Intl.message('Customer', name: 'customer', desc: '', args: []);
+  }
+
+  /// `Category (e.g. 3dprint, cours)`
+  String get category {
+    return Intl.message(
+      'Category (e.g. 3dprint, cours)',
+      name: 'category',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Subject`
+  String get subject {
+    return Intl.message('Subject', name: 'subject', desc: '', args: []);
+  }
+
+  /// `Date of service`
+  String get serviceDate {
+    return Intl.message(
+      'Date of service',
+      name: 'serviceDate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Valid for (days)`
+  String get validDays {
+    return Intl.message(
+      'Valid for (days)',
+      name: 'validDays',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Payable within (days)`
+  String get payDays {
+    return Intl.message(
+      'Payable within (days)',
+      name: 'payDays',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Items`
+  String get items {
+    return Intl.message('Items', name: 'items', desc: '', args: []);
+  }
+
+  /// `Add item`
+  String get addItem {
+    return Intl.message('Add item', name: 'addItem', desc: '', args: []);
+  }
+
+  /// `Description`
+  String get description {
+    return Intl.message('Description', name: 'description', desc: '', args: []);
+  }
+
+  /// `Quantity`
+  String get quantity {
+    return Intl.message('Quantity', name: 'quantity', desc: '', args: []);
+  }
+
+  /// `Unit price (net)`
+  String get unitPrice {
+    return Intl.message(
+      'Unit price (net)',
+      name: 'unitPrice',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Net`
+  String get net {
+    return Intl.message('Net', name: 'net', desc: '', args: []);
+  }
+
+  /// `VAT`
+  String get vat {
+    return Intl.message('VAT', name: 'vat', desc: '', args: []);
+  }
+
+  /// `Total`
+  String get gross {
+    return Intl.message('Total', name: 'gross', desc: '', args: []);
+  }
+
+  /// `Save draft`
+  String get saveDraft {
+    return Intl.message('Save draft', name: 'saveDraft', desc: '', args: []);
+  }
+
+  /// `Issue`
+  String get issue {
+    return Intl.message('Issue', name: 'issue', desc: '', args: []);
+  }
+
+  /// `Accepted`
+  String get accept {
+    return Intl.message('Accepted', name: 'accept', desc: '', args: []);
+  }
+
+  /// `Declined`
+  String get refuse {
+    return Intl.message('Declined', name: 'refuse', desc: '', args: []);
+  }
+
+  /// `Make the invoice`
+  String get makeInvoice {
+    return Intl.message(
+      'Make the invoice',
+      name: 'makeInvoice',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Payment received`
+  String get pay {
+    return Intl.message('Payment received', name: 'pay', desc: '', args: []);
+  }
+
+  /// `Amount`
+  String get amount {
+    return Intl.message('Amount', name: 'amount', desc: '', args: []);
+  }
+
+  /// `Write reminder {level}`
+  String remind(Object level) {
+    return Intl.message(
+      'Write reminder $level',
+      name: 'remind',
+      desc: '',
+      args: [level],
+    );
+  }
+
+  /// `{count} reminders due`
+  String remindersDue(Object count) {
+    return Intl.message(
+      '$count reminders due',
+      name: 'remindersDue',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `PDF`
+  String get pdf {
+    return Intl.message('PDF', name: 'pdf', desc: '', args: []);
+  }
+
+  /// `History`
+  String get history {
+    return Intl.message('History', name: 'history', desc: '', args: []);
+  }
+
+  /// `Delete draft`
+  String get deleteDraft {
+    return Intl.message(
+      'Delete draft',
+      name: 'deleteDraft',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No offers or invoices yet.`
+  String get noDocuments {
+    return Intl.message(
+      'No offers or invoices yet.',
+      name: 'noDocuments',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Set up a letterhead first (settings).`
+  String get noLetterhead {
+    return Intl.message(
+      'Set up a letterhead first (settings).',
+      name: 'noLetterhead',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add a customer first.`
+  String get noCustomer {
+    return Intl.message(
+      'Add a customer first.',
+      name: 'noCustomer',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Booked in the open book: {count} lines`
+  String booked2(Object count) {
+    return Intl.message(
+      'Booked in the open book: $count lines',
+      name: 'booked2',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `Not booked: the open book lacks the letterhead's accounts`
+  String get notBooked {
+    return Intl.message(
+      'Not booked: the open book lacks the letterhead\'s accounts',
+      name: 'notBooked',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Name`
+  String get name {
+    return Intl.message('Name', name: 'name', desc: '', args: []);
+  }
+
+  /// `Short id`
+  String get shortId {
+    return Intl.message('Short id', name: 'shortId', desc: '', args: []);
+  }
+
+  /// `Address (one line per line)`
+  String get address {
+    return Intl.message(
+      'Address (one line per line)',
+      name: 'address',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Country (FR, DE…)`
+  String get country {
+    return Intl.message(
+      'Country (FR, DE…)',
+      name: 'country',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Business (not a private person)`
+  String get business {
+    return Intl.message(
+      'Business (not a private person)',
+      name: 'business',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `VAT id`
+  String get vatId {
+    return Intl.message('VAT id', name: 'vatId', desc: '', args: []);
+  }
+
+  /// `Language of the letters`
+  String get language {
+    return Intl.message(
+      'Language of the letters',
+      name: 'language',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone`
+  String get phone {
+    return Intl.message('Phone', name: 'phone', desc: '', args: []);
+  }
+
+  /// `E-mail`
+  String get email {
+    return Intl.message('E-mail', name: 'email', desc: '', args: []);
+  }
+
+  /// `SIRET`
+  String get siret {
+    return Intl.message('SIRET', name: 'siret', desc: '', args: []);
+  }
+
+  /// `Tax number (DE)`
+  String get taxNumber {
+    return Intl.message(
+      'Tax number (DE)',
+      name: 'taxNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tax regime`
+  String get regime {
+    return Intl.message('Tax regime', name: 'regime', desc: '', args: []);
+  }
+
+  /// `No VAT (franchise, art. 293 B)`
+  String get franchise {
+    return Intl.message(
+      'No VAT (franchise, art. 293 B)',
+      name: 'franchise',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Charges VAT`
+  String get vatRegime {
+    return Intl.message('Charges VAT', name: 'vatRegime', desc: '', args: []);
+  }
+
+  /// `Standard rate (%)`
+  String get rate {
+    return Intl.message('Standard rate (%)', name: 'rate', desc: '', args: []);
+  }
+
+  /// `Rates by category (cours=10, …)`
+  String get rates {
+    return Intl.message(
+      'Rates by category (cours=10, …)',
+      name: 'rates',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reverse charge for (categories)`
+  String get reverseCharge {
+    return Intl.message(
+      'Reverse charge for (categories)',
+      name: 'reverseCharge',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Own franchise note (optional)`
+  String get vatNote {
+    return Intl.message(
+      'Own franchise note (optional)',
+      name: 'vatNote',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Bank`
+  String get bank {
+    return Intl.message('Bank', name: 'bank', desc: '', args: []);
+  }
+
+  /// `Footer`
+  String get footer {
+    return Intl.message('Footer', name: 'footer', desc: '', args: []);
+  }
+
+  /// `Reminders after (days: 15, 30, 45)`
+  String get reminderDays {
+    return Intl.message(
+      'Reminders after (days: 15, 30, 45)',
+      name: 'reminderDays',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Late interest per year (%)`
+  String get penaltyRate {
+    return Intl.message(
+      'Late interest per year (%)',
+      name: 'penaltyRate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Recovery fee (businesses)`
+  String get recoveryFee {
+    return Intl.message(
+      'Recovery fee (businesses)',
+      name: 'recoveryFee',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Booking (account numbers; empty: no booking)`
+  String get booking {
+    return Intl.message(
+      'Booking (account numbers; empty: no booking)',
+      name: 'booking',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Receivable`
+  String get receivable {
+    return Intl.message('Receivable', name: 'receivable', desc: '', args: []);
+  }
+
+  /// `Revenue`
+  String get revenue {
+    return Intl.message('Revenue', name: 'revenue', desc: '', args: []);
+  }
+
+  /// `VAT collected`
+  String get vatAccount {
+    return Intl.message(
+      'VAT collected',
+      name: 'vatAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Bank (payments)`
+  String get bankAccount {
+    return Intl.message(
+      'Bank (payments)',
+      name: 'bankAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Required`
+  String get required {
+    return Intl.message('Required', name: 'required', desc: '', args: []);
+  }
+
+  /// `This id exists already`
+  String get idTaken {
+    return Intl.message(
+      'This id exists already',
+      name: 'idTaken',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delete`
+  String get delete {
+    return Intl.message('Delete', name: 'delete', desc: '', args: []);
+  }
+
+  /// `draft`
+  String get status_draft {
+    return Intl.message('draft', name: 'status_draft', desc: '', args: []);
+  }
+
+  /// `open`
+  String get status_open {
+    return Intl.message('open', name: 'status_open', desc: '', args: []);
+  }
+
+  /// `accepted`
+  String get status_accepted {
+    return Intl.message(
+      'accepted',
+      name: 'status_accepted',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `declined`
+  String get status_refused {
+    return Intl.message('declined', name: 'status_refused', desc: '', args: []);
+  }
+
+  /// `invoiced`
+  String get status_invoiced {
+    return Intl.message(
+      'invoiced',
+      name: 'status_invoiced',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `unpaid`
+  String get status_unpaid {
+    return Intl.message('unpaid', name: 'status_unpaid', desc: '', args: []);
+  }
+
+  /// `overdue`
+  String get status_overdue {
+    return Intl.message('overdue', name: 'status_overdue', desc: '', args: []);
+  }
+
+  /// `paid`
+  String get status_paid {
+    return Intl.message('paid', name: 'status_paid', desc: '', args: []);
+  }
+
+  /// `cancelled`
+  String get status_cancelled {
+    return Intl.message(
+      'cancelled',
+      name: 'status_cancelled',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reminders`
+  String get reminders {
+    return Intl.message('Reminders', name: 'reminders', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
@@ -193,6 +763,7 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
     return const <Locale>[
       Locale.fromSubtags(languageCode: 'en'),
       Locale.fromSubtags(languageCode: 'de'),
+      Locale.fromSubtags(languageCode: 'fr'),
     ];
   }
 

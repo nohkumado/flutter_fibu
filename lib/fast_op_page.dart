@@ -78,6 +78,7 @@ class _FastOpPageState extends ConsumerState<FastOpPage> {
       padding: const EdgeInsets.all(16),
       children: [
         DropdownButtonFormField<String>(
+          isExpanded: true,
           initialValue: _opName,
           decoration: InputDecoration(labelText: s.chooseOp),
           items: [for (final n in names) DropdownMenuItem(value: n, child: Text(n))],
@@ -117,6 +118,7 @@ class _FastOpPageState extends ConsumerState<FastOpPage> {
   Widget _field(OpQuestion q) {
     if (q.kind == OpQuestionKind.account) {
       return DropdownButtonFormField<String>(
+          isExpanded: true,
         initialValue: _accounts[q.key],
         decoration: InputDecoration(labelText: q.label),
         items: [
