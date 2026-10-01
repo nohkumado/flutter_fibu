@@ -33,21 +33,9 @@ class BookNotifier extends Notifier<Book>
   {
     print("adding jrl line");
     if(cur == null || cur.isEmpty) cur = "EUR";
-    if(valuta.isEmpty) valuta = "0";
-    int valutaAsInt = 0;
-    try {
-      valutaAsInt = int.parse(valuta);
-    }
-    catch(e){
-      //print("failed to convert $valuta to int");
-    }
-    DateTime dateO = DateTime.now();
-    try {
-      dateO = DateTime.parse(date);
-    }
-    catch(e){
-      print("failed to parse Date $date");
-    }
+    // "12" is 12 €, "12,50" 12,50 € (nohfibu's Amount)
+    final int valutaAsInt = Amount.parseCents(valuta) ?? 0;
+    final DateTime dateO = FibuDate.parse(date) ?? DateTime.now();
     Konto minus = state.kpl.get(ktom)??Konto();
     Konto plus = state.kpl.get(ktop)??Konto();
     if(minus.isNotValid()) print("Konto $ktom minus not found....");

@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+- nohfibu 0.2.0: book format 2 (version row, account roles), balances shown
+  in their normal direction on the account plan (no minus on liabilities
+  and income).
+- A journal line typed in the app: "12" is 12 € (was 12 cents), "12,50"
+  works, dates as 15.10.2018 / 15-10-2018 / 2018-10-15 (nohfibu's Amount
+  and FibuDate).
 - Stored operations ("Schnellbuchungen" in the drawer): choose an op of the
   open book, answer its questions as a form (date, account dropdowns for
   ranges, amounts, texts), the journal lines previewed live (or what is
