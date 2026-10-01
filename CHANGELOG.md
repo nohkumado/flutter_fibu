@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- Android: no cloud backup and no device-to-device transfer of the app's
+  data (allowBackup false, data extraction rules) — books, invoices,
+  customers and letterheads with bank details stay on the device.
 - Offers & invoices ("Angebote & Rechnungen" in the drawer), on nohfibu's
   workflow — the same archive and letterheads as the facture command line
   (~/.config/nohfibu on Linux, the app's directory on Android): the list
