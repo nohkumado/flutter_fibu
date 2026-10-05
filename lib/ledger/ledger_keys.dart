@@ -38,4 +38,16 @@ class LedgerKeys {
     f.writeAsStringSync('${key.toBase64()}\n');
     if (!Platform.isWindows) Process.runSync('chmod', ['600', f.path]);
   }
+
+  /// Forgets the key of [book] on this device (the history becomes
+  /// unreadable here — keep a backup or the password manager's copy).
+  Future<void> delete(String book) async {
+    if (_phone) {
+      await _secure.delete(key: 'nohfibu-key-$book');
+      return;
+    }
+    final f = _file(book);
+    if (f.existsSync()) f.deleteSync();
+  }
 }
+

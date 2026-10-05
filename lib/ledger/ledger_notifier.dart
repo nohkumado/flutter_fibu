@@ -1,3 +1,5 @@
+import 'dart:isolate';
+
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:nohfibu/nohfibu.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -119,13 +121,16 @@ class LedgerNotifier extends Notifier<LedgerAppState> {
   /// The history under [passphrase], to save anywhere.
   Future<String> backup(String passphrase) async {
     await commit();
-    return LedgerBackup.export(state.repo!.graph, passphrase);
+    final graph = state.repo!.graph;
+    // 600 000 rounds of PBKDF2 take seconds (16 s on an older tablet): off
+    // the screen's thread, so the app stays responsive
+    return Isolate.run(() => LedgerBackup.export(graph, passphrase));
   }
 
   /// Brings a backup into [book] (a new device: the key is new, the
   /// history the backup's).
   Future<int> restore(String book, String text, String passphrase) async {
-    final changes = await LedgerBackup.restore(text, passphrase);
+    final changes = await Isolate.run(() => LedgerBackup.restore(text, passphrase));
     final f = await _files();
     final keys = LedgerKeys(f.base);
     final key = await keys.read(book) ?? LedgerKey.generate();

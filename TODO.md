@@ -18,12 +18,21 @@ Done items move to CHANGELOG.md.
 
 ## Books & devices — try on real devices
 
-- [ ] Pairing by camera on the phone, the desktop app as hub, a sync each
-  way; a backup into Nextcloud and its restore on another device
+- [x] Sync on real devices (Pixel 8 Android 17, tablet Android 11) — the
+  integration test, see CHANGELOG
+- [ ] The tablet hangs sometimes (2 of 4 device-test runs: "did not
+  complete" after 9 min, no step reached the hub in one of them): log each
+  step with its time in the test, find where (Keystore? connection?
+  isolate?); after a hang the cleanup may not have run — check the tablet:
+  key "nohfibu-key-devicetest", pref "ledger-book"
+- [ ] By hand: pairing by camera on the phone, the desktop app as hub, a
+  backup into Nextcloud and its restore on another device
+- [ ] Native PBKDF2 (cryptography_flutter) once it supports AGP 9's
+  built-in Kotlin — 16 s backups on older tablets
 - [ ] "Keep the key in the password manager": does Bitwarden offer to save
   it (Android autofill), and fill it back in "enter the key"?
-- [ ] Android 17 local network permission: is ACCESS_LOCAL_NETWORK the
-  right name, does it need asking at run time?
+- [x] Android 17: sync over Wi-Fi worked with the declared permissions, no
+  run-time prompt (Pixel 8)
 - [ ] Device name and invoice series editable in the app (today: the host
   name, the series from it)
 - [ ] Resolve a conflict in the app (take the replaced version back)

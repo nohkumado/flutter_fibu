@@ -2,6 +2,16 @@
 
 ## Unreleased
 
+- Tried on real devices against a desktop hub (integration_test/
+  device_sync_test.dart): Pixel 8 (Android 17) and LIFETAB tablet
+  (Android 11) over Wi-Fi — paired, received the book, key in the Android
+  Keystore, invoices in each device's series (PIXEL8-…, TABLET-…), booked,
+  synced back; the hub saw one history, no conflicts. Backups: 3.3 s on
+  the Pixel, 16.7 s on the tablet (600 000 PBKDF2 rounds in pure Dart) —
+  now run off the screen's thread (Isolate.run). cryptography_flutter
+  (native PBKDF2) tried and dropped: 2.3.4 still applies the Kotlin Gradle
+  Plugin, which AGP 9 refuses. `LedgerKeys.delete`; the device test cleans
+  up after itself (history closed, test key and book removed).
 - Books & devices (drawer): a book kept as nohfibu's encrypted history.
   Start one from the open book (with the invoice archive and the
   letterheads); every action — journal lines, stored ops, offers,
