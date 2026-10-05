@@ -2,6 +2,22 @@
 
 ## Unreleased
 
+- Books & devices (drawer): a book kept as nohfibu's encrypted history.
+  Start one from the open book (with the invoice archive and the
+  letterheads); every action — journal lines, stored ops, offers,
+  invoices, payments, customers, letterheads — is recorded as a change of
+  this device. Sync with the desktop: scan its code (camera on Android,
+  camera or picture on Linux) or paste the invitation; or be the hub
+  (desktop): the app serves the book on the local network and shows the
+  pairing code. Backup under a passphrase (saved where you choose, e.g. a
+  Nextcloud folder) and restore. The key: on a phone in secure storage
+  (Android Keystore), on the desktop in the key file the `ledger` command
+  uses; "keep the key in the password manager" shows it as a login so
+  Bitwarden (or any autofill service) offers to save it, "enter the key"
+  lets it fill the key back in. Conflicts (changed on two devices at the
+  same time) are listed. With a history, invoice numbers are in this
+  device's series (e.g. TABLET-2026-0001).
+- Android: INTERNET and ACCESS_LOCAL_NETWORK in the release manifest (sync).
 - Android: no cloud backup and no device-to-device transfer of the app's
   data (allowBackup false, data extraction rules) — books, invoices,
   customers and letterheads with bank details stay on the device.

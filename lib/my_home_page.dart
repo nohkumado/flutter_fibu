@@ -7,6 +7,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'act_widget.dart';
 import 'navdrawer.dart';
 import 'fast_op_page.dart';
+import 'ledger/ledger_page.dart';
 import 'invoicing/invoices_page.dart';
 import 'generated/l10n.dart';
 import 'package:flutter_fibu/fibupreferences.dart';
@@ -40,6 +41,7 @@ class MyHomePage extends ConsumerWidget {
 			"jrlview" : ActWidget(name:S.of(context).jrl, icon:JrlIcon(width: 30).draw(), body: JrlPage()),
 			"bilaview" : ActWidget(name:S.of(context).bilanz, icon:BilanzIcon(width: 30).draw(), body: KplPage()),
 			"invoicing" : ActWidget(name:S.of(context).invoicing, icon:Icon(Icons.receipt_long_outlined), body: const InvoicesPage()),
+			"ledger" : ActWidget(name:S.of(context).ledgerTitle, icon:Icon(Icons.devices), body: const LedgerPage()),
 			"fastops" : ActWidget(name:S.of(context).fastops, icon:Icon(Icons.flash_on), body: const FastOpPage()),
 			"helpview" : ActWidget(name:S.of(context).bilanz, icon:Icon(Icons.help_outline), body: ManualBrowser()),
 			"settingsview" : ActWidget(name:S.of(context).settings, icon: Icon(Icons.settings), body: FibuPreferences()),

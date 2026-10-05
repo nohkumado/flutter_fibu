@@ -46,6 +46,14 @@ class NavDrawer extends ConsumerWidget {
 							}
 					),
 					ListTile(
+						leading: const Icon(Icons.devices),
+						title: Text(S.of(context).ledgerTitle),
+						onTap: () {
+							ref.read(navProvider.notifier).chgPage("ledger");
+							Navigator.pop(context);
+						},
+					),
+					ListTile(
 						leading: const Icon(Icons.receipt_long_outlined),
 						title: Text(S.of(context).invoicing),
 						onTap: () {

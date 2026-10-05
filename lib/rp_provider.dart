@@ -5,6 +5,8 @@ import 'package:nohfibu/nohfibu.dart';
 import 'act_widget.dart';
 import 'invoicing/invoice_notifier.dart';
 import 'invoicing/invoice_state.dart';
+import 'ledger/ledger_app_state.dart';
+import 'ledger/ledger_notifier.dart';
 import 'book_notifier.dart';
 import 'manual_provider.dart';
 import 'nav_notifier.dart';
@@ -18,3 +20,5 @@ final manualProvider =
     NotifierProvider<ManualNotifier, String>(ManualNotifier.new);
 final invoiceProvider =
     NotifierProvider<InvoiceNotifier, InvoiceState>(InvoiceNotifier.new);
+final ledgerProvider =
+    NotifierProvider<LedgerNotifier, LedgerAppState>(LedgerNotifier.new);

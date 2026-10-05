@@ -1,6 +1,8 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:nohfibu/nohfibu.dart';
 
+import 'rp_provider.dart';
+
 /// The open book. Accounts and journal lines change the book in place, then
 /// tell the listeners ([Ref.notifyListeners]).
 class BookNotifier extends Notifier<Book>
@@ -10,8 +12,15 @@ class BookNotifier extends Notifier<Book>
   /// A book to start with (tests), else an empty one.
   final Book? initial;
 
+  /// With a book's history open, its book; else [initial] or an empty one.
   @override
-  Book build() => initial ?? Book();
+  Book build() => ref.watch(ledgerProvider.select((s) => s.ledger))?.book ?? initial ?? Book();
+
+  /// After a change: notify, and record it when a history is open.
+  void _changed() {
+    ref.notifyListeners();
+    ref.read(ledgerProvider.notifier).commit();
+  }
 
   void addAccount({required String name, required String desc, String? cur, String? budget})
   {
@@ -26,7 +35,7 @@ class BookNotifier extends Notifier<Book>
     }
     Konto newOne = Konto(name : name, desc:desc, plan: state.kpl,  cur: cur, budget: budgetAsInt );
     state.kpl.put(name, newOne);
-    ref.notifyListeners();
+    _changed();
   }
 
   void addJrlLine({required String date, required String ktom, required String ktop, required String desc, String? cur, required String valuta})
@@ -43,7 +52,7 @@ class BookNotifier extends Notifier<Book>
 
     JrlLine jrlLine = JrlLine(datum: dateO ,kmin: minus,kplu: plus,desc: desc,cur: cur,valuta: valutaAsInt);
     state.jrl.add(jrlLine);
-    ref.notifyListeners();
+    _changed();
   }
 
   /// Adds journal lines made elsewhere (a stored operation) to the journal.
@@ -51,6 +60,6 @@ class BookNotifier extends Notifier<Book>
     for (final line in lines) {
       state.jrl.add(line);
     }
-    ref.notifyListeners();
+    _changed();
   }
 }

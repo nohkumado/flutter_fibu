@@ -16,3 +16,15 @@ Done items move to CHANGELOG.md.
   (archived) started this. The versioned files (book format, archive
   format) are the base for merging.
 
+## Books & devices — try on real devices
+
+- [ ] Pairing by camera on the phone, the desktop app as hub, a sync each
+  way; a backup into Nextcloud and its restore on another device
+- [ ] "Keep the key in the password manager": does Bitwarden offer to save
+  it (Android autofill), and fill it back in "enter the key"?
+- [ ] Android 17 local network permission: is ACCESS_LOCAL_NETWORK the
+  right name, does it need asking at run time?
+- [ ] Device name and invoice series editable in the app (today: the host
+  name, the series from it)
+- [ ] Resolve a conflict in the app (take the replaced version back)
+

@@ -3,6 +3,7 @@ import 'package:nohfibu/nohfibu.dart';
 
 import 'invoice_files.dart';
 import 'invoice_state.dart';
+import '../rp_provider.dart';
 
 /// Offers, invoices, customers and letterheads in the app: every change
 /// goes through nohfibu's [InvoiceDesk] (the same workflow as the facture
@@ -15,27 +16,45 @@ class InvoiceNotifier extends Notifier<InvoiceState> {
 
   @override
   InvoiceState build() {
-    if (files != null) return _read(files!);
+    final ledger = ref.watch(ledgerProvider.select((s) => s.ledger));
+    if (files != null) return _read(files!, ledger);
     InvoiceFiles.locate().then((f) {
-      if (ref.mounted) state = _read(f);
+      if (ref.mounted) state = _read(f, ledger);
     });
-    return InvoiceState(store: InvoiceStore());
+    return InvoiceState(store: ledger?.store ?? InvoiceStore());
   }
 
-  InvoiceState _read(InvoiceFiles f) => InvoiceState(
-        files: f,
-        store: InvoiceStore.load(f.store),
-        letterheads: Letterhead.loadAll(f.letterheads),
-      );
+  /// From the files — or, with a book's history open, its archive and
+  /// letterheads (the files' letterheads too).
+  InvoiceState _read(InvoiceFiles f, Ledger? ledger) {
+    if (ledger == null) {
+      return InvoiceState(files: f, store: InvoiceStore.load(f.store), letterheads: Letterhead.loadAll(f.letterheads));
+    }
+    return InvoiceState(
+      files: f,
+      store: ledger.store,
+      letterheads: {
+        for (final e in ledger.letterheads.entries) e.key: Letterhead.parse(e.value, id: e.key),
+        ...Letterhead.loadAll(f.letterheads),
+      },
+      history: true,
+      series: ref.read(ledgerProvider).repo?.series ?? '',
+    );
+  }
 
   void _changed() {
-    state.store.save(state.files!.store);
+    if (state.history) {
+      ref.read(ledgerProvider.notifier).commit();
+    } else {
+      state.store.save(state.files!.store);
+    }
     state = state.copy();
   }
 
   void saveLetterhead(Letterhead letterhead) {
     letterhead.save(state.files!.letterheads);
     state.letterheads[letterhead.id] = letterhead;
+    if (state.history) ref.read(ledgerProvider.notifier).putLetterhead(letterhead);
     state = state.copy();
   }
 

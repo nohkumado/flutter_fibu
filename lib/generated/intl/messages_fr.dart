@@ -24,11 +24,25 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m1(count) => "Passé dans le livre ouvert : ${count} lignes";
 
-  static String m2(konto) => "Extrait du compte ${konto}";
+  static String m2(count, conflicts) =>
+      "${count} modifications · ${conflicts} conflits";
 
-  static String m3(level) => "Rédiger le rappel ${level}";
+  static String m3(device, series) =>
+      "Cet appareil : ${device} · série de factures : ${series}";
 
-  static String m4(count) => "${count} rappels à envoyer";
+  static String m4(konto) => "Extrait du compte ${konto}";
+
+  static String m5(level) => "Rédiger le rappel ${level}";
+
+  static String m6(count) => "${count} rappels à envoyer";
+
+  static String m7(kept, replaced) =>
+      "conservé : ${kept} — remplacé : ${replaced}";
+
+  static String m8(count) => "${count} modifications restaurées";
+
+  static String m9(received, sent) =>
+      "Synchronisé : ${received} reçus, ${sent} envoyés";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
@@ -45,10 +59,22 @@ class MessageLookup extends MessageLookupByLibrary {
       "Adresse (une ligne par ligne)",
     ),
     "amount": MessageLookupByLibrary.simpleMessage("Montant"),
+    "backup": MessageLookupByLibrary.simpleMessage(
+      "Sauvegarder (phrase secrète)",
+    ),
+    "backupSaved": MessageLookupByLibrary.simpleMessage(
+      "Sauvegarde enregistrée",
+    ),
     "bank": MessageLookupByLibrary.simpleMessage("Banque"),
     "bankAccount": MessageLookupByLibrary.simpleMessage("Banque (paiements)"),
+    "beHub": MessageLookupByLibrary.simpleMessage(
+      "Servir de centrale (montrer le code aux autres appareils)",
+    ),
     "bilanz": MessageLookupByLibrary.simpleMessage("Bilan"),
     "bookIt": MessageLookupByLibrary.simpleMessage("Passer l\'écriture"),
+    "bookName": MessageLookupByLibrary.simpleMessage(
+      "Nom du livre (p. ex. compta2026)",
+    ),
     "booked": m0,
     "booked2": m1,
     "booking": MessageLookupByLibrary.simpleMessage(
@@ -60,7 +86,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "category": MessageLookupByLibrary.simpleMessage(
       "Catégorie (p. ex. 3dprint, cours)",
     ),
+    "changesInfo": m2,
     "chooseOp": MessageLookupByLibrary.simpleMessage("Choisir une opération"),
+    "closeHistory": MessageLookupByLibrary.simpleMessage(
+      "Revenir aux fichiers simples",
+    ),
+    "conflictsTitle": MessageLookupByLibrary.simpleMessage(
+      "Modifié en même temps sur deux appareils",
+    ),
     "country": MessageLookupByLibrary.simpleMessage("Pays (FR, DE…)"),
     "customer": MessageLookupByLibrary.simpleMessage("Client"),
     "customers": MessageLookupByLibrary.simpleMessage("Clients"),
@@ -69,8 +102,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Supprimer le brouillon",
     ),
     "description": MessageLookupByLibrary.simpleMessage("Désignation"),
+    "deviceInfo": m3,
     "email": MessageLookupByLibrary.simpleMessage("E-mail"),
-    "extract": m2,
+    "extract": m4,
     "fastops": MessageLookupByLibrary.simpleMessage("Opérations enregistrées"),
     "footer": MessageLookupByLibrary.simpleMessage("Pied de page"),
     "franchise": MessageLookupByLibrary.simpleMessage(
@@ -78,6 +112,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "gross": MessageLookupByLibrary.simpleMessage("TTC"),
     "history": MessageLookupByLibrary.simpleMessage("Historique"),
+    "hubRunning": MessageLookupByLibrary.simpleMessage(
+      "En attente des appareils. Ce code contient la clé du livre : ne le montrez qu\'à vos appareils et à ceux de vos collaborateurs.",
+    ),
     "idTaken": MessageLookupByLibrary.simpleMessage(
       "Cet identifiant existe déjà",
     ),
@@ -86,8 +123,17 @@ class MessageLookup extends MessageLookupByLibrary {
     "issue": MessageLookupByLibrary.simpleMessage("Émettre"),
     "items": MessageLookupByLibrary.simpleMessage("Lignes"),
     "jrl": MessageLookupByLibrary.simpleMessage("Journal"),
+    "keyEnter": MessageLookupByLibrary.simpleMessage("Saisir la clé"),
+    "keyHint": MessageLookupByLibrary.simpleMessage(
+      "Enregistrez-la avec votre gestionnaire (Bitwarden le propose). Sans la clé, ou une sauvegarde et sa phrase secrète, le livre est illisible — c\'est voulu.",
+    ),
+    "keySave": MessageLookupByLibrary.simpleMessage("Enregistrer"),
+    "keyToManager": MessageLookupByLibrary.simpleMessage(
+      "Garder la clé dans le gestionnaire de mots de passe",
+    ),
     "kpl": MessageLookupByLibrary.simpleMessage("Plan comptable"),
     "language": MessageLookupByLibrary.simpleMessage("Langue des courriers"),
+    "ledgerTitle": MessageLookupByLibrary.simpleMessage("Livres & appareils"),
     "letterhead": MessageLookupByLibrary.simpleMessage("En-tête"),
     "letterheads": MessageLookupByLibrary.simpleMessage("En-têtes"),
     "loadDefault": MessageLookupByLibrary.simpleMessage("charger"),
@@ -104,6 +150,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "noDocuments": MessageLookupByLibrary.simpleMessage(
       "Pas encore de devis ni de facture.",
     ),
+    "noHistory": MessageLookupByLibrary.simpleMessage(
+      "Ce livre est conservé en fichiers simples sur cet appareil. Démarrez un historique pour le synchroniser (chiffré) avec vos autres appareils.",
+    ),
     "noLetterhead": MessageLookupByLibrary.simpleMessage(
       "Créez d\'abord un en-tête (réglages).",
     ),
@@ -114,6 +163,16 @@ class MessageLookup extends MessageLookupByLibrary {
       "Non passé : le livre ouvert n\'a pas les comptes de l\'en-tête",
     ),
     "offers": MessageLookupByLibrary.simpleMessage("Devis"),
+    "passphrase": MessageLookupByLibrary.simpleMessage("Phrase secrète"),
+    "passphraseAgain": MessageLookupByLibrary.simpleMessage(
+      "Phrase secrète à nouveau",
+    ),
+    "passphrasesDiffer": MessageLookupByLibrary.simpleMessage(
+      "Les phrases secrètes diffèrent",
+    ),
+    "pasteInvitation": MessageLookupByLibrary.simpleMessage(
+      "…ou coller l\'invitation",
+    ),
     "pay": MessageLookupByLibrary.simpleMessage("Paiement reçu"),
     "payDays": MessageLookupByLibrary.simpleMessage("Payable sous (jours)"),
     "pdf": MessageLookupByLibrary.simpleMessage("PDF"),
@@ -133,13 +192,18 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "refuse": MessageLookupByLibrary.simpleMessage("Refusé"),
     "regime": MessageLookupByLibrary.simpleMessage("Régime de TVA"),
-    "remind": m3,
+    "remind": m5,
     "reminderDays": MessageLookupByLibrary.simpleMessage(
       "Rappels après (jours : 15, 30, 45)",
     ),
     "reminders": MessageLookupByLibrary.simpleMessage("Relances"),
-    "remindersDue": m4,
+    "remindersDue": m6,
+    "replacedBy": m7,
     "required": MessageLookupByLibrary.simpleMessage("Obligatoire"),
+    "restoreBackup": MessageLookupByLibrary.simpleMessage(
+      "Restaurer une sauvegarde",
+    ),
+    "restored": m8,
     "revenue": MessageLookupByLibrary.simpleMessage("Produits"),
     "reverseCharge": MessageLookupByLibrary.simpleMessage(
       "Autoliquidation pour (catégories)",
@@ -148,12 +212,18 @@ class MessageLookup extends MessageLookupByLibrary {
     "saveDraft": MessageLookupByLibrary.simpleMessage(
       "Enregistrer le brouillon",
     ),
+    "scanHub": MessageLookupByLibrary.simpleMessage(
+      "Scanner le code de l\'ordinateur",
+    ),
     "serviceDate": MessageLookupByLibrary.simpleMessage(
       "Date de la prestation",
     ),
     "settings": MessageLookupByLibrary.simpleMessage("Réglages"),
     "shortId": MessageLookupByLibrary.simpleMessage("Identifiant"),
     "siret": MessageLookupByLibrary.simpleMessage("SIRET"),
+    "startHistory": MessageLookupByLibrary.simpleMessage(
+      "Démarrer un historique à partir du livre ouvert",
+    ),
     "status_accepted": MessageLookupByLibrary.simpleMessage("accepté"),
     "status_cancelled": MessageLookupByLibrary.simpleMessage("annulé"),
     "status_draft": MessageLookupByLibrary.simpleMessage("brouillon"),
@@ -163,7 +233,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "status_paid": MessageLookupByLibrary.simpleMessage("payé"),
     "status_refused": MessageLookupByLibrary.simpleMessage("refusé"),
     "status_unpaid": MessageLookupByLibrary.simpleMessage("à payer"),
+    "stopHub": MessageLookupByLibrary.simpleMessage("Arrêter"),
     "subject": MessageLookupByLibrary.simpleMessage("Objet"),
+    "syncNow": MessageLookupByLibrary.simpleMessage("Synchroniser"),
+    "synced": m9,
     "taxNumber": MessageLookupByLibrary.simpleMessage("Numéro fiscal (DE)"),
     "unitPrice": MessageLookupByLibrary.simpleMessage("Prix unitaire HT"),
     "validDays": MessageLookupByLibrary.simpleMessage("Valable (jours)"),
@@ -174,5 +247,6 @@ class MessageLookup extends MessageLookupByLibrary {
       "Mention de franchise propre (facultatif)",
     ),
     "vatRegime": MessageLookupByLibrary.simpleMessage("Assujetti à la TVA"),
+    "working": MessageLookupByLibrary.simpleMessage("En cours…"),
   };
 }

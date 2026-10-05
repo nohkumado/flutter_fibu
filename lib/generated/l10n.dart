@@ -754,6 +754,256 @@ class S {
   String get reminders {
     return Intl.message('Reminders', name: 'reminders', desc: '', args: []);
   }
+
+  /// `Books & devices`
+  String get ledgerTitle {
+    return Intl.message(
+      'Books & devices',
+      name: 'ledgerTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `This book is kept as plain files on this device. Start a history to sync it with your other devices (encrypted).`
+  String get noHistory {
+    return Intl.message(
+      'This book is kept as plain files on this device. Start a history to sync it with your other devices (encrypted).',
+      name: 'noHistory',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Start a history from the open book`
+  String get startHistory {
+    return Intl.message(
+      'Start a history from the open book',
+      name: 'startHistory',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Name of the book (e.g. compta2026)`
+  String get bookName {
+    return Intl.message(
+      'Name of the book (e.g. compta2026)',
+      name: 'bookName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Scan the desktop's code`
+  String get scanHub {
+    return Intl.message(
+      'Scan the desktop\'s code',
+      name: 'scanHub',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `…or paste the invitation`
+  String get pasteInvitation {
+    return Intl.message(
+      '…or paste the invitation',
+      name: 'pasteInvitation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sync now`
+  String get syncNow {
+    return Intl.message('Sync now', name: 'syncNow', desc: '', args: []);
+  }
+
+  /// `Synced: {received} in, {sent} out`
+  String synced(Object received, Object sent) {
+    return Intl.message(
+      'Synced: $received in, $sent out',
+      name: 'synced',
+      desc: '',
+      args: [received, sent],
+    );
+  }
+
+  /// `Be the hub (show the code for the other devices)`
+  String get beHub {
+    return Intl.message(
+      'Be the hub (show the code for the other devices)',
+      name: 'beHub',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Waiting for devices. This code holds the book's key: show it only to your own devices and your co-workers'.`
+  String get hubRunning {
+    return Intl.message(
+      'Waiting for devices. This code holds the book\'s key: show it only to your own devices and your co-workers\'.',
+      name: 'hubRunning',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Stop`
+  String get stopHub {
+    return Intl.message('Stop', name: 'stopHub', desc: '', args: []);
+  }
+
+  /// `This device: {device} · invoice series: {series}`
+  String deviceInfo(Object device, Object series) {
+    return Intl.message(
+      'This device: $device · invoice series: $series',
+      name: 'deviceInfo',
+      desc: '',
+      args: [device, series],
+    );
+  }
+
+  /// `{count} changes · {conflicts} conflicts`
+  String changesInfo(Object count, Object conflicts) {
+    return Intl.message(
+      '$count changes · $conflicts conflicts',
+      name: 'changesInfo',
+      desc: '',
+      args: [count, conflicts],
+    );
+  }
+
+  /// `Changed at the same time on two devices`
+  String get conflictsTitle {
+    return Intl.message(
+      'Changed at the same time on two devices',
+      name: 'conflictsTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `kept: {kept} — replaced: {replaced}`
+  String replacedBy(Object kept, Object replaced) {
+    return Intl.message(
+      'kept: $kept — replaced: $replaced',
+      name: 'replacedBy',
+      desc: '',
+      args: [kept, replaced],
+    );
+  }
+
+  /// `Back up (passphrase)`
+  String get backup {
+    return Intl.message(
+      'Back up (passphrase)',
+      name: 'backup',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Restore a backup`
+  String get restoreBackup {
+    return Intl.message(
+      'Restore a backup',
+      name: 'restoreBackup',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Passphrase`
+  String get passphrase {
+    return Intl.message('Passphrase', name: 'passphrase', desc: '', args: []);
+  }
+
+  /// `Passphrase again`
+  String get passphraseAgain {
+    return Intl.message(
+      'Passphrase again',
+      name: 'passphraseAgain',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The passphrases differ`
+  String get passphrasesDiffer {
+    return Intl.message(
+      'The passphrases differ',
+      name: 'passphrasesDiffer',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Backup saved`
+  String get backupSaved {
+    return Intl.message(
+      'Backup saved',
+      name: 'backupSaved',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{count} changes restored`
+  String restored(Object count) {
+    return Intl.message(
+      '$count changes restored',
+      name: 'restored',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `Keep the key in the password manager`
+  String get keyToManager {
+    return Intl.message(
+      'Keep the key in the password manager',
+      name: 'keyToManager',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter the key`
+  String get keyEnter {
+    return Intl.message('Enter the key', name: 'keyEnter', desc: '', args: []);
+  }
+
+  /// `Save with your password manager (Bitwarden asks). Without the key, or a backup and its passphrase, the book cannot be read — by design.`
+  String get keyHint {
+    return Intl.message(
+      'Save with your password manager (Bitwarden asks). Without the key, or a backup and its passphrase, the book cannot be read — by design.',
+      name: 'keyHint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Save`
+  String get keySave {
+    return Intl.message('Save', name: 'keySave', desc: '', args: []);
+  }
+
+  /// `Back to plain files`
+  String get closeHistory {
+    return Intl.message(
+      'Back to plain files',
+      name: 'closeHistory',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Working…`
+  String get working {
+    return Intl.message('Working…', name: 'working', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

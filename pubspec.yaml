@@ -49,8 +49,15 @@ dependencies:
   settings_ui: ^4.0.1
   shared_preferences: ^2.3.2
   flutter_widget_from_html_core: ^0.17.4
+  # QR codes: camera on Android, camera or picture on Linux (pairing)
+  linux_qr_reader:
+    git:
+      url: ssh://git@gitea.adlp.org:222/bboett/linux_qr_reader.git
+      ref: main
   path_provider: ^2.1.6
   printing: ^5.15.1
+  flutter_secure_storage: ^11.2.0
+  qr_flutter: ^4.1.0
 
 dev_dependencies:
   flutter_test:
